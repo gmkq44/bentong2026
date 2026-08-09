@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文冬三天两夜 · 家庭游行程</title>
+<meta name="description" content="2026年8月29–31日 文冬（Bentong）家庭三天两夜行程、景点资讯、美食手信与实用备忘。">
+<style>
+/* ── 色彩：文冬姜的赭黄 + 山雾的青绿，中性色偏冷绿 ────────────── */
+:root{
+  --paper:#EEF1EA;
+  --surface:#FAFBF7;
+  --surface-2:#E4E8DE;
+  --ink:#191F1A;
+  --ink-mid:#4A5449;
+  --ink-soft:#6E7A6C;
+  --line:#D3D8CB;
+  --line-strong:#B6BEAC;
+  --ginger:#B5651F;
+  --ginger-soft:#F0E0CD;
+  --pine:#2E5A4C;
+  --pine-soft:#DCE7E0;
+  --alert:#9E3B26;
+  --shadow:0 1px 2px rgba(25,31,26,.06), 0 8px 24px -12px rgba(25,31,26,.18);
+  --serif:"Songti SC","Source Han Serif SC","Noto Serif CJK SC","Noto Serif SC",STSong,SimSun,"Times New Roman",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#10140F;
+    --surface:#181D18;
+    --surface-2:#212821;
+    --ink:#E7EBE1;
+    --ink-mid:#B3BDB0;
+    --ink-soft:#8A9488;
+    --line:#2B332B;
+    --line-strong:#3D473C;
+    --ginger:#DE9A4E;
+    --ginger-soft:#38291A;
+    --pine:#79B39C;
+    --pine-soft:#1C2A25;
+    --alert:#D9765C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10140F;
+  --surface:#181D18;
+  --surface-2:#212821;
+  --ink:#E7EBE1;
+  --ink-mid:#B3BDB0;
+  --ink-soft:#8A9488;
+  --line:#2B332B;
+  --line-strong:#3D473C;
+  --ginger:#DE9A4E;
+  --ginger-soft:#38291A;
+  --pine:#79B39C;
+  --pine-soft:#1C2A25;
+  --alert:#D9765C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.75;
+  overflow-x:hidden;
+}
+a{color:var(--pine)}
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--ginger); outline-offset:3px; border-radius:3px;
+}
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; text-wrap:balance; margin:0; line-height:1.3}
+p{margin:0}
+ul{margin:0; padding:0; list-style:none}
+
+.wrap{width:min(1080px,100% - 2.5rem); margin-inline:auto}
+
+/* ── 通用小部件 ──────────────────────────────────────────── */
+.eyebrow{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--ink-soft);
+}
+.tag{
+  display:inline-flex; align-items:center; gap:.35em;
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.06em;
+  padding:.2em .6em; border-radius:2px; white-space:nowrap;
+  background:var(--surface-2); color:var(--ink-mid);
+}
+.tag--ginger{background:var(--ginger-soft); color:var(--ginger)}
+.tag--pine{background:var(--pine-soft); color:var(--pine)}
+.num{font-family:var(--mono); font-variant-numeric:tabular-nums}
+
+/* ── 页首 ────────────────────────────────────────────────── */
+.hero{position:relative; padding:clamp(3rem,9vw,6rem) 0 clamp(2rem,5vw,3.5rem); overflow:hidden}
+#ridge{position:absolute; inset:auto 0 0 0; width:100%; height:100%; z-index:0; opacity:.55}
+.hero .wrap{position:relative; z-index:1}
+.hero__place{
+  font-family:var(--serif); font-size:clamp(3.2rem,13vw,7rem); line-height:.95;
+  letter-spacing:.06em; margin:0;
+}
+.hero__place small{
+  display:block; font-family:var(--mono); font-size:clamp(.7rem,2.4vw,.9rem);
+  letter-spacing:.42em; color:var(--ginger); margin-top:.9rem; font-weight:400;
+}
+.hero__lede{
+  margin-top:1.6rem; max-width:34em; color:var(--ink-mid);
+  font-size:clamp(1rem,2.4vw,1.1rem);
+}
+.hero__meta{
+  display:flex; flex-wrap:wrap; gap:.5rem 1.6rem; margin-top:1.8rem;
+  padding-top:1.4rem; border-top:1px solid var(--line-strong);
+}
+.hero__meta div{display:flex; flex-direction:column; gap:.1rem}
+.hero__meta dt{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft)}
+.hero__meta dd{margin:0; font-size:1.02rem; font-variant-numeric:tabular-nums}
+#countdown{color:var(--ginger); font-weight:600}
+
+/* ── 日期导航 ────────────────────────────────────────────── */
+.daynav{
+  position:sticky; top:0; z-index:20;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-block:1px solid var(--line);
+  margin-top:2.5rem;
+}
+.daynav ul{display:flex; gap:0; overflow-x:auto; scrollbar-width:none}
+.daynav ul::-webkit-scrollbar{display:none}
+.daynav a{
+  display:block; padding:.85rem 1.1rem; white-space:nowrap;
+  font-size:.88rem; color:var(--ink-mid); text-decoration:none;
+  border-bottom:2px solid transparent;
+}
+.daynav a:hover{color:var(--ink)}
+.daynav a.is-active{color:var(--ink); border-bottom-color:var(--ginger)}
+.daynav .num{color:var(--ink-soft); margin-right:.45em; font-size:.78rem}
+
+/* ── 版块 ────────────────────────────────────────────────── */
+section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
+.sec-head{display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem}
+.sec-head h2{font-size:clamp(1.6rem,4.4vw,2.2rem)}
+.sec-head p{color:var(--ink-mid); max-width:48em}
+
+/* ── 住宿卡 ──────────────────────────────────────────────── */
+.stay{
+  background:var(--surface); border:1px solid var(--line); border-radius:4px;
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.stay__top{
+  display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start;
+  gap:1rem; padding:1.5rem 1.6rem; border-bottom:1px solid var(--line);
+}
+.stay__top h3{font-size:1.35rem}
+.stay__top address{font-style:normal; color:var(--ink-mid); font-size:.92rem; margin-top:.3rem}
+.stay__grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.stay__grid > div{padding:1.1rem 1.6rem; border-top:1px solid var(--line); border-right:1px solid var(--line)}
+.stay__grid dt{font-family:var(--mono); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft)}
+.stay__grid dd{margin:.25rem 0 0; font-size:1rem}
+.stay__acts{display:flex; flex-wrap:wrap; gap:.6rem; padding:1.2rem 1.6rem; background:var(--surface-2)}
+.btn{
+  display:inline-flex; align-items:center; gap:.4em;
+  padding:.5rem .95rem; border-radius:3px; text-decoration:none;
+  font-size:.88rem; border:1px solid var(--line-strong); color:var(--ink); background:var(--surface);
+}
+.btn:hover{border-color:var(--ginger); color:var(--ginger)}
+.btn--solid{background:var(--pine); border-color:var(--pine); color:var(--paper)}
+.btn--solid:hover{opacity:.88; color:var(--paper)}
+
+/* ── 行程时间轴 ──────────────────────────────────────────── */
+.day{border-top:1px solid var(--line-strong); padding-top:1.6rem}
+.day + .day{margin-top:3.5rem}
+.day__head{display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1rem; margin-bottom:.5rem}
+.day__n{font-family:var(--mono); font-size:.8rem; letter-spacing:.16em; color:var(--ginger)}
+.day__head h3{font-size:clamp(1.35rem,3.6vw,1.75rem)}
+.day__date{font-family:var(--mono); font-size:.85rem; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+.day__note{color:var(--ink-mid); font-size:.95rem; margin-bottom:1.8rem; max-width:52em}
+
+.tl{display:flex; flex-direction:column}
+.stop{display:grid; grid-template-columns:5.5rem 1fr; column-gap:1.5rem; position:relative}
+.stop__time{
+  font-family:var(--mono); font-size:.9rem; font-variant-numeric:tabular-nums;
+  color:var(--ink-mid); padding-top:1.35rem; text-align:right;
+}
+.stop__body{
+  border-left:1px solid var(--line-strong); padding:1.3rem 0 1.3rem 1.6rem; position:relative;
+}
+.stop__body::before{
+  content:""; position:absolute; left:-4.5px; top:1.75rem;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--paper); border:1.5px solid var(--line-strong);
+}
+.stop--key .stop__body::before{background:var(--ginger); border-color:var(--ginger)}
+.stop:last-child .stop__body{border-left-color:transparent}
+.stop:last-child .stop__body::before{border-color:var(--line-strong)}
+.stop__title{display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .7rem}
+.stop__title h4{font-size:1.12rem}
+.stop__desc{color:var(--ink-mid); font-size:.95rem; margin-top:.45rem; max-width:56em}
+.stop__facts{
+  display:flex; flex-wrap:wrap; gap:.35rem .5rem; margin-top:.7rem;
+}
+.stop__facts span{
+  font-family:var(--mono); font-size:.72rem; color:var(--ink-soft);
+  border:1px solid var(--line); border-radius:2px; padding:.15em .5em;
+}
+.stop__link{font-size:.82rem; margin-top:.6rem; display:inline-block}
+
+.callout{
+  margin-top:.85rem; padding:.75rem 1rem; border-radius:3px;
+  background:var(--ginger-soft); color:var(--ink); font-size:.9rem;
+  border-left:2px solid var(--ginger);
+}
+.callout b{color:var(--ginger)}
+
+/* ── 卡片网格 ────────────────────────────────────────────── */
+.grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:4px;
+  padding:1.25rem 1.3rem; display:flex; flex-direction:column; gap:.5rem;
+}
+.card h4{font-size:1.05rem}
+.card p{color:var(--ink-mid); font-size:.92rem}
+.card__meta{margin-top:auto; padding-top:.6rem; font-family:var(--mono); font-size:.74rem; color:var(--ink-soft)}
+.card ul li{color:var(--ink-mid); font-size:.92rem; padding-left:1em; position:relative}
+.card ul li::before{content:"·"; position:absolute; left:.15em; color:var(--ginger)}
+
+/* ── 表格 ────────────────────────────────────────────────── */
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:4px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:440px; font-size:.92rem}
+th,td{text-align:left; padding:.7rem 1rem; border-bottom:1px solid var(--line)}
+th{font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:400}
+td:last-child,th:last-child{text-align:right; font-variant-numeric:tabular-nums; font-family:var(--mono)}
+tbody tr:last-child td{border-bottom:none}
+tfoot td{font-weight:600; background:var(--surface-2); border-top:1px solid var(--line-strong)}
+
+/* ── 打包清单 ────────────────────────────────────────────── */
+.pack{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.pack__col{background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:1.1rem 1.2rem}
+.pack__col h4{font-size:.98rem; margin-bottom:.7rem}
+.pack__col li{margin-bottom:.15rem}
+.pack label{display:flex; align-items:flex-start; gap:.6rem; cursor:pointer; font-size:.93rem; color:var(--ink-mid); padding:.15rem 0}
+.pack input{
+  appearance:none; width:1.05em; height:1.05em; margin-top:.36em; flex:none;
+  border:1.5px solid var(--line-strong); border-radius:2px; background:var(--surface); cursor:pointer;
+}
+.pack input:checked{background:var(--pine); border-color:var(--pine)}
+.pack input:checked + span{color:var(--ink-soft); text-decoration:line-through}
+.pack__bar{display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; flex-wrap:wrap}
+.pack__bar progress{
+  flex:1; min-width:160px; height:5px; appearance:none; border:none;
+  background:var(--surface-2); border-radius:99px; overflow:hidden;
+}
+.pack__bar progress::-webkit-progress-bar{background:var(--surface-2)}
+.pack__bar progress::-webkit-progress-value{background:var(--pine)}
+.pack__bar progress::-moz-progress-bar{background:var(--pine)}
+
+/* ── 折叠 ────────────────────────────────────────────────── */
+details{background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:0 1.2rem}
+details + details{margin-top:.7rem}
+summary{
+  cursor:pointer; padding:.95rem 0; font-family:var(--serif); font-size:1.05rem;
+  display:flex; align-items:center; gap:.6rem; list-style:none;
+}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+"; font-family:var(--mono); color:var(--ginger); font-size:1rem}
+details[open] summary::before{content:"–"}
+details[open] summary{border-bottom:1px solid var(--line)}
+.details__body{padding:1rem 0 1.2rem; color:var(--ink-mid); font-size:.94rem; display:flex; flex-direction:column; gap:.7rem}
+
+/* ── 页脚 ────────────────────────────────────────────────── */
+footer{border-top:1px solid var(--line-strong); padding:2.5rem 0 3.5rem; color:var(--ink-soft); font-size:.85rem}
+footer h4{font-size:.95rem; color:var(--ink); margin-bottom:.6rem}
+footer li{margin-bottom:.25rem}
+footer a{color:var(--ink-mid)}
+
+@media (max-width:620px){
+  .stop{grid-template-columns:3.6rem 1fr; column-gap:.9rem}
+  .stop__time{font-size:.8rem; padding-top:1.4rem}
+  .stop__body{padding-left:1.1rem}
+  .hero__meta{gap:.9rem 1.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="ridge" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1 class="hero__place">文冬<small>BENTONG · PAHANG</small></h1>
+    <p class="hero__lede">
+      一家七口的三天两夜。国庆长周末上山，住在文冬老街正中央——夜市在门口，瀑布在半小时内，
+      早上的姜茶和咖啡乌走路就到。这页是全程的行程、地址、门票和备忘。
+    </p>
+    <dl class="hero__meta">
+      <div><dt>日期</dt><dd class="num">2026.08.29 – 08.31</dd></div>
+      <div><dt>星期</dt><dd>六 · 日 · 一（国庆日）</dd></div>
+      <div><dt>人数</dt><dd>4 大人 + 3 小孩</dd></div>
+      <div><dt>车程</dt><dd>吉隆坡约 1 小时</dd></div>
+      <div><dt>倒数</dt><dd id="countdown" class="num">—</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav class="daynav" aria-label="行程导航">
+  <div class="wrap">
+    <ul>
+      <li><a href="#stay">住宿</a></li>
+      <li><a href="#d1"><span class="num">D1</span>老街 · 夜市</a></li>
+      <li><a href="#d2"><span class="num">D2</span>瀑布 · 山里</a></li>
+      <li><a href="#d3"><span class="num">D3</span>手信 · 回程</a></li>
+      <li><a href="#alt">备选</a></li>
+      <li><a href="#food">吃什么</a></li>
+      <li><a href="#info">实用资讯</a></li>
+      <li><a href="#pack">打包清单</a></li>
+      <li><a href="#budget">预算</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 住宿 ───────────────────────────────────────────────── -->
+<section id="stay">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">住宿 · 已确认</span>
+      <h2>整间民宿，就在老街上</h2>
+      <p>Agoda 订单已付款确认。位置在文冬市中心 Jalan Ah Peng，走去周六夜市和早市都是几分钟的事，这也是整个行程围绕老街来排的原因。</p>
+    </div>
+
+    <div class="stay">
+      <div class="stay__top">
+        <div>
+          <h3>27 Ah Peng — Bentong At Your Doorstep</h3>
+          <address>27 Jalan Ah Peng, Bentong Town, 28700 Bentong, Pahang</address>
+        </div>
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+          <span class="tag tag--pine">整间 home</span>
+          <span class="tag">免费 WiFi</span>
+          <span class="tag">停车</span>
+          <span class="tag">咖啡 &amp; 茶</span>
+        </div>
+      </div>
+      <dl class="stay__grid">
+        <div><dt>入住</dt><dd class="num">8月29日 · 周六</dd></div>
+        <div><dt>退房</dt><dd class="num">8月31日 · 周一</dd></div>
+        <div><dt>房间</dt><dd>1 间 · 无加床</dd></div>
+        <div><dt>住客</dt><dd>4 大人 · 3 小孩</dd></div>
+        <div><dt>订单编号</dt><dd class="num">1759092771</dd></div>
+        <div><dt>订房人</dt><dd>Mun Keat Goh</dd></div>
+        <div><dt>付款</dt><dd>MasterCard ····8247</dd></div>
+        <div><dt>免费取消至</dt><dd class="num">8月28日</dd></div>
+      </dl>
+      <div class="stay__acts">
+        <a class="btn btn--solid" href="tel:+60122677887">致电民宿 +60 12-267 7887</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=27+Jalan+Ah+Peng+Bentong+Pahang" target="_blank" rel="noopener">打开地图导航</a>
+        <a class="btn" href="https://www.waze.com/ul?q=27%20Jalan%20Ah%20Peng%20Bentong" target="_blank" rel="noopener">Waze</a>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:1rem">
+      <b>要先办的三件事。</b>确认书上没写入住/退房时间（一般是下午 3 点入住、上午 11 点退房）——出发前一天打电话确认时间和拿钥匙方式；
+      顺便报上是 7 位（4 大 3 小），问清楚有几套被褥和毛巾；国庆长周末停车位紧张，先问院子能停几辆车。
+      取消免费的最后期限是 <span class="num">8月28日</span>，之后全额收费。
+    </div>
+  </div>
+</section>
+
+<!-- Day 1 ──────────────────────────────────────────────── -->
+<section id="d1">
+  <div class="wrap">
+    <div class="day">
+      <div class="day__head">
+        <span class="day__n">DAY 1</span>
+        <h3>老街的一天，晚上走进夜市</h3>
+        <span class="day__date">8月29日 · 周六</span>
+      </div>
+      <p class="day__note">
+        今天唯一不能错过的是 <b>Bentong Walk 周六夜市</b>——它一周只开一晚，刚好落在入住当天，而且就在住的地方旁边。
+        所以白天不排远的行程：进城、吃早午餐、逛老街、回去让小孩睡个午觉，养足精神晚上逛街。
+      </p>
+
+      <div class="tl">
+        <div class="stop">
+          <div class="stop__time">08:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>吉隆坡出发 · 加叻大道 E8</h4><span class="tag">约 70 km</span></div>
+            <p class="stop__desc">走 Karak Highway（E8），正常 1 小时至 1 小时 15 分。国庆长周末的周六早上是出城高峰，过了 Gombak 收费站的隧道路段容易塞，早点走差别很大。出发前确认 Touch 'n Go / RFID 有余额。</p>
+            <div class="stop__facts"><span>过路费 约 RM10</span><span>油钱 约 RM40 来回</span><span>途中有 R&amp;R Genting Sempah</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">10:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>早午餐 · 开记云吞面</h4><span class="tag tag--ginger">开到 11:00</span></div>
+            <p class="stop__desc">四十年的手打面老店，在 Jalan Chui Yin 上。卖完就收，周三休息——所以这一站排在最前面，晚了就只剩下拉闸门。吃不到的话老街上海南茶室、烧鸭面、广西酿料都在同一条街range内。</p>
+            <div class="stop__facts"><span>57 Jalan Chui Yin</span><span>周四–周二 6:45–11:00</span><span>周三休</span><span>只收现金</span></div>
+            <a class="stop__link" href="https://www.google.com/maps/search/?api=1&amp;query=Kai+Kee+Wan+Tan+Mee+Jalan+Chui+Yin+Bentong" target="_blank" rel="noopener">地图 →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">11:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>文冬老街散步 · 壁画 · 咖啡乌</h4></div>
+            <p class="stop__desc">Jalan Chui Yin 到 Jalan Loke Yew 一带的战前店屋、壁画和老咖啡店，慢慢走一个多小时刚好。姜茶、咖啡乌、雪糕店都在这几条街，小孩走累了随时能坐下。这也是先摸一遍晚上夜市地形的好机会。</p>
+            <div class="stop__facts"><span>步行范围</span><span>遮阳帽</span><span>路边停车格 收费到傍晚</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">15:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>入住 27 Ah Peng · 休息</h4><span class="tag tag--pine">放行李</span></div>
+            <p class="stop__desc">下午最热的两三个小时留给休息：小孩午睡，大人开冷气喝民宿的咖啡。晚上要在夜市走两三个钟头，这段一定要留。</p>
+            <div class="stop__facts"><span>入住时间待确认</span><span>准备好订单编号</span></div>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">18:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>Bentong Walk 周六夜市</h4><span class="tag tag--ginger">本行程重点</span></div>
+            <p class="stop__desc">一周只有周六晚这一场，在 Jalan Chui Yin、文冬大巴刹旁边。摊子以吃的和手作为主：炒粿条、糯米饭、肉骨茶、炸油条、酿豆腐，以及文冬姜、蜂蜜、酱油这些土产。走路过去，省掉抢车位的麻烦。</p>
+            <div class="stop__facts"><span>每周六 约 18:00–23:00</span><span>Jalan Chui Yin</span><span>现金为主</span><span>人多，牵好小孩</span></div>
+            <div class="callout"><b>早点去。</b>七点后人潮和热门摊位的队伍会明显变长，受欢迎的小吃会卖完。先绕一圈看完全场再回头买，比边走边买省钱也省手。</div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">21:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回民宿</h4></div>
+            <p class="stop__desc">夜市小吃当晚餐通常就够了。回去洗澡、把明天下水的东西整理出来：泳衣、拖鞋、快干毛巾、装湿衣服的塑料袋。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 2 ──────────────────────────────────────────────── -->
+<section id="d2">
+  <div class="wrap">
+    <div class="day">
+      <div class="day__head">
+        <span class="day__n">DAY 2</span>
+        <h3>上午玩水，下午进山喝茶</h3>
+        <span class="day__date">8月30日 · 周日</span>
+      </div>
+      <p class="day__note">
+        整天中最耗体力的一天，也是小孩最开心的一天。瀑布下午 4:30 关门、通常 4 点就停止入场，所以水一定要上午玩；
+        午后山区雷阵雨常见，下午的行程排在有屋顶的地方。想改成室内/主题式玩法，看下面的<a href="#alt">备选方案</a>。
+      </p>
+
+      <div class="tl">
+        <div class="stop">
+          <div class="stop__time">08:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>文冬大巴刹早餐</h4></div>
+            <p class="stop__desc">Pasar Besar Bentong 一带的早市，热闹时段在早上。吃早餐顺便看看本地姜、豆腐卜和水果的行情，第三天买手信时心里有底。</p>
+            <div class="stop__facts"><span>步行可到</span><span>越早越热闹</span></div>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">09:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>查茫瀑布 Chamang Waterfall</h4><span class="tag tag--ginger">小孩最爱</span></div>
+            <p class="stop__desc">离市区约 15 分钟车程的宽阔石滩瀑布，水量大、声势足。下游有水浅的区域适合小孩踩水，上游主瀑区水流很急。石头长青苔，非常滑——溯溪鞋或有抓地力的凉鞋比拖鞋安全得多。</p>
+            <div class="stop__facts"><span>成人 RM3 · 孩童 RM1.50</span><span>约 16:30 关闭 · 16:00 停止入场</span><span>车程 约 15 分钟</span><span>10–1月雨季常关闭</span></div>
+            <div class="callout"><b>安全第一。</b>三个小孩必须一大人一路跟着；看警示牌和封锁线，不要越过。上游若下雨，水位可能几分钟内暴涨——听到水声变大、水变浑浊就立刻上岸。</div>
+            <a class="stop__link" href="https://www.google.com/maps/search/?api=1&amp;query=Chamang+Waterfall+Bentong+Pahang" target="_blank" rel="noopener">地图 →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">12:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回市区午餐 · 冲凉换衣</h4></div>
+            <p class="stop__desc">回民宿冲掉一身河水，换干衣服再出门吃饭。市区的客家菜、酿料、鸡饭都在步行范围内。想吃得辣一点，Kampung Perting 的冬炎（Tom Yam）店是本地人推荐的一家。</p>
+            <div class="stop__facts"><span>Tom Yam King · Kampung Perting</span><span>约 10 分钟车程</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">15:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>珍德拜 Janda Baik · 山里下午茶</h4><span class="tag tag--pine">避暑</span></div>
+            <p class="stop__desc">从文冬往吉隆坡方向的山谷小镇，约 20–25 分钟车程，气温比市区低几度。溪流、林间咖啡馆和茶园式餐厅都在这里，山中茶原（Tanarimba 一带）是其中一处坐得下一家人的地方。下午下雨也不影响。</p>
+            <div class="stop__facts"><span>车程 约 20–25 分钟</span><span>山路弯多 · 慢开</span><span>傍晚易起雾</span></div>
+            <a class="stop__link" href="https://www.google.com/maps/search/?api=1&amp;query=Janda+Baik+Bentong+Pahang" target="_blank" rel="noopener">地图 →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">18:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回文冬晚餐</h4></div>
+            <p class="stop__desc">天黑前下山，山路没有路灯而且雾大。晚餐回市区吃，饭后老街走走消食，早点休息——第三天要收拾行李和买手信。</p>
+            <div class="stop__facts"><span>建议 18:00 前离开山区</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 3 ──────────────────────────────────────────────── -->
+<section id="d3">
+  <div class="wrap">
+    <div class="day">
+      <div class="day__head">
+        <span class="day__n">DAY 3</span>
+        <h3>买齐手信，赶在塞车前上路</h3>
+        <span class="day__date">8月31日 · 周一 · 国庆日</span>
+      </div>
+      <p class="day__note">
+        今天是国庆日，也是长周末的最后一天——整个雪隆的车都会在同一个下午从彭亨方向回吉隆坡。
+        <b>目标是下午 2 点半前上高速</b>，或者干脆吃了晚餐等到 8 点后再走。中间那一段是最堵的。
+      </p>
+
+      <div class="tl">
+        <div class="stop">
+          <div class="stop__time">08:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>老街早餐 · 收拾行李</h4></div>
+            <p class="stop__desc">最后一顿咖啡乌加烤面包。趁小孩还在吃，把行李收好搬上车，退房时不用手忙脚乱。</p>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">09:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>采买手信</h4><span class="tag tag--ginger">文冬姜</span></div>
+            <p class="stop__desc">文冬姜是这里的招牌，纤维细、辣味厚，老街上的土产店都有卖鲜姜、姜粉、姜茶和姜糖。另外值得带的是豆腐卜、本地蜂蜜、酱油和咖啡粉。八月还在榴莲季，市区和往劳勿方向的路边摊都有。</p>
+            <div class="stop__facts"><span>老街土产店</span><span>大巴刹</span><span>现金 / 部分可 QR</span></div>
+            <div class="callout"><b>鲜姜和榴莲要分开包。</b>味道重，用密封袋加纸箱，车上开一点窗；榴莲多数酒店和车行都不欢迎，尽量当场吃完再上路。</div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">11:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>退房</h4></div>
+            <p class="stop__desc">检查插座上的充电器、浴室里的泳衣、冰箱里的东西——这三处最常漏。按民宿指示交还钥匙。</p>
+            <div class="stop__facts"><span>退房时间待确认</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">11:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>加插一站（二选一）</h4><span class="tag">可跳过</span></div>
+            <p class="stop__desc">
+              <b>文冬温泉</b>——在往珍德拜的旧路上，约 15–20 分钟车程，公共池免费，隔壁 Erya by Suria 的付费池维护得较好（约 RM15/人）。公共池水面常有青苔，介意的话选付费的那边。<br>
+              <b>劳勿榴莲</b>——往北约 30 分钟到 Raub，八月是猫山王的旺季，果园和路边摊都开着。走这条要接受回程多绕一段。
+            </p>
+            <div class="stop__facts"><span>温泉 免费 / RM15</span><span>劳勿 约 30 分钟</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">14:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回程 · 加叻大道</h4><span class="tag tag--ginger">避开高峰</span></div>
+            <p class="stop__desc">国庆日下午往吉隆坡方向是全年最堵的时段之一，云顶路口到文良港一带尤其慢。2 点半前上路，或等 8 点后再走。车上备水和小孩的零食，堵起来会好过很多。</p>
+            <div class="stop__facts"><span>约 1 小时（不塞时）</span><span>Touch 'n Go 备足余额</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 备选 ───────────────────────────────────────────────── -->
+<section id="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">备选方案</span>
+      <h2>下雨、瀑布关闭，或小孩想玩别的</h2>
+      <p>第二天的白天是唯一可以整块换掉的时段。以下三个方案都能从文冬当天来回。</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="tag tag--pine">全日 · 不怕晒</span>
+        <h4>Colmar Tropicale 法国村</h4>
+        <p>Berjaya Hills 上的法式主题村，门票含日本村和兔子园——三个小孩会喜欢兔子园。海拔高，比市区凉爽，遮荫和室内空间多，下雨天照样能玩。</p>
+        <ul>
+          <li>成人 RM14 · 4–12 岁 RM7</li>
+          <li>文冬出发约 30 分钟</li>
+          <li>山下停车后转接驳车上山</li>
+        </ul>
+        <div class="card__meta">最适合：天气不好 / 不想下水</div>
+      </div>
+      <div class="card">
+        <span class="tag tag--pine">半日至全日</span>
+        <h4>云顶高原</h4>
+        <p>约 40–50 分钟车程。室内商场、游乐场和缆车，全天候不受雨影响。缺点是国庆长周末人非常多，缆车和停车都要排队，去就要一早出发。</p>
+        <ul>
+          <li>门票按项目另计</li>
+          <li>山上气温低，带外套</li>
+          <li>长周末建议先订缆车票</li>
+        </ul>
+        <div class="card__meta">最适合：小孩想玩机动游戏</div>
+      </div>
+      <div class="card">
+        <span class="tag tag--ginger">半日 · 应季</span>
+        <h4>劳勿 Raub 榴莲园</h4>
+        <p>往北约 30 分钟。八月正是猫山王旺季，果园可以现场吃到刚落地的果。老人小孩吃不了太多，一家人分两三粒刚好。</p>
+        <ul>
+          <li>按公斤计价，先问价再开果</li>
+          <li>现金为主</li>
+          <li>吃完再上路，别带上车</li>
+        </ul>
+        <div class="card__meta">最适合：大人的重点项目</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 吃 ─────────────────────────────────────────────────── -->
+<section id="food">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">吃什么 · 带什么回去</span>
+      <h2>文冬的味道是姜味的</h2>
+      <p>老街几条街就把大半清单走完了。多数老店只做早市、卖完就收，热门的下午去就没有了。</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h4>手打云吞面</h4>
+        <p>清晨现做的面条，爽口带碱水香。开记在 Jalan Chui Yin，周三休息，十一点前一定要到。</p>
+        <div class="card__meta">早餐 · 现金</div>
+      </div>
+      <div class="card">
+        <h4>客家酿料 · 酿豆腐</h4>
+        <p>文冬客家人多，酿豆腐、酿苦瓜、酿辣椒是家常菜里的主角。夜市和老街茶室都有。</p>
+        <div class="card__meta">午餐 / 夜市</div>
+      </div>
+      <div class="card">
+        <h4>豆腐卜</h4>
+        <p>本地出名的炸豆腐泡，外皮酥内里空，煮汤或蘸辣椒酱都行。也是很好带的手信。</p>
+        <div class="card__meta">手信 · 大巴刹</div>
+      </div>
+      <div class="card">
+        <h4>姜茶 · 姜糖 · 姜粉</h4>
+        <p>文冬姜的招牌产品线。姜茶适合山上早晚喝，姜糖轻便好送人，姜粉能放最久。</p>
+        <div class="card__meta">手信 · 老街土产店</div>
+      </div>
+      <div class="card">
+        <h4>老街咖啡乌 · 烤面包</h4>
+        <p>炭火烤的白面包夹咖椰牛油，配一杯浓咖啡乌。两天的早餐都可以这样开始。</p>
+        <div class="card__meta">早餐</div>
+      </div>
+      <div class="card">
+        <h4>榴莲 · 本地蜂蜜</h4>
+        <p>八月是旺季，往劳勿方向的路边摊最多。蜂蜜和酱油在市区土产店都有，密封好再上车。</p>
+        <div class="card__meta">应季 · 8月</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 实用 ───────────────────────────────────────────────── -->
+<section id="info">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">实用资讯</span>
+      <h2>出发前值得先读一遍</h2>
+    </div>
+
+    <details open>
+      <summary>开车与过路费</summary>
+      <div class="details__body">
+        <p>吉隆坡走加叻大道（Karak Highway，E8）到文冬约 70 公里，不塞车约 1 小时。轿车单程过路费约 RM10（以现场收费为准）。Touch 'n Go 或 RFID 必须有余额，收费站不收现金。</p>
+        <p>市区停车是路边收费格，白天要买停车票；周六晚夜市一带车位极难找，住在老街的好处就是可以走路去。前往瀑布和珍德拜的路窄弯多，山区傍晚起雾，尽量在天黑前下山。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>天气与穿着</summary>
+      <div class="details__body">
+        <p>八月的文冬白天约 26–33°C，湿度高。山区午后雷阵雨很常见，通常下一两个小时就停——每天带把伞或轻便雨衣，行程别把下午排死。</p>
+        <p>下水那天：泳衣穿在里面出门最省事，另外准备一整套干衣服、快干毛巾、抓地力好的鞋。晚上珍德拜和云顶方向会凉，薄外套带一件。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>现金、网络与付款</summary>
+      <div class="details__body">
+        <p>夜市摊贩、瀑布门票、路边榴莲摊、多数老店都<b>只收现金</b>，而且找零有限。建议出发前准备 RM400–600 的小钞和零钱。市区有银行和 ATM，但长周末容易缺钞。</p>
+        <p>市区手机信号正常，民宿有免费 WiFi；瀑布、珍德拜山谷和部分山路信号会弱到断线，导航路线建议先离线下载。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>带小孩的安全备忘</summary>
+      <div class="details__body">
+        <p><b>水边：</b>一个大人负责固定的一到两个小孩，全程视线不离开。瀑布石头长苔极滑，不要在主瀑区附近让小孩自己走。看到水变浑、水声变大立刻上岸——那代表上游在下雨。</p>
+        <p><b>人潮：</b>夜市人挤，先约好走散了在哪里等（例如巴刹正门口），并在小孩身上放一张写着大人电话的纸条。</p>
+        <p><b>防蚊防晒：</b>山区和河边蚊子多，防蚊液和防晒都要带，午后补一次。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>紧急联络</summary>
+      <div class="details__body">
+        <p>全国紧急电话 <b class="num">999</b>（警察 / 救护车 / 消拯）· 手机也可拨 <b class="num">112</b>。</p>
+        <p>民宿 <a href="tel:+60122677887">+60 12-267 7887</a> · 订单编号 <span class="num">1759092771</span>。市区有文冬医院（Hospital Bentong）和警察局，都在市中心范围内。</p>
+        <p>把订房确认书（电子档或打印本）带在身上，入住时要出示。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 打包 ───────────────────────────────────────────────── -->
+<section id="pack">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">打包清单</span>
+      <h2>七个人的东西，勾一样少一样</h2>
+      <p>勾选状态会存在这台设备的浏览器里，关掉页面也还在。</p>
+    </div>
+    <div class="pack__bar">
+      <span class="eyebrow" id="packcount">0 / 0</span>
+      <progress id="packbar" value="0" max="1"></progress>
+      <button class="btn" type="button" id="packreset">全部清空</button>
+    </div>
+    <div class="pack" id="packlist">
+      <div class="pack__col">
+        <h4>证件与钱</h4>
+        <ul>
+          <li><label><input type="checkbox"><span>订房确认书（打印 + 手机）</span></label></li>
+          <li><label><input type="checkbox"><span>身份证 / 驾照</span></label></li>
+          <li><label><input type="checkbox"><span>现金零钱 RM400–600</span></label></li>
+          <li><label><input type="checkbox"><span>Touch 'n Go 卡（已充值）</span></label></li>
+        </ul>
+      </div>
+      <div class="pack__col">
+        <h4>玩水那天</h4>
+        <ul>
+          <li><label><input type="checkbox"><span>泳衣泳裤 ×7</span></label></li>
+          <li><label><input type="checkbox"><span>溯溪鞋 / 防滑凉鞋</span></label></li>
+          <li><label><input type="checkbox"><span>快干毛巾 ×7</span></label></li>
+          <li><label><input type="checkbox"><span>装湿衣服的塑料袋</span></label></li>
+          <li><label><input type="checkbox"><span>小孩浮圈 / 救生衣</span></label></li>
+        </ul>
+      </div>
+      <div class="pack__col">
+        <h4>随身</h4>
+        <ul>
+          <li><label><input type="checkbox"><span>防晒霜 · 遮阳帽</span></label></li>
+          <li><label><input type="checkbox"><span>防蚊液</span></label></li>
+          <li><label><input type="checkbox"><span>雨伞 / 轻便雨衣</span></label></li>
+          <li><label><input type="checkbox"><span>湿纸巾 · 纸巾</span></label></li>
+          <li><label><input type="checkbox"><span>水壶 · 小孩零食</span></label></li>
+          <li><label><input type="checkbox"><span>充电宝 · 车充</span></label></li>
+        </ul>
+      </div>
+      <div class="pack__col">
+        <h4>药品与其他</h4>
+        <ul>
+          <li><label><input type="checkbox"><span>常备药 · 退烧药 · 肠胃药</span></label></li>
+          <li><label><input type="checkbox"><span>创可贴 · 消毒药水</span></label></li>
+          <li><label><input type="checkbox"><span>驱风油 · 晕车药</span></label></li>
+          <li><label><input type="checkbox"><span>薄外套（山上凉）</span></label></li>
+          <li><label><input type="checkbox"><span>购物袋（装手信）</span></label></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 预算 ───────────────────────────────────────────────── -->
+<section id="budget">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">预算估算 · 7 人 · 不含住宿</span>
+      <h2>大概会花多少</h2>
+      <p>住宿已在 Agoda 付清，不计在内。以下是粗估区间，实际视吃法和买多少手信而定。</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>项目</th><th>说明</th><th>估算 (RM)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>油钱 + 过路费</td><td>吉隆坡来回，每辆车</td><td>60 – 90</td></tr>
+          <tr><td>查茫瀑布门票</td><td>成人 RM3 ×4 · 孩童 RM1.50 ×3</td><td>17</td></tr>
+          <tr><td>餐饮</td><td>7 人 × 3 天，以本地小食和茶室为主</td><td>600 – 900</td></tr>
+          <tr><td>夜市小吃</td><td>周六晚一场</td><td>100 – 180</td></tr>
+          <tr><td>手信（姜 / 豆腐卜 / 蜂蜜）</td><td>看买多少</td><td>150 – 300</td></tr>
+          <tr><td>榴莲（应季，可选）</td><td>按公斤计</td><td>100 – 300</td></tr>
+          <tr><td>市区停车 · 杂费</td><td>三天</td><td>20 – 40</td></tr>
+          <tr><td>备选：法国村门票</td><td>成人 RM14 ×4 · 孩童 RM7 ×3</td><td>77</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">合计（不含住宿，不含备选项目）</td><td>约 1,000 – 1,800</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h4>资料来源与说明</h4>
+    <p style="margin-bottom:.9rem">
+      住宿资料取自 Agoda 订房确认书（订单编号 1759092771）。景点的门票、营业时间和季节性关闭以现场公告为准——出发前一两天再确认一次，尤其是瀑布和夜市。
+    </p>
+    <ul>
+      <li><a href="https://www.tripadvisor.com.sg/Attraction_Review-g2301861-d10306425-Reviews-Bentong_Walk-Bentong_Pahang.html" target="_blank" rel="noopener">Bentong Walk 夜市 — Tripadvisor</a></li>
+      <li><a href="https://www.tripadvisor.com.my/Attraction_Review-g2301861-d2462371-Reviews-Chamang_Waterfall-Bentong_Pahang.html" target="_blank" rel="noopener">Chamang Waterfall 门票与开放时间 — Tripadvisor</a></li>
+      <li><a href="https://colmartropicale.com.my/faq/" target="_blank" rel="noopener">Colmar Tropicale 入场费 FAQ — 官方网站</a></li>
+      <li><a href="https://www.pahangtourism.com.my/bentong-hotspring/" target="_blank" rel="noopener">文冬温泉 — 彭亨旅游局</a></li>
+      <li><a href="https://klnow.com.my/10-must-try-food-in-bentong-pahang/" target="_blank" rel="noopener">文冬美食清单 — KL NOW</a></li>
+      <li><a href="https://www.fishagrams.com/bentong-must-eat-food/" target="_blank" rel="noopener">文冬古早味推荐 — Fishagrams</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ── 倒数 ─────────────────────────────────────────── */
+  var el = document.getElementById("countdown");
+  if (el) {
+    var start = new Date(2026, 7, 29, 8, 30, 0);   // 8月29日 08:30 出发
+    var end   = new Date(2026, 7, 31, 23, 59, 0);
+    var now   = new Date();
+    var day   = 864e5;
+    if (now > end) {
+      el.textContent = "旅程已结束";
+    } else if (now >= start) {
+      el.textContent = "正在旅途中";
+    } else {
+      var d = Math.ceil((start - now) / day);
+      el.textContent = d <= 1 ? "明天出发" : "还有 " + d + " 天";
+    }
+  }
+
+  /* ── 山脊背景（文冬是山城）───────────────────────── */
+  var cv = document.getElementById("ridge");
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext("2d");
+    var seed = 20260829;
+    function rnd(){ seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+
+    function draw(){
+      var host = cv.parentElement;
+      var w = host.clientWidth, h = host.clientHeight;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = w * dpr; cv.height = h * dpr;
+      cv.style.width = w + "px"; cv.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+
+      var stroke = getComputedStyle(document.documentElement).getPropertyValue("--pine").trim() || "#2E5A4C";
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 1;
+
+      seed = 20260829;
+      var layers = 16;
+      for (var i = 0; i < layers; i++) {
+        var base = h * (0.34 + i * 0.055);
+        var amp  = h * (0.05 + i * 0.011);
+        var freq = 0.0018 + i * 0.00042;
+        var ph   = rnd() * 6.28;
+        ctx.globalAlpha = 0.32 - i * 0.016;
+        ctx.beginPath();
+        for (var x = 0; x <= w; x += 4) {
+          var y = base
+                - Math.sin(x * freq + ph) * amp
+                - Math.sin(x * freq * 2.7 + ph * 1.9) * amp * 0.34;
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    draw();
+    var t;
+    window.addEventListener("resize", function(){ clearTimeout(t); t = setTimeout(draw, 150); });
+    if (window.matchMedia) {
+      var mq = window.matchMedia("(prefers-color-scheme: dark)");
+      if (mq.addEventListener) mq.addEventListener("change", draw);
+    }
+    new MutationObserver(draw).observe(document.documentElement, { attributes:true, attributeFilter:["data-theme"] });
+  }
+
+  /* ── 打包清单（存本机）─────────────────────────── */
+  var list = document.getElementById("packlist");
+  if (list) {
+    var boxes  = Array.prototype.slice.call(list.querySelectorAll("input[type=checkbox]"));
+    var bar    = document.getElementById("packbar");
+    var count  = document.getElementById("packcount");
+    var KEY    = "bentong2026.pack";
+
+    function store(){
+      try { localStorage.setItem(KEY, JSON.stringify(boxes.map(function(b){ return b.checked; }))); } catch (e) {}
+    }
+    function restore(){
+      try {
+        var raw = localStorage.getItem(KEY);
+        if (!raw) return;
+        var saved = JSON.parse(raw);
+        if (Array.isArray(saved) && saved.length === boxes.length) {
+          boxes.forEach(function(b, i){ b.checked = !!saved[i]; });
+        }
+      } catch (e) {}
+    }
+    function render(){
+      var done = boxes.filter(function(b){ return b.checked; }).length;
+      bar.max = boxes.length; bar.value = done;
+      count.textContent = done + " / " + boxes.length + " 已备妥";
+    }
+
+    restore(); render();
+    boxes.forEach(function(b){ b.addEventListener("change", function(){ store(); render(); }); });
+    document.getElementById("packreset").addEventListener("click", function(){
+      boxes.forEach(function(b){ b.checked = false; });
+      store(); render();
+    });
+  }
+
+  /* ── 导航高亮 ─────────────────────────────────────── */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".daynav a"));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  if (targets.length && "IntersectionObserver" in window) {
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        links.forEach(function(a){
+          a.classList.toggle("is-active", a.getAttribute("href") === "#" + en.target.id);
+        });
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    targets.forEach(function(s){ spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>

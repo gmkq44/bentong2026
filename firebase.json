@@ -10,7 +10,8 @@
       "**/.*",
       "**/node_modules/**",
       "SETUP.md",
-      "README.md"
+      "README.md",
+      "build-artifact.py"
     ],
     "headers": [
       {

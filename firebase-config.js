@@ -20,19 +20,15 @@
    还没填也没关系：页面会自动退回「代码汇总」模式，照样能用。
    ──────────────────────────────────────────────────────────────── */
 
-window.FIREBASE_CONFIG = null; // ← 填好后把这行删掉，取消下面那段的注解
-
-/*
 window.FIREBASE_CONFIG = {
-  apiKey: "PASTE_HERE",
-  authDomain: "PASTE_HERE.firebaseapp.com",
-  databaseURL: "https://PASTE_HERE-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "PASTE_HERE",
-  storageBucket: "PASTE_HERE.appspot.com",
-  messagingSenderId: "PASTE_HERE",
-  appId: "PASTE_HERE"
+  apiKey: "AIzaSyCPbBMADJuURv0vEygSHmhLy9GSVg1fSjY",
+  authDomain: "q44travel.firebaseapp.com",
+  databaseURL: "https://q44travel-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "q44travel",
+  storageBucket: "q44travel.firebasestorage.app",
+  messagingSenderId: "1007248105413",
+  appId: "1:1007248105413:web:fe89155fece57c1860f5ac"
 };
-*/
 
 /* 同一个资料库想放多趟旅行的话，改这里就好 */
 window.TRIP_ID = "bentong2026";

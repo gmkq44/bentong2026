@@ -5,21 +5,26 @@
 
     "trips": {
       "$trip": {
+
         "votes": {
           ".read": true,
 
           "$voter": {
-            ".write": true,
-            ".validate": "$voter.length <= 40 && (!newData.exists() || newData.hasChildren(['name', 'picks']))",
+            ".write": "!data.exists() || data.child('device').val() === newData.child('device').val()",
+            ".validate": "$voter.length <= 40 && newData.hasChildren(['name', 'device'])",
 
             "name": {
               ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 16"
             },
 
+            "device": {
+              ".validate": "newData.isString() && newData.val().length >= 8 && newData.val().length <= 64"
+            },
+
             "picks": {
               ".validate": "newData.hasChildren()",
               "$i": {
-                ".validate": "newData.isString() && newData.val().length <= 4 && newData.val().matches(/^[sf][0-9]{1,2}$/)"
+                ".validate": "newData.isString() && newData.val().length <= 12 && newData.val().matches(/^[sf][a-z0-9]{1,10}$/)"
               }
             },
 
@@ -31,7 +36,92 @@
               ".validate": false
             }
           }
+        },
+
+        "admin": {
+          ".read": true,
+          ".write": "!data.exists() || data.child('device').val() === newData.child('device').val()",
+          ".validate": "newData.hasChildren(['device'])",
+
+          "device": {
+            ".validate": "newData.isString() && newData.val().length >= 8 && newData.val().length <= 64"
+          },
+          "name": {
+            ".validate": "newData.isString() && newData.val().length <= 16"
+          },
+          "at": {
+            ".validate": "newData.isNumber()"
+          },
+          "$other": { ".validate": false }
+        },
+
+        "plan": {
+          ".read": true,
+
+          "$item": {
+            ".write": "newData.exists() && newData.child('device').val() === root.child('trips').child($trip).child('admin').child('device').val()",
+            ".validate": "$item.matches(/^[sf][a-z0-9]{1,10}$/) && newData.hasChildren(['device'])",
+
+            "day": {
+              ".validate": "newData.isString() && newData.val().matches(/^d[123]$/)"
+            },
+            "time": {
+              ".validate": "newData.isString() && newData.val().matches(/^[0-9][0-9]:[0-9][0-9]$/)"
+            },
+            "off": {
+              ".validate": "newData.isBoolean()"
+            },
+            "device": {
+              ".validate": "newData.isString() && newData.val().length >= 8 && newData.val().length <= 64"
+            },
+            "at": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": { ".validate": false }
+          }
+        },
+
+        "items": {
+          ".read": true,
+
+          "$item": {
+            ".write": "!data.exists() || data.child('device').val() === newData.child('device').val()",
+            ".validate": "$item.matches(/^[sf][a-z0-9]{1,10}$/) && newData.hasChildren(['name', 'kind', 'device'])",
+
+            "name": {
+              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 30"
+            },
+
+            "desc": {
+              ".validate": "newData.isString() && newData.val().length <= 80"
+            },
+
+            "kind": {
+              ".validate": "newData.isString() && (newData.val() === 's' || newData.val() === 'f')"
+            },
+
+            "by": {
+              ".validate": "newData.isString() && newData.val().length <= 16"
+            },
+
+            "device": {
+              ".validate": "newData.isString() && newData.val().length >= 8 && newData.val().length <= 64"
+            },
+
+            "hidden": {
+              ".validate": "newData.isBoolean()"
+            },
+
+            "at": {
+              ".validate": "newData.isNumber()"
+            },
+
+            "$other": {
+              ".validate": false
+            }
+          }
         }
+
       }
     }
   }

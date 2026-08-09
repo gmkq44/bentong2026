@@ -140,10 +140,33 @@ repo 里已经放好 `firebase.json` 和 `.firebaserc`。
 ```bash
 npm install -g firebase-tools
 firebase login                    # 会开浏览器让你登入 Google
+```
+
+接下来的指令**看你的资料库是不是全新的**，选错会出事：
+
+#### 全新的资料库（只给这趟旅行用）
+
+```bash
 firebase deploy --only hosting,database
 ```
 
 这样连规则也会一起上传，不必手动贴。
+
+#### 沿用现有专案的资料库 ← **你如果走 1B，看这里**
+
+```bash
+firebase deploy --only hosting     # 注意：没有 ,database
+```
+
+> ⚠️ **千万不要带 `database`，也不要跑没有 `--only` 的 `firebase deploy`。**
+> `database.rules.json` 是一份**完整**的规则档（根节点写死 `.read: false`），
+> 部署它会把整个资料库的规则**整份取代**掉 —— 你原本 app 的
+> `users`、`orders` 那些规则会被无声洗掉，那个 app 立刻全部读写失败。
+>
+> 共用资料库的规则请照**第 2 步**手动在控制台合并，那是唯一安全的做法。
+>
+> 更保险的话，把 `firebase.json` 里 `"database"` 那一段整个删掉，
+> 这样就算手滑跑了 `firebase deploy` 也动不到规则。
 
 ---
 

@@ -257,6 +257,65 @@ section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
 .pick__a b{color:var(--ink)}
 @media (max-width:560px){ .pick__row{grid-template-columns:1fr; gap:.15rem} }
 
+/* ── 投票 ────────────────────────────────────────────────── */
+.votebtn{
+  width:100%; margin-top:.85rem; padding:.55rem .6rem;
+  font-family:var(--sans); font-size:.85rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.45em;
+  background:transparent; color:var(--ink-soft);
+  border:1px solid var(--line-strong); border-radius:3px;
+}
+.votebtn:hover{border-color:var(--ginger); color:var(--ginger)}
+.votebtn[aria-pressed="true"]{background:var(--ginger); border-color:var(--ginger); color:var(--paper); font-weight:600}
+.votebtn__mark{font-size:.95em; line-height:1}
+
+.vote-card{background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:1.3rem 1.4rem}
+.vote-card + .vote-card{margin-top:1rem}
+.vote-card h3{font-size:1.1rem; margin-bottom:.35rem}
+.vote-card > p{color:var(--ink-mid); font-size:.9rem}
+.vote-step{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:1.5rem; height:1.5rem; border-radius:50%; flex:none;
+  background:var(--ginger); color:var(--paper);
+  font-family:var(--mono); font-size:.78rem; font-weight:600;
+}
+.vote-card__head{display:flex; align-items:center; gap:.7rem; margin-bottom:.6rem}
+
+.field{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; align-items:center}
+.field input[type=text], .field textarea{
+  flex:1; min-width:180px; padding:.55rem .8rem; font:inherit; font-size:.92rem;
+  background:var(--paper); color:var(--ink);
+  border:1px solid var(--line-strong); border-radius:3px;
+}
+.field textarea{min-height:5.5rem; resize:vertical; font-family:var(--mono); font-size:.78rem; line-height:1.6}
+.hint{font-size:.82rem; color:var(--ink-soft); margin-top:.6rem}
+.hint b{color:var(--ginger)}
+
+.tally{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.9rem}
+.voter{
+  display:inline-flex; align-items:center; gap:.45em; padding:.25em .7em;
+  background:var(--pine-soft); color:var(--pine); border-radius:99px; font-size:.83rem;
+}
+.voter button{
+  background:none; border:none; color:inherit; cursor:pointer; opacity:.6;
+  font-size:1.05em; line-height:1; padding:0;
+}
+.voter button:hover{opacity:1}
+
+.res{display:grid; gap:.55rem; margin-top:1rem}
+.res__row{display:grid; grid-template-columns:1.7rem minmax(0,1fr) 2.6rem; gap:.5rem .8rem; align-items:center}
+.res__rank{font-family:var(--mono); font-size:.78rem; color:var(--ink-soft); text-align:right}
+.res__name{font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.res__n{font-family:var(--mono); font-size:.8rem; color:var(--ink-mid); text-align:right; font-variant-numeric:tabular-nums}
+.res__bar{grid-column:2/4; height:5px; background:var(--surface-2); border-radius:99px; overflow:hidden; margin-top:-.3rem}
+.res__bar i{display:block; height:100%; background:var(--pine); border-radius:99px}
+.res__row--top .res__name{font-weight:600}
+.res__row--top .res__rank{color:var(--ginger)}
+.res__row--top + .res__bar i{background:var(--ginger)}
+.res__empty{color:var(--ink-soft); font-size:.9rem; padding:.6rem 0}
+.res__cols{display:grid; gap:1.6rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:.4rem}
+.res__cols h4{font-size:.95rem; margin-bottom:.2rem}
+
 /* ── 表格 ────────────────────────────────────────────────── */
 .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:4px; background:var(--surface)}
 table{border-collapse:collapse; width:100%; min-width:440px; font-size:.92rem}
@@ -347,6 +406,7 @@ html{scroll-behavior:smooth}
       <li><a href="#d3"><span class="num">D3</span>手信 · 回程</a></li>
       <li><a href="#spots">景点全览</a></li>
       <li><a href="#food">吃什么</a></li>
+      <li><a href="#vote">家庭投票</a></li>
       <li><a href="#info">实用资讯</a></li>
       <li><a href="#pack">打包清单</a></li>
       <li><a href="#budget">预算</a></li>
@@ -649,7 +709,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">走路就到 · 老街范围</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="s1" data-vote-name="文冬老街 · 壁画">
         <div class="card__tags"><span class="tag tag--pine">免费</span><span class="tag">步行</span></div>
         <h4>文冬老街 · 壁画</h4>
         <p>Jalan Chui Yin 到 Jalan Loke Yew 一带的战前店屋，墙上有描绘旧时文冬生活的壁画，老咖啡店和土产店都夹在中间。慢慢走一个多钟头，随时能坐下喝杯咖啡乌。</p>
@@ -659,7 +719,7 @@ html{scroll-behavior:smooth}
           <div><dt>适合</dt><dd>全家 · 随时</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s2" data-vote-name="Bentong Walk 周六夜市">
         <div class="card__tags"><span class="tag tag--ginger">一周一次</span><span class="tag">周六晚</span></div>
         <h4>Bentong Walk 周六夜市</h4>
         <p>一周只开周六晚这一场，在 Jalan Chui Yin、大巴刹旁边。炒粿条、糯米饭、肉骨茶、炸油条、酿豆腐，加上文冬姜、蜂蜜、酱油等土产摊。人多，牵好小孩。</p>
@@ -669,7 +729,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>步行 5 分钟</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s3" data-vote-name="文冬大巴刹 Pasar Besar">
         <div class="card__tags"><span class="tag tag--pine">免费</span><span class="tag">早上</span></div>
         <h4>文冬大巴刹 Pasar Besar</h4>
         <p>本地人的早市，卖鲜姜、豆腐卜、蔬果和熟食。早上最热闹，也是看清楚手信行情、比价再买的地方。里头的熟食摊可以直接解决早餐。</p>
@@ -679,7 +739,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>步行 5 分钟</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s4" data-vote-name="文冬文化馆 · 老街古庙">
         <div class="card__tags"><span class="tag tag--pine">室内</span><span class="tag">雨天 OK</span></div>
         <h4>文冬文化馆 · 老街古庙</h4>
         <p>小型地方文化馆，讲文冬的锡矿、种姜和华人南来的历史，室内有冷气，突然下雨可以躲进去。附近的老庙也在步行范围内，顺路一起看。</p>
@@ -693,7 +753,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">自然 · 玩水</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="s5" data-vote-name="查茫瀑布 Chamang Waterfall">
         <div class="card__tags"><span class="tag tag--ginger">行程内</span><span class="tag">玩水</span></div>
         <h4>查茫瀑布 Chamang Waterfall</h4>
         <p>宽阔石滩瀑布，水量大。下游水浅处适合小孩踩水，上游主瀑区水流很急。石头长苔极滑，穿溯溪鞋比拖鞋安全得多。10 月至 1 月雨季常关闭。</p>
@@ -703,7 +763,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>约 15 分钟</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s6" data-vote-name="文冬温泉 Kolam Air Panas">
         <div class="card__tags"><span class="tag tag--pine">免费选项</span><span class="tag">泡脚</span></div>
         <h4>文冬温泉 Kolam Air Panas</h4>
         <p>在往珍德拜的旧路上。公共池免费但水面常有青苔，介意的话去隔壁 Erya by Suria 的付费池，维护得好很多。傍晚天气凉时泡最舒服。</p>
@@ -713,7 +773,7 @@ html{scroll-behavior:smooth}
           <div><dt>适合</dt><dd>大人 · 傍晚</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s7" data-vote-name="珍德拜 Janda Baik">
         <div class="card__tags"><span class="tag tag--pine">避暑</span><span class="tag">雨天 OK</span></div>
         <h4>珍德拜 Janda Baik</h4>
         <p>往吉隆坡方向的山谷小镇，气温比市区低几度。溪流、林间咖啡馆和茶园式餐厅集中在这里。下午下雨也不影响，坐在屋檐下看雨反而是这里的卖点。</p>
@@ -723,7 +783,7 @@ html{scroll-behavior:smooth}
           <div><dt>注意</dt><dd>山路弯多 · 傍晚起雾</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s8" data-vote-name="Bilut Extreme Park">
         <div class="card__tags"><span class="tag">户外</span><span class="tag">大孩子</span></div>
         <h4>Bilut Extreme Park</h4>
         <p>ATV 越野车、射箭、飞索一类的户外活动园区。小小孩玩不了，但家里较大的孩子会很尽兴。项目分开收费，长周末最好先打电话问档期。</p>
@@ -737,7 +797,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">亲子农场 · 主题村</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="s9" data-vote-name="The Bentong Farm 文冬休闲农场">
         <div class="card__tags"><span class="tag tag--ginger">小孩首选</span><span class="tag">需预订</span></div>
         <h4>The Bentong Farm 文冬休闲农场</h4>
         <p>27 英亩的休闲农场，在 Jalan Chamang 上、去瀑布的同一条路。羊驼、迷你马、粉红水牛等上百种温驯动物可以近距离喂食触摸，园内还有瀑布、水塘和果树区。三个小孩会玩上大半天。</p>
@@ -747,7 +807,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>约 15 分钟 · 顺路瀑布</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s10" data-vote-name="Colmar Tropicale 法国村">
         <div class="card__tags"><span class="tag tag--pine">雨天 OK</span><span class="tag">拍照</span></div>
         <h4>Colmar Tropicale 法国村</h4>
         <p>Berjaya Hills 上的法式主题村，门票一张含<b>日本村</b>和<b>兔子园</b>三个地方。海拔高、比市区凉，遮荫和室内空间多。山下停车后转接驳车上山。</p>
@@ -757,7 +817,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>约 30 分钟</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s11" data-vote-name="云顶高原">
         <div class="card__tags"><span class="tag tag--pine">全天候</span><span class="tag">人多</span></div>
         <h4>云顶高原</h4>
         <p>室内商场、游乐场和缆车，完全不受雨影响。缺点是国庆长周末人潮和车龙都非常夸张，缆车、停车都要排长队——要去就一早出发，并先在网上订缆车票。</p>
@@ -767,7 +827,7 @@ html{scroll-behavior:smooth}
           <div><dt>注意</dt><dd>气温低 · 带外套</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s12" data-vote-name="Pineyard 山上咖啡厅">
         <div class="card__tags"><span class="tag">咖啡厅</span><span class="tag">半日</span></div>
         <h4>Pineyard 山上咖啡厅</h4>
         <p>开在山坡上的网红咖啡厅，做 brunch，视野开阔适合拍照。带小孩的话可以当作瀑布或农场之后的休息站，吹冷气吃点甜的再回市区。</p>
@@ -781,7 +841,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">应季 · 八月才有</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="s13" data-vote-name="劳勿 Raub 榴莲园">
         <div class="card__tags"><span class="tag tag--ginger">8月旺季</span><span class="tag">大人项目</span></div>
         <h4>劳勿 Raub 榴莲园</h4>
         <p>往北约 30 分钟。八月正是猫山王旺季，果园可以现场吃到刚落地的果，路边摊也一路都是。按公斤计价，先问价再开果。吃完再上路——多数车行和民宿都不欢迎榴莲上车。</p>
@@ -791,7 +851,7 @@ html{scroll-behavior:smooth}
           <div><dt>付款</dt><dd>现金为主</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="s14" data-vote-name="姜园 · 土产工坊">
         <div class="card__tags"><span class="tag">土产</span><span class="tag">顺路</span></div>
         <h4>姜园 · 土产工坊</h4>
         <p>文冬姜是这里的招牌农产，市区外有姜园和加工姜粉、姜茶的小工坊，部分开放参观和试喝。不一定每家都接待散客，去之前先打电话问。</p>
@@ -840,7 +900,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">早餐 · 卖完就收</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="f1" data-vote-name="开记云吞面">
         <div class="card__tags"><span class="tag tag--ginger">行程内</span><span class="tag">周三休</span></div>
         <h4>开记云吞面</h4>
         <p>四十年老店，面条每天清晨现做手打，爽口带碱水香。卖完就收摊，十一点前一定要到。</p>
@@ -850,7 +910,7 @@ html{scroll-behavior:smooth}
           <div><dt>休息</dt><dd class="hi">周三</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f2" data-vote-name="溏记海南茶餐室">
         <div class="card__tags"><span class="tag">茶室</span><span class="tag">周一休</span></div>
         <h4>溏记海南茶餐室</h4>
         <p>老派海南茶室，咖啡乌配炭烤面包夹咖椰牛油，也有海南式的简餐。开到下午，是老街上时间最宽松的一家。</p>
@@ -860,7 +920,7 @@ html{scroll-behavior:smooth}
           <div><dt>休息</dt><dd class="hi">周一</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f3" data-vote-name="烧鸭面">
         <div class="card__tags"><span class="tag">古早味</span></div>
         <h4>烧鸭面</h4>
         <p>老街的古早味之一，烧鸭皮脆肉嫩，配汤面或干捞都行。同样是早市时段的生意，晚了就没有。</p>
@@ -870,7 +930,7 @@ html{scroll-behavior:smooth}
           <div><dt>付款</dt><dd>现金</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f4" data-vote-name="大巴刹熟食摊">
         <div class="card__tags"><span class="tag tag--pine">最本地</span></div>
         <h4>大巴刹熟食摊</h4>
         <p>市场里的熟食区，粿条汤、炒粉、糕点都有，七个人各吃各的最方便，价钱也最实在。第二天早餐就排在这里。</p>
@@ -884,7 +944,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">正餐 · 一家七口坐得下</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="f5" data-vote-name="广西酿料">
         <div class="card__tags"><span class="tag tag--ginger">招牌</span></div>
         <h4>广西酿料</h4>
         <p>文冬驰名十几年的酿料面档，十几二十种酿料任选——酿豆腐、酿苦瓜、酿辣椒、酿茄子，配面或配饭。挑料的过程小孩也玩得开心。</p>
@@ -894,7 +954,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM10–15</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f6" data-vote-name="龙凤酒楼 Loong Foong">
         <div class="card__tags"><span class="tag tag--pine">开桌</span><span class="tag">建议订位</span></div>
         <h4>龙凤酒楼 Loong Foong</h4>
         <p>本地中式酒楼，适合七个人正正经经开一桌吃客家菜和小炒。长周末生意好，最好先打电话订位。</p>
@@ -904,7 +964,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM25–40</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f7" data-vote-name="Tom Yam King 冬炎">
         <div class="card__tags"><span class="tag">辣</span><span class="tag">车程 10 分钟</span></div>
         <h4>Tom Yam King 冬炎</h4>
         <p>开在 Kampung Perting 民宅区里的泰式餐厅，冬炎汤是招牌，酸辣够劲。小孩吃辣不行的话可以另点清汤和炒饭。</p>
@@ -914,7 +974,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM20–30</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f8" data-vote-name="客家菜 · 算盘子 · 梅菜扣肉">
         <div class="card__tags"><span class="tag">客家</span></div>
         <h4>客家菜 · 算盘子 · 梅菜扣肉</h4>
         <p>文冬客家人多，算盘子、梅菜扣肉、猪肠粉这些家常菜在市区好几家餐室都点得到，是最能代表这里日常味道的一顿。</p>
@@ -924,7 +984,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM15–25</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f9" data-vote-name="山中茶原 · 珍德拜">
         <div class="card__tags"><span class="tag">山里</span><span class="tag">下午茶</span></div>
         <h4>山中茶原 · 珍德拜</h4>
         <p>林间的茶菜餐厅，木造装潢，坐得开阔，第二天下午的行程就落在这里。喝茶配点心，山里凉快，下雨也不影响。</p>
@@ -934,7 +994,7 @@ html{scroll-behavior:smooth}
           <div><dt>建议</dt><dd>先订位</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f10" data-vote-name="夜市小吃当晚餐">
         <div class="card__tags"><span class="tag">宵夜</span><span class="tag">周六</span></div>
         <h4>夜市小吃当晚餐</h4>
         <p>炒粿条、炒粉、糯米饭、肉骨茶、炸油条、酿豆腐、树灰面——第一天晚上根本不用另外找餐厅，一路吃过去就饱了。</p>
@@ -948,7 +1008,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">甜品 · 小孩会一直问的</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="f11" data-vote-name="陈雪糕店">
         <div class="card__tags"><span class="tag tag--ginger">古早味</span><span class="tag">周一休</span></div>
         <h4>陈雪糕店</h4>
         <p>老街的古早味雪糕店，几十年的口味，天热走累了一人一支正好。注意它中间有休息时段，别扑空。</p>
@@ -958,7 +1018,7 @@ html{scroll-behavior:smooth}
           <div><dt>价钱</dt><dd>几块钱一支</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f12" data-vote-name="姜茶 · 姜撞奶">
         <div class="card__tags"><span class="tag tag--ginger">在地</span></div>
         <h4>姜茶 · 姜撞奶</h4>
         <p>用文冬姜煮的热姜茶，辣味厚但回甘。山上早晚凉，喝一杯很舒服；姜撞奶小孩比较接受。</p>
@@ -968,7 +1028,7 @@ html{scroll-behavior:smooth}
           <div><dt>价钱</dt><dd>约 RM3–6</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f13" data-vote-name="咖啡乌 · 咖椰烤面包">
         <div class="card__tags"><span class="tag">下午茶</span></div>
         <h4>咖啡乌 · 咖椰烤面包</h4>
         <p>炭火烤的白面包夹咖椰和厚牛油，配半生熟蛋和一杯浓咖啡乌。三天里至少要吃一次的组合。</p>
@@ -978,7 +1038,7 @@ html{scroll-behavior:smooth}
           <div><dt>价钱</dt><dd>约 RM5–8</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f14" data-vote-name="榴莲 · 猫山王">
         <div class="card__tags"><span class="tag tag--ginger">8月应季</span></div>
         <h4>榴莲 · 猫山王</h4>
         <p>八月正当季，市区和往劳勿方向的路边摊都有。按公斤计价，先问价再开果。老人小孩吃不多，一家分两三粒刚好。</p>
@@ -992,7 +1052,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">手信 · 带回去的</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-vote="f15" data-vote-name="文冬姜 · 姜粉 · 姜糖 · 姜茶包">
         <div class="card__tags"><span class="tag tag--ginger">招牌</span></div>
         <h4>文冬姜 · 姜粉 · 姜糖 · 姜茶包</h4>
         <p>这里的姜纤维细、辣味厚，是全马有名的。鲜姜味重要密封好；姜粉最耐放；姜糖轻便，分送同事最方便。</p>
@@ -1001,7 +1061,7 @@ html{scroll-behavior:smooth}
           <div><dt>价位</dt><dd>RM10–30 一份</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f16" data-vote-name="豆腐卜">
         <div class="card__tags"><span class="tag">本地特产</span></div>
         <h4>豆腐卜</h4>
         <p>出名的炸豆腐泡，外皮酥、里头是空的，煮汤或蘸辣椒酱都行。轻、不怕压，是最好带的一样。</p>
@@ -1010,7 +1070,7 @@ html{scroll-behavior:smooth}
           <div><dt>价位</dt><dd>一包几块钱</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f17" data-vote-name="本地蜂蜜 · 酱油 · 咖啡粉">
         <div class="card__tags"><span class="tag">土产</span></div>
         <h4>本地蜂蜜 · 酱油 · 咖啡粉</h4>
         <p>夜市和土产店都有本地小厂做的蜂蜜和酱油，咖啡粉是老咖啡店自己炒的。玻璃瓶装的记得用衣服包好再放行李。</p>
@@ -1019,7 +1079,7 @@ html{scroll-behavior:smooth}
           <div><dt>价位</dt><dd>RM15–40</dd></div>
         </dl>
       </div>
-      <div class="card">
+      <div class="card" data-vote="f18" data-vote-name="山货 · 果干 · 蔬果">
         <div class="card__tags"><span class="tag">顺路</span></div>
         <h4>山货 · 果干 · 蔬果</h4>
         <p>大巴刹的本地蔬果比城里便宜也新鲜，果干和腌制品适合当零食。回程当天早上买，路上就能开来吃。</p>
@@ -1027,6 +1087,67 @@ html{scroll-behavior:smooth}
           <div><dt>买处</dt><dd>大巴刹</dd></div>
           <div><dt>时间</dt><dd>清晨最齐</dd></div>
         </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 投票 ───────────────────────────────────────────────── -->
+<section id="vote">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">家庭投票 · 7 人</span>
+      <h2>大家各自选，选完自动排名</h2>
+      <p>不必吵。每个人在自己手机上按<b>「想去」「想吃」</b>，选完产生一个代码丢进家族群，
+        谁贴上去汇总，谁就看得到全家的排名。不需要注册，资料只存在各自的手机里。</p>
+    </div>
+
+    <div class="vote-card">
+      <div class="vote-card__head"><span class="vote-step">1</span><h3>先写你的名字</h3></div>
+      <p>然后回到上面的<a href="#spots">景点</a>和<a href="#food">美食</a>，把想去、想吃的按一按。小孩可以借大人的手机，一人投完换一个名字再投。</p>
+      <div class="field">
+        <input type="text" id="voterName" placeholder="例如：爸爸、阿嫲、小宝" maxlength="12" autocomplete="off">
+        <button class="btn btn--solid" type="button" id="voteSave">存入投票箱</button>
+      </div>
+      <p class="hint" id="voteStatus">还没选任何一项。</p>
+    </div>
+
+    <div class="vote-card">
+      <div class="vote-card__head"><span class="vote-step">2</span><h3>分享给家人</h3></div>
+      <p>把你的选择变成一段代码，丢到家族群里。别人贴进下面第 3 步就能合并。</p>
+      <div class="field">
+        <button class="btn btn--solid" type="button" id="voteWa">用 WhatsApp 发给家人</button>
+        <button class="btn" type="button" id="voteCopy">复制代码</button>
+      </div>
+      <p class="hint">代码长这样：<b>BT26.xxxxx</b>，整段一起复制才有效。</p>
+    </div>
+
+    <div class="vote-card">
+      <div class="vote-card__head"><span class="vote-step">3</span><h3>汇总大家的代码</h3></div>
+      <p>把家人传来的代码贴进来，<b>一行一个</b>，多少个都行。</p>
+      <div class="field">
+        <textarea id="votePaste" placeholder="BT26.xxxxx&#10;BT26.yyyyy" spellcheck="false"></textarea>
+      </div>
+      <div class="field">
+        <button class="btn btn--solid" type="button" id="voteMerge">合并进来</button>
+        <button class="btn" type="button" id="voteClear">清空投票箱</button>
+      </div>
+      <p class="hint" id="voteMergeMsg"></p>
+      <div class="tally" id="voteTally"></div>
+    </div>
+
+    <div class="vote-card">
+      <div class="vote-card__head"><span class="vote-step">4</span><h3>全家排名</h3></div>
+      <p id="voteSummary">投票箱还是空的。先存入你自己的一票，或贴上家人的代码。</p>
+      <div class="res__cols">
+        <div>
+          <h4>最想去的地方</h4>
+          <div class="res" id="resSpots"><p class="res__empty">还没有票。</p></div>
+        </div>
+        <div>
+          <h4>最想吃的东西</h4>
+          <div class="res" id="resFood"><p class="res__empty">还没有票。</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1303,6 +1424,196 @@ html{scroll-behavior:smooth}
       store(); render();
     });
   }
+
+  /* ── 家庭投票 ─────────────────────────────────────── */
+  (function(){
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".card[data-vote]"));
+    var box   = document.getElementById("voteTally");
+    if (!cards.length || !box) return;
+
+    var K_MINE = "bentong2026.myvotes";
+    var K_NAME = "bentong2026.myname";
+    var K_POOL = "bentong2026.pool";
+
+    var names = {};                       // id -> 名称
+    cards.forEach(function(c){ names[c.getAttribute("data-vote")] = c.getAttribute("data-vote-name"); });
+
+    var mine = load(K_MINE, []);          // 我勾的 id
+    var pool = load(K_POOL, {});          // 名字 -> id 数组
+
+    function load(k, dflt){
+      try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? dflt : v; }
+      catch (e) { return dflt; }
+    }
+    function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+    /* base64url ↔ UTF-8，中文名字也能编码 */
+    function enc(str){
+      var b = btoa(String.fromCharCode.apply(null, new TextEncoder().encode(str)));
+      return b.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    }
+    function dec(s){
+      var b = s.replace(/-/g, "+").replace(/_/g, "/");
+      while (b.length % 4) b += "=";
+      var bin = atob(b), arr = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+      return new TextDecoder().decode(arr);
+    }
+    function myName(){ return (document.getElementById("voterName").value || "").trim(); }
+    function myCode(){
+      return "BT26." + enc(JSON.stringify([myName() || "家人", mine]));
+    }
+
+    /* 在每张卡片底部加投票钮 */
+    cards.forEach(function(card){
+      var id = card.getAttribute("data-vote");
+      var b  = document.createElement("button");
+      b.type = "button";
+      b.className = "votebtn";
+      b.setAttribute("aria-pressed", mine.indexOf(id) > -1 ? "true" : "false");
+      var isFood = id.charAt(0) === "f";
+      b.innerHTML = '<span class="votebtn__mark" aria-hidden="true"></span><span class="votebtn__txt"></span>';
+      card.appendChild(b);
+      function paint(){
+        var on = mine.indexOf(id) > -1;
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        b.querySelector(".votebtn__mark").textContent = on ? "✓" : "＋";
+        b.querySelector(".votebtn__txt").textContent =
+          on ? (isFood ? "我想吃" : "我想去") : (isFood ? "想吃" : "想去");
+      }
+      b.addEventListener("click", function(){
+        var i = mine.indexOf(id);
+        if (i > -1) mine.splice(i, 1); else mine.push(id);
+        save(K_MINE, mine); paint(); status();
+      });
+      paint();
+    });
+
+    /* 我的进度提示 */
+    function status(){
+      var s = mine.filter(function(i){ return i.charAt(0) === "s"; }).length;
+      var f = mine.length - s;
+      document.getElementById("voteStatus").textContent = mine.length
+        ? "你选了 " + s + " 个地方、" + f + " 样吃的。写上名字后按「存入投票箱」。"
+        : "还没选任何一项。到上面的景点和美食按「想去」「想吃」。";
+    }
+
+    /* 投票箱与排名 */
+    function tally(){
+      var people = Object.keys(pool);
+      box.innerHTML = "";
+      people.forEach(function(n){
+        var chip = document.createElement("span");
+        chip.className = "voter";
+        chip.appendChild(document.createTextNode(n + " · " + pool[n].length + " 项"));
+        var x = document.createElement("button");
+        x.type = "button"; x.textContent = "×";
+        x.setAttribute("aria-label", "移除 " + n + " 的投票");
+        x.addEventListener("click", function(){ delete pool[n]; save(K_POOL, pool); tally(); });
+        chip.appendChild(x);
+        box.appendChild(chip);
+      });
+
+      var total = people.length;
+      document.getElementById("voteSummary").textContent = total
+        ? "已收到 " + total + " 个人的投票。票数一样的并列，行程就照这个排。"
+        : "投票箱还是空的。先存入你自己的一票，或贴上家人的代码。";
+
+      var count = {};
+      people.forEach(function(n){
+        pool[n].forEach(function(id){ if (names[id]) count[id] = (count[id] || 0) + 1; });
+      });
+      render("resSpots", "s", count, total);
+      render("resFood",  "f", count, total);
+    }
+
+    function render(elId, prefix, count, total){
+      var host = document.getElementById(elId);
+      var ids = Object.keys(count).filter(function(i){ return i.charAt(0) === prefix; });
+      host.innerHTML = "";
+      if (!ids.length) {
+        host.innerHTML = '<p class="res__empty">还没有票。</p>';
+        return;
+      }
+      ids.sort(function(a, b){ return count[b] - count[a] || names[a].localeCompare(names[b]); });
+      var top = count[ids[0]];
+      ids.forEach(function(id, i){
+        var n = count[id], isTop = n === top;
+        var row = document.createElement("div");
+        row.className = "res__row" + (isTop ? " res__row--top" : "");
+        row.innerHTML =
+          '<span class="res__rank">' + (i + 1) + '</span>' +
+          '<span class="res__name"></span>' +
+          '<span class="res__n">' + n + "/" + total + "</span>";
+        row.querySelector(".res__name").textContent = names[id];
+        var bar = document.createElement("div");
+        bar.className = "res__bar";
+        bar.innerHTML = '<i style="width:' + Math.round(n / total * 100) + '%"></i>';
+        host.appendChild(row); host.appendChild(bar);
+      });
+    }
+
+    /* 按钮 */
+    var nameEl = document.getElementById("voterName");
+    nameEl.value = load(K_NAME, "");
+    nameEl.addEventListener("input", function(){ save(K_NAME, nameEl.value); });
+
+    document.getElementById("voteSave").addEventListener("click", function(){
+      var n = myName();
+      if (!n) { nameEl.focus(); flash("voteStatus", "先写上名字，才知道这票是谁的。"); return; }
+      if (!mine.length) { flash("voteStatus", "还没选任何一项，先到上面按「想去」「想吃」。"); return; }
+      pool[n] = mine.slice(); save(K_POOL, pool); tally();
+      flash("voteStatus", "已存入投票箱：" + n + " 的 " + mine.length + " 项。");
+    });
+
+    document.getElementById("voteCopy").addEventListener("click", function(){
+      var code = myCode();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(
+          function(){ flash("voteStatus", "代码已复制，贴到家族群就行。"); },
+          function(){ prompt("手动复制这段代码：", code); }
+        );
+      } else { prompt("手动复制这段代码：", code); }
+    });
+
+    document.getElementById("voteWa").addEventListener("click", function(){
+      var n = myName() || "我";
+      var txt = "【文冬三天两夜】" + n + " 的选择来了 🗳️\n" +
+                "选了 " + mine.length + " 项。把下面整段代码贴到行程网页的「汇总」里：\n\n" +
+                myCode() + "\n\n" + location.href;
+      window.open("https://wa.me/?text=" + encodeURIComponent(txt), "_blank", "noopener");
+    });
+
+    document.getElementById("voteMerge").addEventListener("click", function(){
+      var raw = document.getElementById("votePaste").value;
+      var hits = raw.match(/BT26\.[A-Za-z0-9\-_]+/g) || [];
+      var ok = 0, bad = 0;
+      hits.forEach(function(code){
+        try {
+          var v = JSON.parse(dec(code.slice(5)));
+          if (Array.isArray(v) && typeof v[0] === "string" && Array.isArray(v[1])) {
+            pool[v[0]] = v[1].filter(function(i){ return names[i]; });
+            ok++;
+          } else bad++;
+        } catch (e) { bad++; }
+      });
+      save(K_POOL, pool); tally();
+      document.getElementById("votePaste").value = "";
+      document.getElementById("voteMergeMsg").textContent = !hits.length
+        ? "没找到代码。代码要以 BT26. 开头，整段一起贴。"
+        : "合并了 " + ok + " 个人" + (bad ? "，" + bad + " 段读不出来" : "") + "。";
+    });
+
+    document.getElementById("voteClear").addEventListener("click", function(){
+      if (!Object.keys(pool).length) return;
+      pool = {}; save(K_POOL, pool); tally();
+      document.getElementById("voteMergeMsg").textContent = "投票箱已清空。";
+    });
+
+    function flash(id, msg){ document.getElementById(id).textContent = msg; }
+
+    status(); tally();
+  })();
 
   /* ── 导航高亮 ─────────────────────────────────────── */
   var links = Array.prototype.slice.call(document.querySelectorAll(".daynav a"));

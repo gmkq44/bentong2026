@@ -228,6 +228,34 @@ section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
 .card__meta{margin-top:auto; padding-top:.6rem; font-family:var(--mono); font-size:.74rem; color:var(--ink-soft)}
 .card ul li{color:var(--ink-mid); font-size:.92rem; padding-left:1em; position:relative}
 .card ul li::before{content:"·"; position:absolute; left:.15em; color:var(--ginger)}
+.card__tags{display:flex; flex-wrap:wrap; gap:.3rem}
+
+/* 景点 / 美食卡的资料行 */
+.rows{margin-top:auto; padding-top:.8rem; border-top:1px solid var(--line); display:grid; gap:.28rem}
+.rows div{display:flex; justify-content:space-between; align-items:baseline; gap:1rem}
+.rows dt{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); flex:none}
+.rows dd{margin:0; font-size:.82rem; text-align:right; color:var(--ink-mid); font-variant-numeric:tabular-nums}
+.rows dd.hi{color:var(--ginger); font-weight:600}
+
+/* 分组小标题 */
+.subhead{
+  display:flex; align-items:center; gap:.9rem; margin:2.6rem 0 1.1rem;
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--ink-soft);
+}
+.subhead::after{content:""; flex:1; height:1px; background:var(--line)}
+.subhead:first-of-type{margin-top:0}
+
+/* 二选一决策块 */
+.pick{
+  background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--ginger);
+  border-radius:4px; padding:1.3rem 1.4rem; display:grid; gap:.9rem;
+}
+.pick__row{display:grid; grid-template-columns:7.5rem 1fr; gap:.4rem 1.1rem; align-items:baseline}
+.pick__q{font-family:var(--mono); font-size:.74rem; letter-spacing:.08em; color:var(--ginger); text-transform:uppercase}
+.pick__a{font-size:.94rem; color:var(--ink-mid)}
+.pick__a b{color:var(--ink)}
+@media (max-width:560px){ .pick__row{grid-template-columns:1fr; gap:.15rem} }
 
 /* ── 表格 ────────────────────────────────────────────────── */
 .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:4px; background:var(--surface)}
@@ -317,7 +345,7 @@ html{scroll-behavior:smooth}
       <li><a href="#d1"><span class="num">D1</span>老街 · 夜市</a></li>
       <li><a href="#d2"><span class="num">D2</span>瀑布 · 山里</a></li>
       <li><a href="#d3"><span class="num">D3</span>手信 · 回程</a></li>
-      <li><a href="#alt">备选</a></li>
+      <li><a href="#spots">景点全览</a></li>
       <li><a href="#food">吃什么</a></li>
       <li><a href="#info">实用资讯</a></li>
       <li><a href="#pack">打包清单</a></li>
@@ -458,7 +486,7 @@ html{scroll-behavior:smooth}
       </div>
       <p class="day__note">
         整天中最耗体力的一天，也是小孩最开心的一天。瀑布下午 4:30 关门、通常 4 点就停止入场，所以水一定要上午玩；
-        午后山区雷阵雨常见，下午的行程排在有屋顶的地方。想改成室内/主题式玩法，看下面的<a href="#alt">备选方案</a>。
+        午后山区雷阵雨常见，下午的行程排在有屋顶的地方。想换成农场、主题村或室内玩法，看<a href="#spots">景点全览</a>里的「第二天怎么挑」。
       </p>
 
       <div class="tl">
@@ -479,6 +507,16 @@ html{scroll-behavior:smooth}
             <div class="stop__facts"><span>成人 RM3 · 孩童 RM1.50</span><span>约 16:30 关闭 · 16:00 停止入场</span><span>车程 约 15 分钟</span><span>10–1月雨季常关闭</span></div>
             <div class="callout"><b>安全第一。</b>三个小孩必须一大人一路跟着；看警示牌和封锁线，不要越过。上游若下雨，水位可能几分钟内暴涨——听到水声变大、水变浑浊就立刻上岸。</div>
             <a class="stop__link" href="https://www.google.com/maps/search/?api=1&amp;query=Chamang+Waterfall+Bentong+Pahang" target="_blank" rel="noopener">地图 →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">11:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>顺路加一站：文冬休闲农场</h4><span class="tag">可选 · 需前一天买票</span></div>
+            <p class="stop__desc">The Bentong Farm 就在同一条 Jalan Chamang 上，从瀑布出来顺路。羊驼、迷你马、粉红水牛可以喂食触摸，三个小孩通常会赖着不走。门票要提前 24 小时买——今天想去，昨天就得订。要是决定进农场，就把下午的珍德拜换掉，一个下午留给农场刚刚好。</p>
+            <div class="stop__facts"><span>成人 RM48 · 孩童 RM38</span><span>需提前 24 小时购票</span><span>Jalan Chamang</span><span>顺路瀑布</span></div>
+            <a class="stop__link" href="https://thebentongfarm.my/" target="_blank" rel="noopener">官方购票 →</a>
           </div>
         </div>
 
@@ -581,47 +619,192 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<!-- 备选 ───────────────────────────────────────────────── -->
-<section id="alt">
+<!-- 景点全览 ───────────────────────────────────────────── -->
+<section id="spots">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">备选方案</span>
-      <h2>下雨、瀑布关闭，或小孩想玩别的</h2>
-      <p>第二天的白天是唯一可以整块换掉的时段。以下三个方案都能从文冬当天来回。</p>
+      <span class="eyebrow">景点全览 · 14 处</span>
+      <h2>可以去的地方，比三天能走完的多</h2>
+      <p>全部都能从文冬市区当天来回。行程里排了其中六处，其余留着换——下雨、瀑布关闭、小孩临时不想下水，从这里挑就行。标价以现场公告为准。</p>
     </div>
+
+    <h3 class="subhead">走路就到 · 老街范围</h3>
     <div class="grid">
       <div class="card">
-        <span class="tag tag--pine">全日 · 不怕晒</span>
+        <div class="card__tags"><span class="tag tag--pine">免费</span><span class="tag">步行</span></div>
+        <h4>文冬老街 · 壁画</h4>
+        <p>Jalan Chui Yin 到 Jalan Loke Yew 一带的战前店屋，墙上有描绘旧时文冬生活的壁画，老咖啡店和土产店都夹在中间。慢慢走一个多钟头，随时能坐下喝杯咖啡乌。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">免费</dd></div>
+          <div><dt>车程</dt><dd>步行 5 分钟</dd></div>
+          <div><dt>适合</dt><dd>全家 · 随时</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">一周一次</span><span class="tag">周六晚</span></div>
+        <h4>Bentong Walk 周六夜市</h4>
+        <p>一周只开周六晚这一场，在 Jalan Chui Yin、大巴刹旁边。炒粿条、糯米饭、肉骨茶、炸油条、酿豆腐，加上文冬姜、蜂蜜、酱油等土产摊。人多，牵好小孩。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">免费</dd></div>
+          <div><dt>时间</dt><dd>周六 18:00–23:00</dd></div>
+          <div><dt>车程</dt><dd>步行 5 分钟</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--pine">免费</span><span class="tag">早上</span></div>
+        <h4>文冬大巴刹 Pasar Besar</h4>
+        <p>本地人的早市，卖鲜姜、豆腐卜、蔬果和熟食。早上最热闹，也是看清楚手信行情、比价再买的地方。里头的熟食摊可以直接解决早餐。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">免费</dd></div>
+          <div><dt>时间</dt><dd>清晨最旺 · 中午后收</dd></div>
+          <div><dt>车程</dt><dd>步行 5 分钟</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--pine">室内</span><span class="tag">雨天 OK</span></div>
+        <h4>文冬文化馆 · 老街古庙</h4>
+        <p>小型地方文化馆，讲文冬的锡矿、种姜和华人南来的历史，室内有冷气，突然下雨可以躲进去。附近的老庙也在步行范围内，顺路一起看。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd>免费或小额乐捐</dd></div>
+          <div><dt>时间</dt><dd>以现场公告为准</dd></div>
+          <div><dt>适合</dt><dd>躲雨 · 半小时</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="subhead">自然 · 玩水</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">行程内</span><span class="tag">玩水</span></div>
+        <h4>查茫瀑布 Chamang Waterfall</h4>
+        <p>宽阔石滩瀑布，水量大。下游水浅处适合小孩踩水，上游主瀑区水流很急。石头长苔极滑，穿溯溪鞋比拖鞋安全得多。10 月至 1 月雨季常关闭。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">成人 RM3 · 孩童 RM1.50</dd></div>
+          <div><dt>时间</dt><dd>约 16:30 关 · 16:00 停入场</dd></div>
+          <div><dt>车程</dt><dd>约 15 分钟</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--pine">免费选项</span><span class="tag">泡脚</span></div>
+        <h4>文冬温泉 Kolam Air Panas</h4>
+        <p>在往珍德拜的旧路上。公共池免费但水面常有青苔，介意的话去隔壁 Erya by Suria 的付费池，维护得好很多。傍晚天气凉时泡最舒服。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">免费 / 付费池 约 RM15</dd></div>
+          <div><dt>车程</dt><dd>约 15–20 分钟</dd></div>
+          <div><dt>适合</dt><dd>大人 · 傍晚</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--pine">避暑</span><span class="tag">雨天 OK</span></div>
+        <h4>珍德拜 Janda Baik</h4>
+        <p>往吉隆坡方向的山谷小镇，气温比市区低几度。溪流、林间咖啡馆和茶园式餐厅集中在这里。下午下雨也不影响，坐在屋檐下看雨反而是这里的卖点。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">免费 · 消费另计</dd></div>
+          <div><dt>车程</dt><dd>约 20–25 分钟</dd></div>
+          <div><dt>注意</dt><dd>山路弯多 · 傍晚起雾</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">户外</span><span class="tag">大孩子</span></div>
+        <h4>Bilut Extreme Park</h4>
+        <p>ATV 越野车、射箭、飞索一类的户外活动园区。小小孩玩不了，但家里较大的孩子会很尽兴。项目分开收费，长周末最好先打电话问档期。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd>按项目计 · 现场为准</dd></div>
+          <div><dt>车程</dt><dd>约 25–30 分钟</dd></div>
+          <div><dt>适合</dt><dd>较大孩子 · 需预约</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="subhead">亲子农场 · 主题村</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">小孩首选</span><span class="tag">需预订</span></div>
+        <h4>The Bentong Farm 文冬休闲农场</h4>
+        <p>27 英亩的休闲农场，在 Jalan Chamang 上、去瀑布的同一条路。羊驼、迷你马、粉红水牛等上百种温驯动物可以近距离喂食触摸，园内还有瀑布、水塘和果树区。三个小孩会玩上大半天。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">成人 RM48 · 孩童 RM38</dd></div>
+          <div><dt>预订</dt><dd>需提前 24 小时购票</dd></div>
+          <div><dt>车程</dt><dd>约 15 分钟 · 顺路瀑布</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--pine">雨天 OK</span><span class="tag">拍照</span></div>
         <h4>Colmar Tropicale 法国村</h4>
-        <p>Berjaya Hills 上的法式主题村，门票含日本村和兔子园——三个小孩会喜欢兔子园。海拔高，比市区凉爽，遮荫和室内空间多，下雨天照样能玩。</p>
-        <ul>
-          <li>成人 RM14 · 4–12 岁 RM7</li>
-          <li>文冬出发约 30 分钟</li>
-          <li>山下停车后转接驳车上山</li>
-        </ul>
-        <div class="card__meta">最适合：天气不好 / 不想下水</div>
+        <p>Berjaya Hills 上的法式主题村，门票一张含<b>日本村</b>和<b>兔子园</b>三个地方。海拔高、比市区凉，遮荫和室内空间多。山下停车后转接驳车上山。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd class="hi">成人 RM14 · 4–12岁 RM7</dd></div>
+          <div><dt>日本村</dt><dd>09:30–17:30</dd></div>
+          <div><dt>车程</dt><dd>约 30 分钟</dd></div>
+        </dl>
       </div>
       <div class="card">
-        <span class="tag tag--pine">半日至全日</span>
+        <div class="card__tags"><span class="tag tag--pine">全天候</span><span class="tag">人多</span></div>
         <h4>云顶高原</h4>
-        <p>约 40–50 分钟车程。室内商场、游乐场和缆车，全天候不受雨影响。缺点是国庆长周末人非常多，缆车和停车都要排队，去就要一早出发。</p>
-        <ul>
-          <li>门票按项目另计</li>
-          <li>山上气温低，带外套</li>
-          <li>长周末建议先订缆车票</li>
-        </ul>
-        <div class="card__meta">最适合：小孩想玩机动游戏</div>
+        <p>室内商场、游乐场和缆车，完全不受雨影响。缺点是国庆长周末人潮和车龙都非常夸张，缆车、停车都要排长队——要去就一早出发，并先在网上订缆车票。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd>按项目另计</dd></div>
+          <div><dt>车程</dt><dd>约 40–50 分钟</dd></div>
+          <div><dt>注意</dt><dd>气温低 · 带外套</dd></div>
+        </dl>
       </div>
       <div class="card">
-        <span class="tag tag--ginger">半日 · 应季</span>
+        <div class="card__tags"><span class="tag">咖啡厅</span><span class="tag">半日</span></div>
+        <h4>Pineyard 山上咖啡厅</h4>
+        <p>开在山坡上的网红咖啡厅，做 brunch，视野开阔适合拍照。带小孩的话可以当作瀑布或农场之后的休息站，吹冷气吃点甜的再回市区。</p>
+        <dl class="rows">
+          <div><dt>消费</dt><dd>brunch 价位</dd></div>
+          <div><dt>车程</dt><dd>市区外 · 山路</dd></div>
+          <div><dt>建议</dt><dd>长周末先订位</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="subhead">应季 · 八月才有</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">8月旺季</span><span class="tag">大人项目</span></div>
         <h4>劳勿 Raub 榴莲园</h4>
-        <p>往北约 30 分钟。八月正是猫山王旺季，果园可以现场吃到刚落地的果。老人小孩吃不了太多，一家人分两三粒刚好。</p>
-        <ul>
-          <li>按公斤计价，先问价再开果</li>
-          <li>现金为主</li>
-          <li>吃完再上路，别带上车</li>
-        </ul>
-        <div class="card__meta">最适合：大人的重点项目</div>
+        <p>往北约 30 分钟。八月正是猫山王旺季，果园可以现场吃到刚落地的果，路边摊也一路都是。按公斤计价，先问价再开果。吃完再上路——多数车行和民宿都不欢迎榴莲上车。</p>
+        <dl class="rows">
+          <div><dt>价格</dt><dd class="hi">按公斤 · 先问价</dd></div>
+          <div><dt>车程</dt><dd>约 30 分钟</dd></div>
+          <div><dt>付款</dt><dd>现金为主</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">土产</span><span class="tag">顺路</span></div>
+        <h4>姜园 · 土产工坊</h4>
+        <p>文冬姜是这里的招牌农产，市区外有姜园和加工姜粉、姜茶的小工坊，部分开放参观和试喝。不一定每家都接待散客，去之前先打电话问。</p>
+        <dl class="rows">
+          <div><dt>门票</dt><dd>多数免费 · 消费另计</dd></div>
+          <div><dt>建议</dt><dd>先电话确认开放</dd></div>
+          <div><dt>适合</dt><dd>买手信顺路</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="subhead">第二天怎么挑</h3>
+    <div class="pick">
+      <div class="pick__row">
+        <span class="pick__q">天气好</span>
+        <span class="pick__a"><b>查茫瀑布</b>上午玩水，下午<b>珍德拜</b>喝茶避暑——就是行程里的原定安排，也是最省钱的一天。</span>
+      </div>
+      <div class="pick__row">
+        <span class="pick__q">下雨</span>
+        <span class="pick__a">改<b>法国村</b>（室内多、门票便宜）或<b>云顶</b>（全天候，但长周末人爆满）。老街的<b>文化馆</b>可以顶掉半天。</span>
+      </div>
+      <div class="pick__row">
+        <span class="pick__q">小孩最开心</span>
+        <span class="pick__a"><b>文冬休闲农场</b>——喂动物比看风景管用得多。和瀑布同一条 Jalan Chamang，可以上午瀑布、下午农场连着走，但要提前一天买票。</span>
+      </div>
+      <div class="pick__row">
+        <span class="pick__q">大人想吃</span>
+        <span class="pick__a">第三天退房后加<b>劳勿榴莲园</b>，八月正当季，回程也顺路往北绕一小段。</span>
+      </div>
+      <div class="pick__row">
+        <span class="pick__q">预算最省</span>
+        <span class="pick__a">老街 + 大巴刹 + 夜市 + <b>温泉公共池</b>，全部免费或几块钱，一天下来只花在吃的上面。</span>
       </div>
     </div>
   </div>
@@ -633,38 +816,198 @@ html{scroll-behavior:smooth}
     <div class="sec-head">
       <span class="eyebrow">吃什么 · 带什么回去</span>
       <h2>文冬的味道是姜味的</h2>
-      <p>老街几条街就把大半清单走完了。多数老店只做早市、卖完就收，热门的下午去就没有了。</p>
+      <p>大半清单在老街那几条街上就走完了。要留意的是<b>时间</b>：多数老店只做早市，卖完就收，中午过后去只剩下拉闸门。营业时间会变，出发前查一下最新的。</p>
     </div>
+
+    <h3 class="subhead">早餐 · 卖完就收</h3>
     <div class="grid">
       <div class="card">
-        <h4>手打云吞面</h4>
-        <p>清晨现做的面条，爽口带碱水香。开记在 Jalan Chui Yin，周三休息，十一点前一定要到。</p>
-        <div class="card__meta">早餐 · 现金</div>
+        <div class="card__tags"><span class="tag tag--ginger">行程内</span><span class="tag">周三休</span></div>
+        <h4>开记云吞面</h4>
+        <p>四十年老店，面条每天清晨现做手打，爽口带碱水香。卖完就收摊，十一点前一定要到。</p>
+        <dl class="rows">
+          <div><dt>地址</dt><dd>57 Jalan Chui Yin</dd></div>
+          <div><dt>时间</dt><dd>周四–二 06:45–11:00</dd></div>
+          <div><dt>休息</dt><dd class="hi">周三</dd></div>
+        </dl>
       </div>
       <div class="card">
-        <h4>客家酿料 · 酿豆腐</h4>
-        <p>文冬客家人多，酿豆腐、酿苦瓜、酿辣椒是家常菜里的主角。夜市和老街茶室都有。</p>
-        <div class="card__meta">午餐 / 夜市</div>
+        <div class="card__tags"><span class="tag">茶室</span><span class="tag">周一休</span></div>
+        <h4>溏记海南茶餐室</h4>
+        <p>老派海南茶室，咖啡乌配炭烤面包夹咖椰牛油，也有海南式的简餐。开到下午，是老街上时间最宽松的一家。</p>
+        <dl class="rows">
+          <div><dt>地址</dt><dd>92 Jalan Chui Yin</dd></div>
+          <div><dt>时间</dt><dd>07:00–16:30</dd></div>
+          <div><dt>休息</dt><dd class="hi">周一</dd></div>
+        </dl>
       </div>
       <div class="card">
+        <div class="card__tags"><span class="tag">古早味</span></div>
+        <h4>烧鸭面</h4>
+        <p>老街的古早味之一，烧鸭皮脆肉嫩，配汤面或干捞都行。同样是早市时段的生意，晚了就没有。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>老街 / 巴刹一带</dd></div>
+          <div><dt>时间</dt><dd>早市 · 卖完为止</dd></div>
+          <div><dt>付款</dt><dd>现金</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--pine">最本地</span></div>
+        <h4>大巴刹熟食摊</h4>
+        <p>市场里的熟食区，粿条汤、炒粉、糕点都有，七个人各吃各的最方便，价钱也最实在。第二天早餐就排在这里。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>Pasar Besar Bentong</dd></div>
+          <div><dt>时间</dt><dd>清晨最旺</dd></div>
+          <div><dt>付款</dt><dd>现金</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="subhead">正餐 · 一家七口坐得下</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">招牌</span></div>
+        <h4>广西酿料</h4>
+        <p>文冬驰名十几年的酿料面档，十几二十种酿料任选——酿豆腐、酿苦瓜、酿辣椒、酿茄子，配面或配饭。挑料的过程小孩也玩得开心。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>老街茶餐室内</dd></div>
+          <div><dt>点法</dt><dd>自己夹 · 按件算</dd></div>
+          <div><dt>人均</dt><dd>约 RM10–15</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--pine">开桌</span><span class="tag">建议订位</span></div>
+        <h4>龙凤酒楼 Loong Foong</h4>
+        <p>本地中式酒楼，适合七个人正正经经开一桌吃客家菜和小炒。长周末生意好，最好先打电话订位。</p>
+        <dl class="rows">
+          <div><dt>类型</dt><dd>中餐 · 圆桌</dd></div>
+          <div><dt>建议</dt><dd class="hi">先订位</dd></div>
+          <div><dt>人均</dt><dd>约 RM25–40</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">辣</span><span class="tag">车程 10 分钟</span></div>
+        <h4>Tom Yam King 冬炎</h4>
+        <p>开在 Kampung Perting 民宅区里的泰式餐厅，冬炎汤是招牌，酸辣够劲。小孩吃辣不行的话可以另点清汤和炒饭。</p>
+        <dl class="rows">
+          <div><dt>地址</dt><dd>Kampung Perting</dd></div>
+          <div><dt>车程</dt><dd>约 10 分钟</dd></div>
+          <div><dt>人均</dt><dd>约 RM20–30</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">客家</span></div>
+        <h4>客家菜 · 算盘子 · 梅菜扣肉</h4>
+        <p>文冬客家人多，算盘子、梅菜扣肉、猪肠粉这些家常菜在市区好几家餐室都点得到，是最能代表这里日常味道的一顿。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>市区多家</dd></div>
+          <div><dt>时段</dt><dd>午餐 / 晚餐</dd></div>
+          <div><dt>人均</dt><dd>约 RM15–25</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">山里</span><span class="tag">下午茶</span></div>
+        <h4>山中茶原 · 珍德拜</h4>
+        <p>林间的茶菜餐厅，木造装潢，坐得开阔，第二天下午的行程就落在这里。喝茶配点心，山里凉快，下雨也不影响。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>Tanarimba, Janda Baik</dd></div>
+          <div><dt>车程</dt><dd>约 20–25 分钟</dd></div>
+          <div><dt>建议</dt><dd>先订位</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">宵夜</span><span class="tag">周六</span></div>
+        <h4>夜市小吃当晚餐</h4>
+        <p>炒粿条、炒粉、糯米饭、肉骨茶、炸油条、酿豆腐、树灰面——第一天晚上根本不用另外找餐厅，一路吃过去就饱了。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>Jalan Chui Yin 夜市</dd></div>
+          <div><dt>时间</dt><dd>周六 18:00–23:00</dd></div>
+          <div><dt>付款</dt><dd class="hi">现金</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="subhead">甜品 · 小孩会一直问的</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">古早味</span><span class="tag">周一休</span></div>
+        <h4>陈雪糕店</h4>
+        <p>老街的古早味雪糕店，几十年的口味，天热走累了一人一支正好。注意它中间有休息时段，别扑空。</p>
+        <dl class="rows">
+          <div><dt>时间</dt><dd>12:00–16:00 · 18:00–22:00</dd></div>
+          <div><dt>休息</dt><dd class="hi">周一</dd></div>
+          <div><dt>价钱</dt><dd>几块钱一支</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">在地</span></div>
+        <h4>姜茶 · 姜撞奶</h4>
+        <p>用文冬姜煮的热姜茶，辣味厚但回甘。山上早晚凉，喝一杯很舒服；姜撞奶小孩比较接受。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>老街茶室 / 夜市</dd></div>
+          <div><dt>时段</dt><dd>随时</dd></div>
+          <div><dt>价钱</dt><dd>约 RM3–6</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">下午茶</span></div>
+        <h4>咖啡乌 · 咖椰烤面包</h4>
+        <p>炭火烤的白面包夹咖椰和厚牛油，配半生熟蛋和一杯浓咖啡乌。三天里至少要吃一次的组合。</p>
+        <dl class="rows">
+          <div><dt>位置</dt><dd>老街各茶室</dd></div>
+          <div><dt>时段</dt><dd>早餐 / 下午</dd></div>
+          <div><dt>价钱</dt><dd>约 RM5–8</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">8月应季</span></div>
+        <h4>榴莲 · 猫山王</h4>
+        <p>八月正当季，市区和往劳勿方向的路边摊都有。按公斤计价，先问价再开果。老人小孩吃不多，一家分两三粒刚好。</p>
+        <dl class="rows">
+          <div><dt>价格</dt><dd class="hi">按公斤 · 先问价</dd></div>
+          <div><dt>位置</dt><dd>市区 / 劳勿方向</dd></div>
+          <div><dt>提醒</dt><dd>吃完再上车</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="subhead">手信 · 带回去的</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card__tags"><span class="tag tag--ginger">招牌</span></div>
+        <h4>文冬姜 · 姜粉 · 姜糖 · 姜茶包</h4>
+        <p>这里的姜纤维细、辣味厚，是全马有名的。鲜姜味重要密封好；姜粉最耐放；姜糖轻便，分送同事最方便。</p>
+        <dl class="rows">
+          <div><dt>买处</dt><dd>老街土产店 / 大巴刹</dd></div>
+          <div><dt>价位</dt><dd>RM10–30 一份</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="card__tags"><span class="tag">本地特产</span></div>
         <h4>豆腐卜</h4>
-        <p>本地出名的炸豆腐泡，外皮酥内里空，煮汤或蘸辣椒酱都行。也是很好带的手信。</p>
-        <div class="card__meta">手信 · 大巴刹</div>
+        <p>出名的炸豆腐泡，外皮酥、里头是空的，煮汤或蘸辣椒酱都行。轻、不怕压，是最好带的一样。</p>
+        <dl class="rows">
+          <div><dt>买处</dt><dd>大巴刹 / 夜市</dd></div>
+          <div><dt>价位</dt><dd>一包几块钱</dd></div>
+        </dl>
       </div>
       <div class="card">
-        <h4>姜茶 · 姜糖 · 姜粉</h4>
-        <p>文冬姜的招牌产品线。姜茶适合山上早晚喝，姜糖轻便好送人，姜粉能放最久。</p>
-        <div class="card__meta">手信 · 老街土产店</div>
+        <div class="card__tags"><span class="tag">土产</span></div>
+        <h4>本地蜂蜜 · 酱油 · 咖啡粉</h4>
+        <p>夜市和土产店都有本地小厂做的蜂蜜和酱油，咖啡粉是老咖啡店自己炒的。玻璃瓶装的记得用衣服包好再放行李。</p>
+        <dl class="rows">
+          <div><dt>买处</dt><dd>夜市 / 土产店</dd></div>
+          <div><dt>价位</dt><dd>RM15–40</dd></div>
+        </dl>
       </div>
       <div class="card">
-        <h4>老街咖啡乌 · 烤面包</h4>
-        <p>炭火烤的白面包夹咖椰牛油，配一杯浓咖啡乌。两天的早餐都可以这样开始。</p>
-        <div class="card__meta">早餐</div>
-      </div>
-      <div class="card">
-        <h4>榴莲 · 本地蜂蜜</h4>
-        <p>八月是旺季，往劳勿方向的路边摊最多。蜂蜜和酱油在市区土产店都有，密封好再上车。</p>
-        <div class="card__meta">应季 · 8月</div>
+        <div class="card__tags"><span class="tag">顺路</span></div>
+        <h4>山货 · 果干 · 蔬果</h4>
+        <p>大巴刹的本地蔬果比城里便宜也新鲜，果干和腌制品适合当零食。回程当天早上买，路上就能开来吃。</p>
+        <dl class="rows">
+          <div><dt>买处</dt><dd>大巴刹</dd></div>
+          <div><dt>时间</dt><dd>清晨最齐</dd></div>
+        </dl>
       </div>
     </div>
   </div>
@@ -802,6 +1145,7 @@ html{scroll-behavior:smooth}
           <tr><td>榴莲（应季，可选）</td><td>按公斤计</td><td>100 – 300</td></tr>
           <tr><td>市区停车 · 杂费</td><td>三天</td><td>20 – 40</td></tr>
           <tr><td>备选：法国村门票</td><td>成人 RM14 ×4 · 孩童 RM7 ×3</td><td>77</td></tr>
+          <tr><td>备选：文冬休闲农场</td><td>成人 RM48 ×4 · 孩童 RM38 ×3</td><td>306</td></tr>
         </tbody>
         <tfoot>
           <tr><td colspan="2">合计（不含住宿，不含备选项目）</td><td>约 1,000 – 1,800</td></tr>
@@ -815,11 +1159,13 @@ html{scroll-behavior:smooth}
   <div class="wrap">
     <h4>资料来源与说明</h4>
     <p style="margin-bottom:.9rem">
-      住宿资料取自 Agoda 订房确认书（订单编号 1759092771）。景点的门票、营业时间和季节性关闭以现场公告为准——出发前一两天再确认一次，尤其是瀑布和夜市。
+      住宿资料取自 Agoda 订房确认书（订单编号 1759092771）。景点门票、餐厅营业时间和季节性关闭都以现场公告为准——
+      老店的休息日和收摊时间尤其常变，出发前一两天再确认一次，特别是瀑布、周六夜市和需要提前订票的农场。
     </p>
     <ul>
       <li><a href="https://www.tripadvisor.com.sg/Attraction_Review-g2301861-d10306425-Reviews-Bentong_Walk-Bentong_Pahang.html" target="_blank" rel="noopener">Bentong Walk 夜市 — Tripadvisor</a></li>
       <li><a href="https://www.tripadvisor.com.my/Attraction_Review-g2301861-d2462371-Reviews-Chamang_Waterfall-Bentong_Pahang.html" target="_blank" rel="noopener">Chamang Waterfall 门票与开放时间 — Tripadvisor</a></li>
+      <li><a href="https://thebentongfarm.my/" target="_blank" rel="noopener">The Bentong Farm 文冬休闲农场 — 官方网站</a></li>
       <li><a href="https://colmartropicale.com.my/faq/" target="_blank" rel="noopener">Colmar Tropicale 入场费 FAQ — 官方网站</a></li>
       <li><a href="https://www.pahangtourism.com.my/bentong-hotspring/" target="_blank" rel="noopener">文冬温泉 — 彭亨旅游局</a></li>
       <li><a href="https://klnow.com.my/10-must-try-food-in-bentong-pahang/" target="_blank" rel="noopener">文冬美食清单 — KL NOW</a></li>

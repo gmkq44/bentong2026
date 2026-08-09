@@ -1,0 +1,24 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "database.rules.json",
+      "**/.*",
+      "**/node_modules/**",
+      "SETUP.md",
+      "README.md"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(html|js)",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache" }
+        ]
+      }
+    ]
+  }
+}

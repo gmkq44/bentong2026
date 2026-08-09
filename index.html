@@ -316,6 +316,21 @@ section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
 .res__cols{display:grid; gap:1.6rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:.4rem}
 .res__cols h4{font-size:.95rem; margin-bottom:.2rem}
 
+/* 连线状态 */
+.conn{
+  display:flex; align-items:center; gap:.6rem; margin-bottom:1rem;
+  padding:.6rem 1rem; border-radius:3px; font-size:.88rem;
+  background:var(--surface-2); color:var(--ink-mid); border:1px solid var(--line);
+}
+.conn__dot{width:.5rem; height:.5rem; border-radius:50%; background:var(--ink-soft); flex:none}
+.conn[data-state="live"]{background:var(--pine-soft); color:var(--pine); border-color:transparent}
+.conn[data-state="live"] .conn__dot{background:var(--pine)}
+.conn[data-state="live"] .conn__dot{animation:pulse 2.4s ease-in-out infinite}
+.conn[data-state="error"]{background:var(--ginger-soft); color:var(--ginger); border-color:transparent}
+.conn[data-state="error"] .conn__dot{background:var(--ginger)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+body[data-mode="live"] .offline-only{display:none}
+
 /* ── 表格 ────────────────────────────────────────────────── */
 .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:4px; background:var(--surface)}
 table{border-collapse:collapse; width:100%; min-width:440px; font-size:.92rem}
@@ -565,7 +580,7 @@ html{scroll-behavior:smooth}
       </div>
       <p class="day__note">
         整天中最耗体力的一天，也是小孩最开心的一天。瀑布下午 4:30 关门、通常 4 点就停止入场，所以水一定要上午玩；
-        午后山区雷阵雨常见，下午的行程排在有屋顶的地方。想换成农场、主题村或室内玩法，看<a href="#spots">景点全览</a>里的「第二天怎么挑」。
+        午后山区雷阵雨常见，下午的行程排在有屋顶的地方。想换成农场或室内玩法，看<a href="#spots">景点全览</a>里的「第二天怎么挑」。
       </p>
 
       <div class="tl">
@@ -689,7 +704,7 @@ html{scroll-behavior:smooth}
           <div class="stop__time">14:30</div>
           <div class="stop__body">
             <div class="stop__title"><h4>回程 · 加叻大道</h4><span class="tag tag--ginger">避开高峰</span></div>
-            <p class="stop__desc">国庆日下午往吉隆坡方向是全年最堵的时段之一，云顶路口到文良港一带尤其慢。2 点半前上路，或等 8 点后再走。车上备水和小孩的零食，堵起来会好过很多。</p>
+            <p class="stop__desc">国庆日下午往吉隆坡方向是全年最堵的时段之一，文冬出口到文良港一带尤其慢。2 点半前上路，或等 8 点后再走。车上备水和小孩的零食，堵起来会好过很多。</p>
             <div class="stop__facts"><span>约 1 小时（不塞时）</span><span>Touch 'n Go 备足余额</span></div>
           </div>
         </div>
@@ -702,7 +717,7 @@ html{scroll-behavior:smooth}
 <section id="spots">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">景点全览 · 14 处</span>
+      <span class="eyebrow">景点全览 · 12 处</span>
       <h2>可以去的地方，比三天能走完的多</h2>
       <p>全部都能从文冬市区当天来回。行程里排了其中六处，其余留着换——下雨、瀑布关闭、小孩临时不想下水，从这里挑就行。标价以现场公告为准。</p>
     </div>
@@ -795,7 +810,7 @@ html{scroll-behavior:smooth}
       </div>
     </div>
 
-    <h3 class="subhead">亲子农场 · 主题村</h3>
+    <h3 class="subhead">亲子农场 · 咖啡厅</h3>
     <div class="grid">
       <div class="card" data-vote="s9" data-vote-name="The Bentong Farm 文冬休闲农场">
         <div class="card__tags"><span class="tag tag--ginger">小孩首选</span><span class="tag">需预订</span></div>
@@ -805,26 +820,6 @@ html{scroll-behavior:smooth}
           <div><dt>门票</dt><dd class="hi">成人 RM48 · 孩童 RM38</dd></div>
           <div><dt>预订</dt><dd>需提前 24 小时购票</dd></div>
           <div><dt>车程</dt><dd>约 15 分钟 · 顺路瀑布</dd></div>
-        </dl>
-      </div>
-      <div class="card" data-vote="s10" data-vote-name="Colmar Tropicale 法国村">
-        <div class="card__tags"><span class="tag tag--pine">雨天 OK</span><span class="tag">拍照</span></div>
-        <h4>Colmar Tropicale 法国村</h4>
-        <p>Berjaya Hills 上的法式主题村，门票一张含<b>日本村</b>和<b>兔子园</b>三个地方。海拔高、比市区凉，遮荫和室内空间多。山下停车后转接驳车上山。</p>
-        <dl class="rows">
-          <div><dt>门票</dt><dd class="hi">成人 RM14 · 4–12岁 RM7</dd></div>
-          <div><dt>日本村</dt><dd>09:30–17:30</dd></div>
-          <div><dt>车程</dt><dd>约 30 分钟</dd></div>
-        </dl>
-      </div>
-      <div class="card" data-vote="s11" data-vote-name="云顶高原">
-        <div class="card__tags"><span class="tag tag--pine">全天候</span><span class="tag">人多</span></div>
-        <h4>云顶高原</h4>
-        <p>室内商场、游乐场和缆车，完全不受雨影响。缺点是国庆长周末人潮和车龙都非常夸张，缆车、停车都要排长队——要去就一早出发，并先在网上订缆车票。</p>
-        <dl class="rows">
-          <div><dt>门票</dt><dd>按项目另计</dd></div>
-          <div><dt>车程</dt><dd>约 40–50 分钟</dd></div>
-          <div><dt>注意</dt><dd>气温低 · 带外套</dd></div>
         </dl>
       </div>
       <div class="card" data-vote="s12" data-vote-name="Pineyard 山上咖啡厅">
@@ -871,7 +866,7 @@ html{scroll-behavior:smooth}
       </div>
       <div class="pick__row">
         <span class="pick__q">下雨</span>
-        <span class="pick__a">改<b>法国村</b>（室内多、门票便宜）或<b>云顶</b>（全天候，但长周末人爆满）。老街的<b>文化馆</b>可以顶掉半天。</span>
+        <span class="pick__a">上午照去<b>农场</b>（棚子和室内区多），下午躲进<b>珍德拜</b>的林间餐厅喝茶看雨。老街的<b>文化馆</b>可以顶掉半天。</span>
       </div>
       <div class="pick__row">
         <span class="pick__q">小孩最开心</span>
@@ -1098,8 +1093,13 @@ html{scroll-behavior:smooth}
     <div class="sec-head">
       <span class="eyebrow">家庭投票 · 7 人</span>
       <h2>大家各自选，选完自动排名</h2>
-      <p>不必吵。每个人在自己手机上按<b>「想去」「想吃」</b>，选完产生一个代码丢进家族群，
-        谁贴上去汇总，谁就看得到全家的排名。不需要注册，资料只存在各自的手机里。</p>
+      <p>不必吵。每个人在自己手机上按<b>「想去」「想吃」</b>，送出后即时汇总成全家排名。
+        没接上资料库时会自动改用代码汇总 —— 一样能投，只是要有人负责贴代码。</p>
+    </div>
+
+    <div class="conn" id="conn" data-state="local">
+      <span class="conn__dot" aria-hidden="true"></span>
+      <span id="connMsg">正在连线…</span>
     </div>
 
     <div class="vote-card">
@@ -1107,12 +1107,12 @@ html{scroll-behavior:smooth}
       <p>然后回到上面的<a href="#spots">景点</a>和<a href="#food">美食</a>，把想去、想吃的按一按。小孩可以借大人的手机，一人投完换一个名字再投。</p>
       <div class="field">
         <input type="text" id="voterName" placeholder="例如：爸爸、阿嫲、小宝" maxlength="12" autocomplete="off">
-        <button class="btn btn--solid" type="button" id="voteSave">存入投票箱</button>
+        <button class="btn btn--solid" type="button" id="voteSave">送出我的一票</button>
       </div>
       <p class="hint" id="voteStatus">还没选任何一项。</p>
     </div>
 
-    <div class="vote-card">
+    <div class="vote-card offline-only">
       <div class="vote-card__head"><span class="vote-step">2</span><h3>分享给家人</h3></div>
       <p>把你的选择变成一段代码，丢到家族群里。别人贴进下面第 3 步就能合并。</p>
       <div class="field">
@@ -1122,7 +1122,7 @@ html{scroll-behavior:smooth}
       <p class="hint">代码长这样：<b>BT26.xxxxx</b>，整段一起复制才有效。</p>
     </div>
 
-    <div class="vote-card">
+    <div class="vote-card offline-only">
       <div class="vote-card__head"><span class="vote-step">3</span><h3>汇总大家的代码</h3></div>
       <p>把家人传来的代码贴进来，<b>一行一个</b>，多少个都行。</p>
       <div class="field">
@@ -1133,11 +1133,11 @@ html{scroll-behavior:smooth}
         <button class="btn" type="button" id="voteClear">清空投票箱</button>
       </div>
       <p class="hint" id="voteMergeMsg"></p>
-      <div class="tally" id="voteTally"></div>
     </div>
 
     <div class="vote-card">
-      <div class="vote-card__head"><span class="vote-step">4</span><h3>全家排名</h3></div>
+      <div class="vote-card__head"><span class="vote-step" id="stepLast">4</span><h3>全家排名</h3></div>
+      <div class="tally" id="voteTally"></div>
       <p id="voteSummary">投票箱还是空的。先存入你自己的一票，或贴上家人的代码。</p>
       <div class="res__cols">
         <div>
@@ -1173,7 +1173,7 @@ html{scroll-behavior:smooth}
       <summary>天气与穿着</summary>
       <div class="details__body">
         <p>八月的文冬白天约 26–33°C，湿度高。山区午后雷阵雨很常见，通常下一两个小时就停——每天带把伞或轻便雨衣，行程别把下午排死。</p>
-        <p>下水那天：泳衣穿在里面出门最省事，另外准备一整套干衣服、快干毛巾、抓地力好的鞋。晚上珍德拜和云顶方向会凉，薄外套带一件。</p>
+        <p>下水那天：泳衣穿在里面出门最省事，另外准备一整套干衣服、快干毛巾、抓地力好的鞋。晚上珍德拜山上会凉，薄外套带一件。</p>
       </div>
     </details>
 
@@ -1289,7 +1289,6 @@ html{scroll-behavior:smooth}
           <tr><td>手信（姜 / 豆腐卜 / 蜂蜜）</td><td>看买多少</td><td>150 – 300</td></tr>
           <tr><td>榴莲（应季，可选）</td><td>按公斤计</td><td>100 – 300</td></tr>
           <tr><td>市区停车 · 杂费</td><td>三天</td><td>20 – 40</td></tr>
-          <tr><td>备选：法国村门票</td><td>成人 RM14 ×4 · 孩童 RM7 ×3</td><td>77</td></tr>
           <tr><td>备选：文冬休闲农场</td><td>成人 RM48 ×4 · 孩童 RM38 ×3</td><td>306</td></tr>
         </tbody>
         <tfoot>
@@ -1311,7 +1310,6 @@ html{scroll-behavior:smooth}
       <li><a href="https://www.tripadvisor.com.sg/Attraction_Review-g2301861-d10306425-Reviews-Bentong_Walk-Bentong_Pahang.html" target="_blank" rel="noopener">Bentong Walk 夜市 — Tripadvisor</a></li>
       <li><a href="https://www.tripadvisor.com.my/Attraction_Review-g2301861-d2462371-Reviews-Chamang_Waterfall-Bentong_Pahang.html" target="_blank" rel="noopener">Chamang Waterfall 门票与开放时间 — Tripadvisor</a></li>
       <li><a href="https://thebentongfarm.my/" target="_blank" rel="noopener">The Bentong Farm 文冬休闲农场 — 官方网站</a></li>
-      <li><a href="https://colmartropicale.com.my/faq/" target="_blank" rel="noopener">Colmar Tropicale 入场费 FAQ — 官方网站</a></li>
       <li><a href="https://www.pahangtourism.com.my/bentong-hotspring/" target="_blank" rel="noopener">文冬温泉 — 彭亨旅游局</a></li>
       <li><a href="https://klnow.com.my/10-must-try-food-in-bentong-pahang/" target="_blank" rel="noopener">文冬美食清单 — KL NOW</a></li>
       <li><a href="https://www.fishagrams.com/bentong-must-eat-food/" target="_blank" rel="noopener">文冬古早味推荐 — Fishagrams</a></li>
@@ -1319,6 +1317,7 @@ html{scroll-behavior:smooth}
   </div>
 </footer>
 
+<script src="firebase-config.js"></script>
 <script>
 (function(){
   "use strict";
@@ -1434,12 +1433,21 @@ html{scroll-behavior:smooth}
     var K_MINE = "bentong2026.myvotes";
     var K_NAME = "bentong2026.myname";
     var K_POOL = "bentong2026.pool";
+    var K_ME   = "bentong2026.voterid";
 
     var names = {};                       // id -> 名称
     cards.forEach(function(c){ names[c.getAttribute("data-vote")] = c.getAttribute("data-vote-name"); });
 
     var mine = load(K_MINE, []);          // 我勾的 id
-    var pool = load(K_POOL, {});          // 名字 -> id 数组
+    var pool = load(K_POOL, {});          // voterId -> {name, picks}
+    var remote = null;                    // Firebase store，接上才有
+
+    /* 这台装置的固定身分，重投会覆盖而不是重复计票 */
+    var meId = load(K_ME, null);
+    if (!meId) {
+      meId = "v" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+      save(K_ME, meId);
+    }
 
     function load(k, dflt){
       try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? dflt : v; }
@@ -1498,18 +1506,34 @@ html{scroll-behavior:smooth}
         : "还没选任何一项。到上面的景点和美食按「想去」「想吃」。";
     }
 
+    /* ── 资料层：接得上 Firebase 就用它，否则退回本机 ── */
+    function putVote(name, picks){
+      if (remote) return remote.put(meId, name, picks);
+      pool[meId] = { name: name, picks: picks.slice() };
+      save(K_POOL, pool); tally();
+      return Promise.resolve();
+    }
+    function dropVote(id){
+      if (remote) return remote.remove(id);
+      delete pool[id]; save(K_POOL, pool); tally();
+      return Promise.resolve();
+    }
+
     /* 投票箱与排名 */
     function tally(){
       var people = Object.keys(pool);
       box.innerHTML = "";
-      people.forEach(function(n){
+      people.forEach(function(id){
+        var v = pool[id];
         var chip = document.createElement("span");
         chip.className = "voter";
-        chip.appendChild(document.createTextNode(n + " · " + pool[n].length + " 项"));
+        chip.appendChild(document.createTextNode(
+          v.name + " · " + v.picks.length + " 项" + (id === meId ? "（你）" : "")
+        ));
         var x = document.createElement("button");
         x.type = "button"; x.textContent = "×";
-        x.setAttribute("aria-label", "移除 " + n + " 的投票");
-        x.addEventListener("click", function(){ delete pool[n]; save(K_POOL, pool); tally(); });
+        x.setAttribute("aria-label", "移除 " + v.name + " 的投票");
+        x.addEventListener("click", function(){ dropVote(id); });
         chip.appendChild(x);
         box.appendChild(chip);
       });
@@ -1517,11 +1541,12 @@ html{scroll-behavior:smooth}
       var total = people.length;
       document.getElementById("voteSummary").textContent = total
         ? "已收到 " + total + " 个人的投票。票数一样的并列，行程就照这个排。"
-        : "投票箱还是空的。先存入你自己的一票，或贴上家人的代码。";
+        : (remote ? "还没有人投票。你可以当第一个。"
+                  : "投票箱还是空的。先送出你自己的一票，或贴上家人的代码。");
 
       var count = {};
-      people.forEach(function(n){
-        pool[n].forEach(function(id){ if (names[id]) count[id] = (count[id] || 0) + 1; });
+      people.forEach(function(id){
+        pool[id].picks.forEach(function(p){ if (names[p]) count[p] = (count[p] || 0) + 1; });
       });
       render("resSpots", "s", count, total);
       render("resFood",  "f", count, total);
@@ -1562,8 +1587,14 @@ html{scroll-behavior:smooth}
       var n = myName();
       if (!n) { nameEl.focus(); flash("voteStatus", "先写上名字，才知道这票是谁的。"); return; }
       if (!mine.length) { flash("voteStatus", "还没选任何一项，先到上面按「想去」「想吃」。"); return; }
-      pool[n] = mine.slice(); save(K_POOL, pool); tally();
-      flash("voteStatus", "已存入投票箱：" + n + " 的 " + mine.length + " 项。");
+      flash("voteStatus", "送出中…");
+      putVote(n, mine).then(function(){
+        flash("voteStatus", remote
+          ? "已送出：" + n + " 的 " + mine.length + " 项，全家现在都看得到。改了再按一次就会更新。"
+          : "已存入投票箱：" + n + " 的 " + mine.length + " 项。");
+      }, function(){
+        flash("voteStatus", "送不出去，可能是网络问题。等一下再按一次。");
+      });
     });
 
     document.getElementById("voteCopy").addEventListener("click", function(){
@@ -1592,7 +1623,10 @@ html{scroll-behavior:smooth}
         try {
           var v = JSON.parse(dec(code.slice(5)));
           if (Array.isArray(v) && typeof v[0] === "string" && Array.isArray(v[1])) {
-            pool[v[0]] = v[1].filter(function(i){ return names[i]; });
+            pool["code:" + v[0]] = {
+              name: v[0],
+              picks: v[1].filter(function(i){ return names[i]; })
+            };
             ok++;
           } else bad++;
         } catch (e) { bad++; }
@@ -1612,7 +1646,67 @@ html{scroll-behavior:smooth}
 
     function flash(id, msg){ document.getElementById(id).textContent = msg; }
 
-    status(); tally();
+    /* ── 连上 Firebase（没设定 / 连不上就静静退回本机模式）── */
+    var conn = document.getElementById("conn");
+    var connMsg = document.getElementById("connMsg");
+
+    function setConn(state, msg){
+      conn.setAttribute("data-state", state);
+      connMsg.textContent = msg;
+      document.body.setAttribute("data-mode", state === "live" ? "live" : "local");
+      document.getElementById("stepLast").textContent = state === "live" ? "2" : "4";
+    }
+
+    function connect(){
+      var cfg = window.FIREBASE_CONFIG;
+      if (!cfg || !cfg.databaseURL || /PASTE_HERE/.test(cfg.databaseURL)) {
+        setConn("local", "代码汇总模式：各自投完，把代码丢进家族群，一个人贴上来汇总。");
+        return;
+      }
+      setConn("local", "正在连线…");
+
+      var V = "https://www.gstatic.com/firebasejs/10.12.2/";
+      Promise.all([import(V + "firebase-app.js"), import(V + "firebase-database.js")])
+        .then(function(mods){
+          var app = mods[0].initializeApp(cfg);
+          var d   = mods[1];
+          var db  = d.getDatabase(app);
+          var ref = d.ref(db, "trips/" + (window.TRIP_ID || "bentong2026") + "/votes");
+
+          remote = {
+            put: function(id, name, picks){
+              return d.set(d.child(ref, id), {
+                name: name.slice(0, 16),
+                picks: picks.slice(0, 60),
+                updatedAt: Date.now()
+              });
+            },
+            remove: function(id){ return d.remove(d.child(ref, id)); }
+          };
+
+          /* 即时同步：任何人一投票，所有开着页面的人立刻更新 */
+          d.onValue(ref, function(snap){
+            var val = snap.val() || {};
+            pool = {};
+            Object.keys(val).forEach(function(id){
+              var v = val[id];
+              if (v && typeof v.name === "string" && v.picks) {
+                pool[id] = { name: v.name, picks: [].concat(v.picks) };
+              }
+            });
+            tally();
+            setConn("live", "已连线 · 全家即时同步（" + Object.keys(pool).length + " 人已投）");
+          }, function(){
+            setConn("error", "读不到投票资料，暂时用本机模式。检查资料库规则是否已套用。");
+            remote = null; pool = load(K_POOL, {}); tally();
+          });
+        })
+        .catch(function(){
+          setConn("local", "代码汇总模式：各自投完，把代码丢进家族群，一个人贴上来汇总。");
+        });
+    }
+
+    status(); tally(); connect();
   })();
 
   /* ── 导航高亮 ─────────────────────────────────────── */

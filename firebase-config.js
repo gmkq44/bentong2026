@@ -1,12 +1,18 @@
 /* ────────────────────────────────────────────────────────────────
    Firebase 设定 —— 只需要改这一个档案
    ────────────────────────────────────────────────────────────────
-   1. 到 https://console.firebase.google.com 建立专案
-   2. 左侧「建构 → Realtime Database」→ 建立资料库
-      （地区选 Singapore (asia-southeast1)，规则先选「锁定模式」，
-        之后用本 repo 的 database.rules.json 覆盖）
-   3. 专案设定 ⚙ → 你的应用程式 → 新增「网页应用程式」</>
-   4. 把它给你的 firebaseConfig 整段贴到下面，取代 PASTE_HERE
+   1. 到 https://console.firebase.google.com
+      —— 专案额度满了不必建新的，沿用现有专案就行
+   2. 左侧「建构 → Realtime Database」
+      已经有资料库就直接用；还没有才按「建立资料库」
+      （地区选 Singapore (asia-southeast1)，规则先选「锁定模式」）
+   3. 「规则」分页套用 database.rules.json
+      ⚠ 资料库已经有别的 app 在用的话，只把 "trips" 那一段插进现有规则里，
+        千万别整份覆盖 —— 详见 SETUP.md 第 2 步
+   4. 专案设定 ⚙ → 你的应用程式 → 用现成的网页应用程式，或新增一个 </>
+   5. 把它给你的 firebaseConfig 整段贴到下面，取代 PASTE_HERE
+
+   投票资料只写在 trips/<TRIP_ID>/votes 底下，与专案里其他资料无关。
 
    这些值是「公开设定」，不是密钥 —— Firebase 网页应用程式本来就会
    把它们放在前端，安全性靠 database.rules.json 的规则来管。

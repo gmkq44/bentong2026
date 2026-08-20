@@ -60,7 +60,6 @@
   --alert:#D9765C;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
 }
-
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
@@ -79,9 +78,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 h1,h2,h3,h4{font-family:var(--serif); font-weight:600; text-wrap:balance; margin:0; line-height:1.3}
 p{margin:0}
 ul{margin:0; padding:0; list-style:none}
-
 .wrap{width:min(1080px,100% - 2.5rem); margin-inline:auto}
-
 /* ── 通用小部件 ──────────────────────────────────────────── */
 .eyebrow{
   font-family:var(--mono); font-size:.72rem; letter-spacing:.18em;
@@ -96,7 +93,6 @@ ul{margin:0; padding:0; list-style:none}
 .tag--ginger{background:var(--ginger-soft); color:var(--ginger)}
 .tag--pine{background:var(--pine-soft); color:var(--pine)}
 .num{font-family:var(--mono); font-variant-numeric:tabular-nums}
-
 /* ── 页首 ────────────────────────────────────────────────── */
 .hero{position:relative; padding:clamp(3rem,9vw,6rem) 0 clamp(2rem,5vw,3.5rem); overflow:hidden}
 #ridge{position:absolute; inset:auto 0 0 0; width:100%; height:100%; z-index:0; opacity:.55}
@@ -121,7 +117,6 @@ ul{margin:0; padding:0; list-style:none}
 .hero__meta dt{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft)}
 .hero__meta dd{margin:0; font-size:1.02rem; font-variant-numeric:tabular-nums}
 #countdown{color:var(--ginger); font-weight:600}
-
 /* ── 日期导航 ────────────────────────────────────────────── */
 .daynav{
   position:sticky; top:0; z-index:20;
@@ -140,12 +135,10 @@ ul{margin:0; padding:0; list-style:none}
 .daynav button:hover{color:var(--ink)}
 .daynav button[aria-selected="true"]{color:var(--ink); font-weight:600; border-bottom-color:var(--ginger)}
 .daynav .num{color:var(--ink-soft); margin-right:.45em; font-size:.78rem}
-
 /* ── 分页 ────────────────────────────────────────────────── */
 .tabpanel{display:none}
 .tabpanel.is-on{display:block}
 .tabpanel > section:first-child{padding-top:clamp(1.8rem,4vw,2.6rem)}
-
 .daytabs{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem}
 .daytabs button{
   cursor:pointer; font-family:var(--sans); font-size:.92rem;
@@ -162,13 +155,11 @@ ul{margin:0; padding:0; list-style:none}
 body[data-day="d1"] #d2, body[data-day="d1"] #d3,
 body[data-day="d2"] #d1, body[data-day="d2"] #d3,
 body[data-day="d3"] #d1, body[data-day="d3"] #d2{display:none}
-
 /* ── 版块 ────────────────────────────────────────────────── */
 section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
 .sec-head{display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem}
 .sec-head h2{font-size:clamp(1.6rem,4.4vw,2.2rem)}
 .sec-head p{color:var(--ink-mid); max-width:48em}
-
 /* ── 住宿卡 ──────────────────────────────────────────────── */
 .stay{
   background:var(--surface); border:1px solid var(--line); border-radius:4px;
@@ -193,7 +184,6 @@ section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
 .btn:hover{border-color:var(--ginger); color:var(--ginger)}
 .btn--solid{background:var(--pine); border-color:var(--pine); color:var(--paper)}
 .btn--solid:hover{opacity:.88; color:var(--paper)}
-
 /* ── 行程时间轴 ──────────────────────────────────────────── */
 .day{border-top:1px solid var(--line-strong); padding-top:1.6rem}
 .day + .day{margin-top:3.5rem}
@@ -202,7 +192,6 @@ section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
 .day__head h3{font-size:clamp(1.35rem,3.6vw,1.75rem)}
 .day__date{font-family:var(--mono); font-size:.85rem; color:var(--ink-soft); font-variant-numeric:tabular-nums}
 .day__note{color:var(--ink-mid); font-size:.95rem; margin-bottom:1.8rem; max-width:52em}
-
 .tl{display:flex; flex-direction:column}
 .stop{display:grid; grid-template-columns:5.5rem 1fr; column-gap:1.5rem; position:relative}
 .stop__time{
@@ -231,50 +220,18 @@ section{padding:clamp(2.75rem,7vw,4.5rem) 0; scroll-margin-top:3.5rem}
   border:1px solid var(--line); border-radius:2px; padding:.15em .5em;
 }
 .stop__link{font-size:.82rem; margin-top:.6rem; display:inline-block}
-
 .callout{
   margin-top:.85rem; padding:.75rem 1rem; border-radius:3px;
   background:var(--ginger-soft); color:var(--ink); font-size:.9rem;
   border-left:2px solid var(--ginger);
 }
 .callout b{color:var(--ginger)}
-
-/* 投票牵动行程 */
 .vbadge{
   display:inline-flex; align-items:center; gap:.4em;
   font-family:var(--mono); font-size:.7rem; letter-spacing:.04em;
   padding:.2em .55em; border-radius:2px; white-space:nowrap;
 }
-.vbadge--hot{background:var(--ginger); color:var(--paper)}
-.vbadge--warm{background:var(--pine-soft); color:var(--pine)}
-.vbadge--cold{background:var(--surface-2); color:var(--ink-soft); border:1px solid var(--line)}
-.stop--cold .stop__body{opacity:.5}
-.stop--cold .stop__body:hover{opacity:1}
-.stop--hot .stop__body::before{background:var(--ginger); border-color:var(--ginger)}
-
-/* 只有管理员（爸爸）看得到的调整列 */
 .adminbar{display:flex; flex-wrap:wrap; align-items:center; gap:.7rem 1rem; margin-top:1.2rem}
-.adminbar[hidden]{display:none}
-.adminbar__note{font-size:.85rem; color:var(--ink-soft)}
-body[data-edit="1"] #editPlan{background:var(--pine); border-color:var(--pine); color:var(--paper)}
-
-.pinctl{
-  display:flex; flex-wrap:wrap; align-items:center; gap:.45rem;
-  margin-top:.8rem; padding:.6rem .7rem; border-radius:3px;
-  background:var(--surface-2); border:1px dashed var(--line-strong);
-}
-.pinctl select{
-  font:inherit; font-size:.85rem; padding:.35rem .5rem; border-radius:3px;
-  background:var(--paper); color:var(--ink); border:1px solid var(--line-strong);
-}
-.pinctl button{
-  font:inherit; font-size:.85rem; padding:.35rem .8rem; border-radius:3px; cursor:pointer;
-  background:var(--pine); color:var(--paper); border:1px solid var(--pine);
-}
-.pinctl button.pinctl--off{background:var(--surface); color:var(--ink-mid); border-color:var(--line-strong)}
-.pinctl__msg{font-size:.8rem; color:var(--pine)}
-.stop--pinned .stop__body::before{background:var(--pine); border-color:var(--pine)}
-
 .autoplan:empty{display:none}
 .autoplan{
   margin-top:1.6rem; padding:1.1rem 1.2rem; border-radius:4px;
@@ -285,7 +242,6 @@ body[data-edit="1"] #editPlan{background:var(--pine); border-color:var(--pine); 
 .autoplan li{font-size:.92rem; color:var(--ink); padding-left:1.1em; position:relative}
 .autoplan li::before{content:"→"; position:absolute; left:0; color:var(--pine)}
 .autoplan p{font-size:.88rem; color:var(--ink-mid); margin-top:.5rem}
-
 /* ── 卡片网格 ────────────────────────────────────────────── */
 .grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .card{
@@ -298,14 +254,12 @@ body[data-edit="1"] #editPlan{background:var(--pine); border-color:var(--pine); 
 .card ul li{color:var(--ink-mid); font-size:.92rem; padding-left:1em; position:relative}
 .card ul li::before{content:"·"; position:absolute; left:.15em; color:var(--ginger)}
 .card__tags{display:flex; flex-wrap:wrap; gap:.3rem}
-
 /* 景点 / 美食卡的资料行 */
 .rows{margin-top:auto; padding-top:.8rem; border-top:1px solid var(--line); display:grid; gap:.28rem}
 .rows div{display:flex; justify-content:space-between; align-items:baseline; gap:1rem}
 .rows dt{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); flex:none}
 .rows dd{margin:0; font-size:.82rem; text-align:right; color:var(--ink-mid); font-variant-numeric:tabular-nums}
 .rows dd.hi{color:var(--ginger); font-weight:600}
-
 /* 分组小标题 */
 .subhead{
   display:flex; align-items:center; gap:.9rem; margin:2.6rem 0 1.1rem;
@@ -314,7 +268,6 @@ body[data-edit="1"] #editPlan{background:var(--pine); border-color:var(--pine); 
 }
 .subhead::after{content:""; flex:1; height:1px; background:var(--line)}
 .subhead:first-of-type{margin-top:0}
-
 /* 二选一决策块 */
 .pick{
   background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--ginger);
@@ -325,8 +278,6 @@ body[data-edit="1"] #editPlan{background:var(--pine); border-color:var(--pine); 
 .pick__a{font-size:.94rem; color:var(--ink-mid)}
 .pick__a b{color:var(--ink)}
 @media (max-width:560px){ .pick__row{grid-template-columns:1fr; gap:.15rem} }
-
-/* ── 投票 ────────────────────────────────────────────────── */
 .votebtn{
   width:100%; margin-top:.85rem; padding:.55rem .6rem;
   font-family:var(--sans); font-size:.85rem; cursor:pointer;
@@ -334,139 +285,18 @@ body[data-edit="1"] #editPlan{background:var(--pine); border-color:var(--pine); 
   background:transparent; color:var(--ink-soft);
   border:1px solid var(--line-strong); border-radius:3px;
 }
-.votebtn:hover{border-color:var(--ginger); color:var(--ginger)}
-.votebtn[aria-pressed="true"]{background:var(--ginger); border-color:var(--ginger); color:var(--paper); font-weight:600}
-.votebtn__mark{font-size:.95em; line-height:1}
-
-.vote-card{background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:1.3rem 1.4rem}
-.vote-card + .vote-card{margin-top:1rem}
-.vote-card h3{font-size:1.1rem; margin-bottom:.35rem}
-.vote-card > p{color:var(--ink-mid); font-size:.9rem}
-.vote-step{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:1.5rem; height:1.5rem; border-radius:50%; flex:none;
-  background:var(--ginger); color:var(--paper);
-  font-family:var(--mono); font-size:.78rem; font-weight:600;
-}
-.vote-card__head{display:flex; align-items:center; gap:.7rem; margin-bottom:.6rem}
-
-/* 谁在投票 —— 大按钮，不必打字 */
 .who{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1rem}
-.who button{
-  cursor:pointer; font-family:var(--sans); font-size:1.05rem;
-  padding:.75rem 1.3rem; border-radius:99px; min-width:5.5rem;
-  border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink);
-}
-.who button:hover{border-color:var(--ginger); color:var(--ginger)}
-.who button[aria-pressed="true"]{
-  background:var(--ginger); border-color:var(--ginger); color:var(--paper); font-weight:600;
-}
-
-/* 第一次进来先问你是谁 */
 .gate{
   position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
   padding:1.2rem; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(6px);
 }
-.gate[hidden]{display:none}
-.gate__box{
-  width:min(34rem,100%); max-height:90vh; overflow-y:auto;
-  background:var(--surface); border:1px solid var(--line); border-radius:6px;
-  box-shadow:var(--shadow); padding:1.8rem 1.7rem;
-}
-.gate__box h2{font-size:clamp(1.4rem,4vw,1.9rem); margin:.35rem 0 .6rem}
-.gate__box > p{color:var(--ink-mid); font-size:.95rem}
-.gate__msg{margin-top:.9rem; font-size:.92rem; color:var(--ginger); min-height:1.3em}
-.gate__fine{margin-top:1rem; font-size:.82rem; color:var(--ink-soft)}
-.gate .who{margin-top:1.2rem}
-
-/* 我是谁 */
 .me{display:flex; flex-wrap:wrap; align-items:center; gap:.7rem 1rem; margin-top:.6rem}
-.me__who{
-  display:inline-flex; align-items:center; padding:.6rem 1.4rem; border-radius:99px;
-  background:var(--ginger); color:var(--paper); font-size:1.15rem; font-weight:600;
-}
-.me__note{font-size:.88rem; color:var(--ink-soft)}
-
-/* 大颗的选项列 —— 老人家也点得到 */
 .picklist{display:grid; gap:.5rem; margin-top:1rem}
-.picklist__h{font-size:1rem; margin-top:1.8rem}
-.picklist button{
-  display:flex; align-items:flex-start; gap:.9rem; width:100%; text-align:left;
-  cursor:pointer; font-family:var(--sans); font-size:1.02rem; color:var(--ink);
-  padding:.85rem 1rem; border-radius:4px;
-  border:1.5px solid var(--line-strong); background:var(--surface);
-}
-.picklist__main{display:flex; flex-direction:column; gap:.2rem; min-width:0}
-.picklist__desc{font-size:.86rem; color:var(--ink-mid); font-weight:400; line-height:1.5}
-.picklist__meta{font-family:var(--mono); font-size:.72rem; color:var(--ink-soft)}
-.picklist button:hover{border-color:var(--ginger)}
-.picklist button[aria-pressed="true"]{
-  border-color:var(--ginger); background:var(--ginger-soft); font-weight:600;
-}
-.picklist__box{
-  flex:none; width:1.7rem; height:1.7rem; border-radius:4px;
-  border:1.5px solid var(--line-strong); background:var(--paper);
-  display:flex; align-items:center; justify-content:center;
-  font-size:1.05rem; line-height:1; color:transparent;
-}
-.picklist button[aria-pressed="true"] .picklist__box{
-  background:var(--ginger); border-color:var(--ginger); color:var(--paper);
-}
-.picklist__n{margin-left:auto; flex:none; font-family:var(--mono); font-size:.75rem; color:var(--ink-soft)}
-#pickCard[data-locked="1"] .picklist,
-#pickCard[data-locked="1"] .picklist__h{opacity:.4; pointer-events:none}
-.saved{margin-top:1rem; font-size:.95rem; color:var(--pine); min-height:1.4em}
-
-.field{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; align-items:center}
-.field input[type=text], .field textarea{
-  flex:1; min-width:180px; padding:.55rem .8rem; font:inherit; font-size:.92rem;
-  background:var(--paper); color:var(--ink);
-  border:1px solid var(--line-strong); border-radius:3px;
-}
-.field textarea{min-height:5.5rem; resize:vertical; font-family:var(--mono); font-size:.78rem; line-height:1.6}
-.hint{font-size:.82rem; color:var(--ink-soft); margin-top:.6rem}
-.hint b{color:var(--ginger)}
-
-.tally{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.9rem}
-.voter{
-  display:inline-flex; align-items:center; gap:.45em; padding:.25em .7em;
-  background:var(--pine-soft); color:var(--pine); border-radius:99px; font-size:.83rem;
-}
-.voter button{
-  background:none; border:none; color:inherit; cursor:pointer; opacity:.6;
-  font-size:1.05em; line-height:1; padding:0;
-}
-.voter button:hover{opacity:1}
-
-.res{display:grid; gap:.55rem; margin-top:1rem}
-.res__row{display:grid; grid-template-columns:1.7rem minmax(0,1fr) 2.6rem; gap:.5rem .8rem; align-items:center}
-.res__rank{font-family:var(--mono); font-size:.78rem; color:var(--ink-soft); text-align:right}
-.res__name{font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
-.res__n{font-family:var(--mono); font-size:.8rem; color:var(--ink-mid); text-align:right; font-variant-numeric:tabular-nums}
-.res__bar{grid-column:2/4; height:5px; background:var(--surface-2); border-radius:99px; overflow:hidden; margin-top:-.3rem}
-.res__bar i{display:block; height:100%; background:var(--pine); border-radius:99px}
-.res__row--top .res__name{font-weight:600}
-.res__row--top .res__rank{color:var(--ginger)}
-.res__row--top + .res__bar i{background:var(--ginger)}
-.res__empty{color:var(--ink-soft); font-size:.9rem; padding:.6rem 0}
-.res__cols{display:grid; gap:1.6rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:.4rem}
-.res__cols h4{font-size:.95rem; margin-bottom:.2rem}
-
-/* 连线状态 */
 .conn{
   display:flex; align-items:center; gap:.6rem; margin-bottom:1rem;
   padding:.6rem 1rem; border-radius:3px; font-size:.88rem;
   background:var(--surface-2); color:var(--ink-mid); border:1px solid var(--line);
 }
-.conn__dot{width:.5rem; height:.5rem; border-radius:50%; background:var(--ink-soft); flex:none}
-.conn[data-state="live"]{background:var(--pine-soft); color:var(--pine); border-color:transparent}
-.conn[data-state="live"] .conn__dot{background:var(--pine)}
-.conn[data-state="live"] .conn__dot{animation:pulse 2.4s ease-in-out infinite}
-.conn[data-state="error"]{background:var(--ginger-soft); color:var(--ginger); border-color:transparent}
-.conn[data-state="error"] .conn__dot{background:var(--ginger)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-body[data-mode="live"] .offline-only{display:none}
-
 /* ── 表格 ────────────────────────────────────────────────── */
 .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:4px; background:var(--surface)}
 table{border-collapse:collapse; width:100%; min-width:440px; font-size:.92rem}
@@ -475,7 +305,6 @@ th{font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; text-transfor
 td:last-child,th:last-child{text-align:right; font-variant-numeric:tabular-nums; font-family:var(--mono)}
 tbody tr:last-child td{border-bottom:none}
 tfoot td{font-weight:600; background:var(--surface-2); border-top:1px solid var(--line-strong)}
-
 /* ── 打包清单 ────────────────────────────────────────────── */
 .pack{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .pack__col{background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:1.1rem 1.2rem}
@@ -496,7 +325,6 @@ tfoot td{font-weight:600; background:var(--surface-2); border-top:1px solid var(
 .pack__bar progress::-webkit-progress-bar{background:var(--surface-2)}
 .pack__bar progress::-webkit-progress-value{background:var(--pine)}
 .pack__bar progress::-moz-progress-bar{background:var(--pine)}
-
 /* ── 折叠 ────────────────────────────────────────────────── */
 details{background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:0 1.2rem}
 details + details{margin-top:.7rem}
@@ -509,13 +337,11 @@ summary::before{content:"+"; font-family:var(--mono); color:var(--ginger); font-
 details[open] summary::before{content:"–"}
 details[open] summary{border-bottom:1px solid var(--line)}
 .details__body{padding:1rem 0 1.2rem; color:var(--ink-mid); font-size:.94rem; display:flex; flex-direction:column; gap:.7rem}
-
 /* ── 页脚 ────────────────────────────────────────────────── */
 footer{border-top:1px solid var(--line-strong); padding:2.5rem 0 3.5rem; color:var(--ink-soft); font-size:.85rem}
 footer h4{font-size:.95rem; color:var(--ink); margin-bottom:.6rem}
 footer li{margin-bottom:.25rem}
 footer a{color:var(--ink-mid)}
-
 @media (max-width:620px){
   .stop{grid-template-columns:3.6rem 1fr; column-gap:.9rem}
   .stop__time{font-size:.8rem; padding-top:1.4rem}
@@ -529,17 +355,6 @@ html{scroll-behavior:smooth}
 </style>
 </head>
 <body>
-
-<div class="gate" id="gate" hidden>
-  <div class="gate__box" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
-    <span class="eyebrow">文冬三天两夜 · 家庭投票</span>
-    <h2 id="gateTitle">请问你是谁？</h2>
-    <p>点一下你的名字。这台手机以后就代表你，别人不能用你的名字投票，你也不用每次重认。</p>
-    <div class="who" id="gateWho"></div>
-    <p class="gate__msg" id="gateMsg" aria-live="polite"></p>
-    <p class="gate__fine">选错了？在「家庭投票」那页最下面可以看到怎么改。</p>
-  </div>
-</div>
 
 <header class="hero">
   <canvas id="ridge" aria-hidden="true"></canvas>
@@ -566,7 +381,6 @@ html{scroll-behavior:smooth}
       <li><button type="button" role="tab" data-tab="plan">三日行程</button></li>
       <li><button type="button" role="tab" data-tab="spots">景点</button></li>
       <li><button type="button" role="tab" data-tab="food">吃什么</button></li>
-      <li><button type="button" role="tab" data-tab="vote">家庭投票</button></li>
       <li><button type="button" role="tab" data-tab="notes">备忘</button></li>
     </ul>
   </div>
@@ -631,28 +445,21 @@ html{scroll-behavior:smooth}
 <section id="planhead">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">三日行程 · 整份照票生出来</span>
-      <h2>这三天不是写死的，是照票排出来的</h2>
-      <p>下面每一个景点、每一顿饭，都是拿<a href="#vote" data-goto="vote">家庭投票</a>的票数即时排出来的 —— 票最高的先占时段，
-        再照营业时间、车程和适合的时段填进去（瀑布只排上午、夜市只排周六晚、要预约的会标出来）。
-        只有出发、入住、退房、回程这几站是固定的，因为那不是喜好。有人投票或改主意，这三天立刻重排。</p>
+      <span class="eyebrow">三日行程 · 已排定</span>
+      <h2>三天两夜，怎么走比较不累</h2>
+      <p>排这三天只有一个原则：<b>一天只放一个大行程</b>。七个人里三个是小孩、两位是长辈，
+        上午出城下午再进山那种排法，第二天就走不动了。每天下面都写了备案，天气不好或临时改主意可以直接换。</p>
     </div>
 
-    <div class="conn" id="planConn" data-state="local">
-      <span class="conn__dot" aria-hidden="true"></span>
-      <span id="planConnMsg">投票还没开始，先照原定行程走。</span>
+    <div class="callout">
+      <b>出发前要先办的两件事。</b>
+      ① <b>文冬休闲农场的票要提前 24 小时买</b> —— 第二天上午整个行程靠它，8月29日之前一定要在官网订好（7 人约 RM306）。
+      ② 第三天中午的<b>龙凤酒楼先打电话订位</b>，并确认国庆日营业。
     </div>
-
-    <div class="adminbar" id="adminBar" hidden>
-      <button class="btn" type="button" id="editPlan">调整行程</button>
-      <span class="adminbar__note" id="adminNote">只有你看得到这个。可以把任何一站换到别天、别的时间。</span>
-    </div>
-
-    <div class="autoplan" id="customPlan"></div>
 
     <div class="daytabs" role="tablist" aria-label="选择哪一天">
       <button type="button" role="tab" data-day="d1"><span class="num">D1</span>老街 · 夜市</button>
-      <button type="button" role="tab" data-day="d2"><span class="num">D2</span>瀑布 · 山里</button>
+      <button type="button" role="tab" data-day="d2"><span class="num">D2</span>农场 · 老街</button>
       <button type="button" role="tab" data-day="d3"><span class="num">D3</span>手信 · 回程</button>
     </div>
   </div>
@@ -663,12 +470,98 @@ html{scroll-behavior:smooth}
     <div class="day" data-day="d1">
       <div class="day__head">
         <span class="day__n">DAY 1</span>
-        <h3 data-daytitle>—</h3>
+        <h3>白天在老街慢慢走，晚上进夜市</h3>
         <span class="day__date">8月29日 · 周六</span>
       </div>
-      <p class="day__note" data-daynote></p>
-      <div class="tl" data-tl></div>
-      <div class="autoplan" data-autoplan="d1"></div>
+      <p class="day__note">
+        今天唯一不能错过的是 <b>Bentong Walk 周六夜市</b> —— 它一周只开这一晚，刚好落在入住当天，而且就在住的地方旁边。
+        所以白天不排远的地方：进城、吃、逛老街，回去让小孩睡个午觉，把精神留给晚上那两三个钟头。
+      </p>
+
+      <div class="tl">
+        <div class="stop">
+          <div class="stop__time">08:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>吉隆坡出发 · 加叻大道 E8</h4><span class="tag">约 70 km</span></div>
+            <p class="stop__desc">走 Karak Highway（E8），不塞车约 1 小时至 1 小时 15 分。国庆长周末的周六早上是出城高峰，过了 Gombak 收费站的隧道路段容易塞，早点走差别很大。出发前确认 Touch &apos;n Go / RFID 有余额。</p>
+            <div class="stop__facts"><span>过路费 约 RM10</span><span>油钱 约 RM40 来回</span><span>途中有 R&amp;R Genting Sempah</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">10:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>早午餐 · 开记云吞面</h4><span class="tag tag--ginger">11:00 收摊</span></div>
+            <p class="stop__desc">四十年的手打面老店，在 Jalan Chui Yin 上。<b>卖完就收，十一点前一定要到</b> —— 三天里也只有今天这个时间刚好卡得进去，所以第一顿就吃它。周三休息，这趟不受影响。</p>
+            <div class="stop__facts"><span>57 Jalan Chui Yin</span><span>周四–周二 06:45–11:00</span><span>只收现金</span><span>约 45 分钟</span></div>
+            <a class="stop__link" href="https://www.google.com/maps/search/?api=1&amp;query=Kai+Kee+Wan+Tan+Mee+Jalan+Chui+Yin+Bentong" target="_blank" rel="noopener">地图 →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">11:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>文冬老街散步 · 壁画 · 咖啡乌</h4><span class="tag">步行</span></div>
+            <p class="stop__desc">Jalan Chui Yin 到 Jalan Loke Yew 一带的战前店屋和壁画，慢慢走一个多钟头刚好。走累了随时坐进老茶室，来一份<b>炭烤咖椰面包配咖啡乌</b>。这一趟也顺便把晚上夜市的地形先摸一遍。</p>
+            <div class="stop__facts"><span>免费</span><span>步行范围</span><span>遮阳帽</span><span>约 1.5 小时</span></div>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">13:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>打电话给管家 Shanthi</h4><span class="tag tag--ginger">别忘了</span></div>
+            <p class="stop__desc">房东要求<b>抵达前至少 30 分钟</b>通知，Shanthi 才会到场交钥匙。老街逛到一半就先打，免得到了门口在楼下等。</p>
+            <div class="stop__facts"><span>010-9381 901</span><span>提前 ≥30 分钟</span></div>
+            <a class="stop__link" href="tel:+60109381901">拨打 Shanthi →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">14:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>入住 27 Ah Peng · 午休</h4><span class="tag tag--pine">放行李</span></div>
+            <p class="stop__desc">Suki Bakery 正对面、Lauu Bookstore 楼上。下午最热的两三个小时留给休息：小孩午睡，大人开冷气喝民宿的咖啡。<b>晚上要在夜市走两三个钟头，这段一定要留。</b></p>
+            <div class="stop__facts"><span>入住 14:00</span><span>Shanthi 现场接待</span><span>备好订单编号</span></div>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">18:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>Bentong Walk 周六夜市</h4><span class="tag tag--ginger">一周只有这一晚</span></div>
+            <p class="stop__desc">在 Jalan Chui Yin、文冬大巴刹旁边。摊子以吃的和手作为主，也有文冬姜、蜂蜜、酱油这些土产 —— <b>先看不急着买，第三天再回来采买</b>，免得整晚提着走。走路过去，省掉抢车位的麻烦。</p>
+            <div class="stop__facts"><span>免费</span><span>每周六 18:00–23:00</span><span>现金为主</span><span>人多，牵好小孩</span></div>
+            <div class="callout"><b>早点去。</b>七点后人潮和热门摊位的队伍会明显变长，受欢迎的小吃会卖完。先绕一圈看完全场再回头买，比边走边买省钱也省手。</div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">19:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>夜市小吃当晚餐</h4><span class="tag">不用另找餐厅</span></div>
+            <p class="stop__desc">炒粿条、炒粉、糯米饭、肉骨茶、炸油条、酿豆腐、树灰面 —— 七个人各买各的，一路吃过去就饱了。<b>第一晚不安排餐厅，就是为了这个。</b></p>
+            <div class="stop__facts"><span>现金</span><span>人均 约 RM10–15</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">21:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回民宿</h4></div>
+            <p class="stop__desc">走路回去，洗澡休息。明天要去农场，先把帽子、防晒、换洗衣服和小孩的水壶准备好放门口。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="autoplan">
+        <h4>今天的备案</h4>
+        <ul>
+          <li>开记卖完了 —— 同一条街的<b>烧鸭面</b>、<b>溏记海南茶餐室</b>、<b>广西酿料</b>都在走路范围内</li>
+          <li>下大雨 —— <b>文冬文化馆</b>有冷气，半小时刚好，顶掉老街那一段</li>
+        </ul>
+        <p>夜市没有备案，因为它一周只有这一场。今晚下雨也照去，摊子多数有棚。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -679,12 +572,99 @@ html{scroll-behavior:smooth}
     <div class="day" data-day="d2">
       <div class="day__head">
         <span class="day__n">DAY 2</span>
-        <h3 data-daytitle>—</h3>
+        <h3>上午整个给农场，下午留在老街</h3>
         <span class="day__date">8月30日 · 周日</span>
       </div>
-      <p class="day__note" data-daynote></p>
-      <div class="tl" data-tl></div>
-      <div class="autoplan" data-autoplan="d2"></div>
+      <p class="day__note">
+        三天里唯一装得下大行程的一天，整个给<b>文冬休闲农场</b> —— 三个小孩喂动物能玩上大半天，比看风景管用得多。
+        下午刻意<b>不出城</b>：农场回来大家都累了，再开二十几分钟山路去珍德拜，晚上会撑不住。
+      </p>
+
+      <div class="tl">
+        <div class="stop">
+          <div class="stop__time">08:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>文冬大巴刹早餐</h4><span class="tag">走路 5 分钟</span></div>
+            <p class="stop__desc">本地人的早市，里头的熟食区粿条汤、炒粉、糕点都有，七个人各吃各的最方便。<b>顺便把姜、豆腐卜、蜂蜜的行情看一遍</b>，第三天买手信时心里有底。中午后就收，只有早上来得及。</p>
+            <div class="stop__facts"><span>免费</span><span>清晨最旺</span><span>现金</span><span>约 1 小时</span></div>
+            <a class="stop__link" href="https://www.google.com/maps/search/?api=1&amp;query=Pasar+Besar+Bentong+Pahang" target="_blank" rel="noopener">地图 →</a>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">09:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>The Bentong Farm 文冬休闲农场</h4><span class="tag tag--ginger">今天的重点 · 需提前订票</span></div>
+            <p class="stop__desc">27 英亩的休闲农场，在 Jalan Chamang 上。羊驼、迷你马、粉红水牛等上百种温驯动物可以近距离喂食触摸，园内还有瀑布、水塘和果树区。<b>三个小孩会玩上大半天</b>，大人也有树荫和座位可以歇。</p>
+            <div class="stop__facts"><span>成人 RM48 · 孩童 RM38</span><span>7 人约 RM306</span><span>车程 约 15 分钟</span><span>约 3.5 小时</span></div>
+            <div class="callout"><b>门票要提前 24 小时买。</b>官网订，<b>8月29日之前一定要订好</b> —— 现场买不到，今天想去昨天就得订。长周末更要早订。</div>
+            <a class="stop__link" href="https://thebentongfarm.my/" target="_blank" rel="noopener">官方购票 →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">13:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回市区午餐 · 广西酿料</h4><span class="tag">招牌</span></div>
+            <p class="stop__desc">文冬驰名十几年的酿料面档，十几二十种任选 —— 酿豆腐、酿苦瓜、酿辣椒、酿茄子，配面或配饭。<b>自己夹、按件算，小孩挑料的过程也玩得开心</b>，比正正经经点一桌菜快得多。</p>
+            <div class="stop__facts"><span>老街茶餐室内</span><span>人均 约 RM10–15</span><span>约 45 分钟</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">14:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回民宿冲凉 · 午休</h4><span class="tag tag--pine">重要</span></div>
+            <p class="stop__desc">农场一早上下来一身汗和草屑，回去冲掉换干衣服。<b>三个小孩今天没睡过，这一觉不能省</b>，不然晚餐就闹了。大人也趁这时候把明天要带走的东西先收一收。</p>
+            <div class="stop__facts"><span>最热的时段留给休息</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">16:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>老街下午 · 榴莲 · 姜茶姜撞奶</h4><span class="tag tag--ginger">8月应季</span></div>
+            <p class="stop__desc">八月正是猫山王旺季，市区路边摊就有，<b>按公斤计价，先问价再开果</b>，一家分两三粒刚好。吃完再回民宿 —— 榴莲味道重，别带上车也别带进屋。旁边茶室的<b>姜撞奶</b>小孩比较能接受，山上傍晚凉，喝一杯正好。</p>
+            <div class="stop__facts"><span>榴莲 按公斤 · 先问价</span><span>姜茶 约 RM3–6</span><span>步行范围</span><span>约 1.5 小时</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">18:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>晚餐 · 客家菜 · 算盘子 · 梅菜扣肉</h4><span class="tag">最在地的一顿</span></div>
+            <p class="stop__desc">文冬客家人多，算盘子、梅菜扣肉、猪肠粉这些家常菜市区好几家餐室都点得到，<b>是最能代表这里日常味道的一顿</b>。老人小孩都吃得惯，不辣不重口。</p>
+            <div class="stop__facts"><span>市区多家</span><span>人均 约 RM15–25</span><span>约 1 小时</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">19:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>陈雪糕店</h4><span class="tag tag--ginger">只有今晚吃得到</span></div>
+            <p class="stop__desc">老街几十年的古早味雪糕，一人一支当收尾。<b>它周一休息</b>，所以只有今晚这个时间点吃得到 —— 中午那段 12:00–16:00 我们在农场，刚好卡在晚上这一场。</p>
+            <div class="stop__facts"><span>18:00–22:00</span><span>周一休</span><span>几块钱一支</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">20:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回民宿 · 先收行李</h4></div>
+            <p class="stop__desc">明天要退房又要买手信，今晚先把大件的收好。检查插座上的充电器、浴室里的衣服 —— 这两处最常漏。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="autoplan">
+        <h4>今天的备案</h4>
+        <ul>
+          <li>想玩水不想去农场 —— 换<b>查茫瀑布</b>（车程 15 分钟、成人 RM3，同一条 Jalan Chamang）。<b>必须排上午</b>，16:30 关、16:00 停止入场；石头长苔极滑，三个小孩要一大人跟一个</li>
+          <li>想上山避暑 —— 下午换<b>珍德拜 Janda Baik</b> 或<b>山中茶原</b>，车程 20–25 分钟，下雨也不影响，但傍晚起雾要 18:00 前下山</li>
+          <li>家里孩子大一点 —— <b>Bilut Extreme Park</b> 有 ATV、射箭、飞索，要先打电话问档期</li>
+        </ul>
+        <p>三个都是整块的行程，换的话是<b>整个上午或整个下午一起换</b>，不要跟农场挤在同一天。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -695,15 +675,95 @@ html{scroll-behavior:smooth}
     <div class="day" data-day="d3">
       <div class="day__head">
         <span class="day__n">DAY 3</span>
-        <h3 data-daytitle>—</h3>
+        <h3>买齐手信，赶在塞车前上路</h3>
         <span class="day__date">8月31日 · 周一 · 国庆日</span>
       </div>
-      <p class="day__note" data-daynote></p>
-      <div class="tl" data-tl></div>
-      <div class="autoplan" data-autoplan="d3"></div>
+      <p class="day__note">
+        今天是国庆日，也是长周末最后一天 —— 整个雪隆的车都会在同一个下午从彭亨方向回吉隆坡。
+        <b>目标是下午 2 点半前上高速</b>，或者干脆吃了晚餐等到 8 点后再走，中间那一段最堵。
+        另外今天<b>溏记和陈雪糕都休息</b>，早餐和下午茶不要排在那两家。
+      </p>
+
+      <div class="tl">
+        <div class="stop">
+          <div class="stop__time">08:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>老街早餐 · 烧鸭面</h4><span class="tag">卖完为止</span></div>
+            <p class="stop__desc">老街的古早味之一，烧鸭皮脆肉嫩，配汤面或干捞都行。同样是早市时段的生意，晚了就没有。<b>今天周一，溏记休息</b>，所以早餐换到这里。趁小孩还在吃，把行李搬上车。</p>
+            <div class="stop__facts"><span>老街 / 巴刹一带</span><span>早市 · 卖完为止</span><span>现金</span><span>约 40 分钟</span></div>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">09:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>采买手信 · 文冬姜 · 豆腐卜</h4><span class="tag tag--ginger">这里的招牌</span></div>
+            <p class="stop__desc">文冬姜纤维细、辣味厚，是全马有名的。<b>鲜姜味重要密封好；姜粉最耐放；姜糖轻便，分送同事最方便。</b>豆腐卜轻又不怕压，是最好带的一样。第一晚在夜市看过行情，今天直接下手不用再比价。</p>
+            <div class="stop__facts"><span>老街土产店 / 大巴刹</span><span>姜 RM10–30 一份</span><span>豆腐卜 一包几块钱</span><span>约 1 小时</span></div>
+            <div class="callout"><b>鲜姜和榴莲要分开包。</b>味道重，用密封袋加纸箱，车上开一点窗。</div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">10:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>大巴刹 · 蜂蜜 · 酱油 · 咖啡粉 · 山货</h4><span class="tag">最后一趟</span></div>
+            <p class="stop__desc">本地小厂做的蜂蜜和酱油、老咖啡店自己炒的咖啡粉，都在这一带。大巴刹的蔬果和果干比城里便宜也新鲜，<b>回程路上就能开来给小孩吃</b>。玻璃瓶装的记得用衣服包好再放行李。</p>
+            <div class="stop__facts"><span>蜂蜜 / 酱油 RM15–40</span><span>清晨最齐</span><span>现金</span><span>约 45 分钟</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">11:45</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>退房</h4><span class="tag tag--pine">12:00 前</span></div>
+            <p class="stop__desc">检查插座上的充电器、浴室里的泳衣、冰箱里的东西 —— 这三处最常漏。钥匙交还给 Shanthi，按房东指示处理。退房前给 Paula &amp; Richard 发个讯息道谢，顺手的事。</p>
+            <div class="stop__facts"><span>退房 12:00</span><span>Shanthi 010-9381 901</span></div>
+            <a class="stop__link" href="tel:+60109381901">拨打 Shanthi →</a>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">12:15</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>文冬文化馆 · 老街古庙</h4><span class="tag">室内 · 半小时</span></div>
+            <p class="stop__desc">讲文冬的锡矿、种姜和华人南来的历史，室内有冷气，<b>刚退房又还没到上路时间，这半小时刚好</b>。就在老街上不绕路，附近老庙顺路一起看。天热或下雨的话这一站特别值得。</p>
+            <div class="stop__facts"><span>免费或小额乐捐</span><span>室内 · 有冷气</span><span>约 40 分钟</span></div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <div class="stop__time">13:00</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>上路前吃饱 · 龙凤酒楼</h4><span class="tag tag--ginger">先订位</span></div>
+            <p class="stop__desc">七个人正正经经开一桌客家菜和小炒再上路，路上塞车也不怕饿。<b>长周末生意好，出发前先打电话订位，顺便确认国庆日营业。</b>吃完直接上车，不要再回老街。</p>
+            <div class="stop__facts"><span>中餐 · 圆桌</span><span>人均 约 RM25–40</span><span>约 1 小时</span><span>建议先订位</span></div>
+          </div>
+        </div>
+
+        <div class="stop stop--key">
+          <div class="stop__time">14:30</div>
+          <div class="stop__body">
+            <div class="stop__title"><h4>回程 · 加叻大道</h4><span class="tag tag--ginger">避开高峰</span></div>
+            <p class="stop__desc">国庆日下午往吉隆坡方向是全年最堵的时段之一，文冬出口到文良港一带尤其慢。<b>2 点半前上路，或等 8 点后再走。</b>车上备水和小孩的零食，堵起来会好过很多。</p>
+            <div class="stop__facts"><span>约 1 小时（不塞时）</span><span>Touch &apos;n Go 备足余额</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="autoplan">
+        <h4>今天的备案</h4>
+        <ul>
+          <li>想多留一会 —— <b>文冬温泉</b>在往珍德拜的旧路上，车程 15–20 分钟，公共池免费。但泡完就拖到下午，<b>会正面撞上回程高峰</b></li>
+          <li>还想买榴莲 —— <b>劳勿 Raub</b> 往北 30 分钟，八月旺季果园都开着；同样要接受晚出发</li>
+          <li>不想开桌吃 —— 老街<b>广西酿料</b>或<b>咖啡乌配咖椰面包</b>，二十分钟解决，能更早上路</li>
+        </ul>
+        <p>今天所有备案的代价都一样：<b>晚一小时上路，可能多塞两小时。</b>拿不定主意就照原定的走。</p>
+      </div>
     </div>
   </div>
 </section>
+
 </div><!-- /tab-plan -->
 
 <!-- 景点全览 ───────────────────────────────────────────── -->
@@ -718,7 +778,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">走路就到 · 老街范围</h3>
     <div class="grid">
-      <div class="card" data-vote="s1" data-vote-name="文冬老街 · 壁画">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--pine">免费</span><span class="tag">步行</span></div>
         <h4>文冬老街 · 壁画</h4>
         <p>Jalan Chui Yin 到 Jalan Loke Yew 一带的战前店屋，墙上有描绘旧时文冬生活的壁画，老咖啡店和土产店都夹在中间。慢慢走一个多钟头，随时能坐下喝杯咖啡乌。</p>
@@ -728,7 +788,7 @@ html{scroll-behavior:smooth}
           <div><dt>适合</dt><dd>全家 · 随时</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s2" data-vote-name="Bentong Walk 周六夜市">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">一周一次</span><span class="tag">周六晚</span></div>
         <h4>Bentong Walk 周六夜市</h4>
         <p>一周只开周六晚这一场，在 Jalan Chui Yin、大巴刹旁边。炒粿条、糯米饭、肉骨茶、炸油条、酿豆腐，加上文冬姜、蜂蜜、酱油等土产摊。人多，牵好小孩。</p>
@@ -738,7 +798,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>步行 5 分钟</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s3" data-vote-name="文冬大巴刹 Pasar Besar">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--pine">免费</span><span class="tag">早上</span></div>
         <h4>文冬大巴刹 Pasar Besar</h4>
         <p>本地人的早市，卖鲜姜、豆腐卜、蔬果和熟食。早上最热闹，也是看清楚手信行情、比价再买的地方。里头的熟食摊可以直接解决早餐。</p>
@@ -748,7 +808,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>步行 5 分钟</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s4" data-vote-name="文冬文化馆 · 老街古庙">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--pine">室内</span><span class="tag">雨天 OK</span></div>
         <h4>文冬文化馆 · 老街古庙</h4>
         <p>小型地方文化馆，讲文冬的锡矿、种姜和华人南来的历史，室内有冷气，突然下雨可以躲进去。附近的老庙也在步行范围内，顺路一起看。</p>
@@ -762,7 +822,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">自然 · 玩水</h3>
     <div class="grid">
-      <div class="card" data-vote="s5" data-vote-name="查茫瀑布 Chamang Waterfall">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">行程内</span><span class="tag">玩水</span></div>
         <h4>查茫瀑布 Chamang Waterfall</h4>
         <p>宽阔石滩瀑布，水量大。下游水浅处适合小孩踩水，上游主瀑区水流很急。石头长苔极滑，穿溯溪鞋比拖鞋安全得多。10 月至 1 月雨季常关闭。</p>
@@ -772,7 +832,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>约 15 分钟</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s6" data-vote-name="文冬温泉 Kolam Air Panas">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--pine">免费选项</span><span class="tag">泡脚</span></div>
         <h4>文冬温泉 Kolam Air Panas</h4>
         <p>在往珍德拜的旧路上。公共池免费但水面常有青苔，介意的话去隔壁 Erya by Suria 的付费池，维护得好很多。傍晚天气凉时泡最舒服。</p>
@@ -782,7 +842,7 @@ html{scroll-behavior:smooth}
           <div><dt>适合</dt><dd>大人 · 傍晚</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s7" data-vote-name="珍德拜 Janda Baik">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--pine">避暑</span><span class="tag">雨天 OK</span></div>
         <h4>珍德拜 Janda Baik</h4>
         <p>往吉隆坡方向的山谷小镇，气温比市区低几度。溪流、林间咖啡馆和茶园式餐厅集中在这里。下午下雨也不影响，坐在屋檐下看雨反而是这里的卖点。</p>
@@ -792,7 +852,7 @@ html{scroll-behavior:smooth}
           <div><dt>注意</dt><dd>山路弯多 · 傍晚起雾</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s8" data-vote-name="Bilut Extreme Park">
+      <div class="card">
         <div class="card__tags"><span class="tag">户外</span><span class="tag">大孩子</span></div>
         <h4>Bilut Extreme Park</h4>
         <p>ATV 越野车、射箭、飞索一类的户外活动园区。小小孩玩不了，但家里较大的孩子会很尽兴。项目分开收费，长周末最好先打电话问档期。</p>
@@ -806,7 +866,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">亲子农场 · 咖啡厅</h3>
     <div class="grid">
-      <div class="card" data-vote="s9" data-vote-name="The Bentong Farm 文冬休闲农场">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">小孩首选</span><span class="tag">需预订</span></div>
         <h4>The Bentong Farm 文冬休闲农场</h4>
         <p>27 英亩的休闲农场，在 Jalan Chamang 上、去瀑布的同一条路。羊驼、迷你马、粉红水牛等上百种温驯动物可以近距离喂食触摸，园内还有瀑布、水塘和果树区。三个小孩会玩上大半天。</p>
@@ -816,7 +876,7 @@ html{scroll-behavior:smooth}
           <div><dt>车程</dt><dd>约 15 分钟 · 顺路瀑布</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s12" data-vote-name="Pineyard 山上咖啡厅">
+      <div class="card">
         <div class="card__tags"><span class="tag">咖啡厅</span><span class="tag">半日</span></div>
         <h4>Pineyard 山上咖啡厅</h4>
         <p>开在山坡上的网红咖啡厅，做 brunch，视野开阔适合拍照。带小孩的话可以当作瀑布或农场之后的休息站，吹冷气吃点甜的再回市区。</p>
@@ -830,7 +890,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">应季 · 八月才有</h3>
     <div class="grid">
-      <div class="card" data-vote="s13" data-vote-name="劳勿 Raub 榴莲园">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">8月旺季</span><span class="tag">大人项目</span></div>
         <h4>劳勿 Raub 榴莲园</h4>
         <p>往北约 30 分钟。八月正是猫山王旺季，果园可以现场吃到刚落地的果，路边摊也一路都是。按公斤计价，先问价再开果。吃完再上路——多数车行和民宿都不欢迎榴莲上车。</p>
@@ -840,7 +900,7 @@ html{scroll-behavior:smooth}
           <div><dt>付款</dt><dd>现金为主</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="s14" data-vote-name="姜园 · 土产工坊">
+      <div class="card">
         <div class="card__tags"><span class="tag">土产</span><span class="tag">顺路</span></div>
         <h4>姜园 · 土产工坊</h4>
         <p>文冬姜是这里的招牌农产，市区外有姜园和加工姜粉、姜茶的小工坊，部分开放参观和试喝。不一定每家都接待散客，去之前先打电话问。</p>
@@ -892,7 +952,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">早餐 · 卖完就收</h3>
     <div class="grid">
-      <div class="card" data-vote="f1" data-vote-name="开记云吞面">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">行程内</span><span class="tag">周三休</span></div>
         <h4>开记云吞面</h4>
         <p>四十年老店，面条每天清晨现做手打，爽口带碱水香。卖完就收摊，十一点前一定要到。</p>
@@ -902,7 +962,7 @@ html{scroll-behavior:smooth}
           <div><dt>休息</dt><dd class="hi">周三</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f2" data-vote-name="溏记海南茶餐室">
+      <div class="card">
         <div class="card__tags"><span class="tag">茶室</span><span class="tag">周一休</span></div>
         <h4>溏记海南茶餐室</h4>
         <p>老派海南茶室，咖啡乌配炭烤面包夹咖椰牛油，也有海南式的简餐。开到下午，是老街上时间最宽松的一家。</p>
@@ -912,7 +972,7 @@ html{scroll-behavior:smooth}
           <div><dt>休息</dt><dd class="hi">周一</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f3" data-vote-name="烧鸭面">
+      <div class="card">
         <div class="card__tags"><span class="tag">古早味</span></div>
         <h4>烧鸭面</h4>
         <p>老街的古早味之一，烧鸭皮脆肉嫩，配汤面或干捞都行。同样是早市时段的生意，晚了就没有。</p>
@@ -922,7 +982,7 @@ html{scroll-behavior:smooth}
           <div><dt>付款</dt><dd>现金</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f4" data-vote-name="大巴刹熟食摊">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--pine">最本地</span></div>
         <h4>大巴刹熟食摊</h4>
         <p>市场里的熟食区，粿条汤、炒粉、糕点都有，七个人各吃各的最方便，价钱也最实在。第二天早餐就排在这里。</p>
@@ -936,7 +996,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">正餐 · 一家七口坐得下</h3>
     <div class="grid">
-      <div class="card" data-vote="f5" data-vote-name="广西酿料">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">招牌</span></div>
         <h4>广西酿料</h4>
         <p>文冬驰名十几年的酿料面档，十几二十种酿料任选——酿豆腐、酿苦瓜、酿辣椒、酿茄子，配面或配饭。挑料的过程小孩也玩得开心。</p>
@@ -946,7 +1006,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM10–15</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f6" data-vote-name="龙凤酒楼 Loong Foong">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--pine">开桌</span><span class="tag">建议订位</span></div>
         <h4>龙凤酒楼 Loong Foong</h4>
         <p>本地中式酒楼，适合七个人正正经经开一桌吃客家菜和小炒。长周末生意好，最好先打电话订位。</p>
@@ -956,7 +1016,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM25–40</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f7" data-vote-name="Tom Yam King 冬炎">
+      <div class="card">
         <div class="card__tags"><span class="tag">辣</span><span class="tag">车程 10 分钟</span></div>
         <h4>Tom Yam King 冬炎</h4>
         <p>开在 Kampung Perting 民宅区里的泰式餐厅，冬炎汤是招牌，酸辣够劲。小孩吃辣不行的话可以另点清汤和炒饭。</p>
@@ -966,7 +1026,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM20–30</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f8" data-vote-name="客家菜 · 算盘子 · 梅菜扣肉">
+      <div class="card">
         <div class="card__tags"><span class="tag">客家</span></div>
         <h4>客家菜 · 算盘子 · 梅菜扣肉</h4>
         <p>文冬客家人多，算盘子、梅菜扣肉、猪肠粉这些家常菜在市区好几家餐室都点得到，是最能代表这里日常味道的一顿。</p>
@@ -976,7 +1036,7 @@ html{scroll-behavior:smooth}
           <div><dt>人均</dt><dd>约 RM15–25</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f9" data-vote-name="山中茶原 · 珍德拜">
+      <div class="card">
         <div class="card__tags"><span class="tag">山里</span><span class="tag">下午茶</span></div>
         <h4>山中茶原 · 珍德拜</h4>
         <p>林间的茶菜餐厅，木造装潢，坐得开阔，第二天下午的行程就落在这里。喝茶配点心，山里凉快，下雨也不影响。</p>
@@ -986,7 +1046,7 @@ html{scroll-behavior:smooth}
           <div><dt>建议</dt><dd>先订位</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f10" data-vote-name="夜市小吃当晚餐">
+      <div class="card">
         <div class="card__tags"><span class="tag">宵夜</span><span class="tag">周六</span></div>
         <h4>夜市小吃当晚餐</h4>
         <p>炒粿条、炒粉、糯米饭、肉骨茶、炸油条、酿豆腐、树灰面——第一天晚上根本不用另外找餐厅，一路吃过去就饱了。</p>
@@ -1000,7 +1060,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">甜品 · 小孩会一直问的</h3>
     <div class="grid">
-      <div class="card" data-vote="f11" data-vote-name="陈雪糕店">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">古早味</span><span class="tag">周一休</span></div>
         <h4>陈雪糕店</h4>
         <p>老街的古早味雪糕店，几十年的口味，天热走累了一人一支正好。注意它中间有休息时段，别扑空。</p>
@@ -1010,7 +1070,7 @@ html{scroll-behavior:smooth}
           <div><dt>价钱</dt><dd>几块钱一支</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f12" data-vote-name="姜茶 · 姜撞奶">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">在地</span></div>
         <h4>姜茶 · 姜撞奶</h4>
         <p>用文冬姜煮的热姜茶，辣味厚但回甘。山上早晚凉，喝一杯很舒服；姜撞奶小孩比较接受。</p>
@@ -1020,7 +1080,7 @@ html{scroll-behavior:smooth}
           <div><dt>价钱</dt><dd>约 RM3–6</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f13" data-vote-name="咖啡乌 · 咖椰烤面包">
+      <div class="card">
         <div class="card__tags"><span class="tag">下午茶</span></div>
         <h4>咖啡乌 · 咖椰烤面包</h4>
         <p>炭火烤的白面包夹咖椰和厚牛油，配半生熟蛋和一杯浓咖啡乌。三天里至少要吃一次的组合。</p>
@@ -1030,7 +1090,7 @@ html{scroll-behavior:smooth}
           <div><dt>价钱</dt><dd>约 RM5–8</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f14" data-vote-name="榴莲 · 猫山王">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">8月应季</span></div>
         <h4>榴莲 · 猫山王</h4>
         <p>八月正当季，市区和往劳勿方向的路边摊都有。按公斤计价，先问价再开果。老人小孩吃不多，一家分两三粒刚好。</p>
@@ -1044,7 +1104,7 @@ html{scroll-behavior:smooth}
 
     <h3 class="subhead">手信 · 带回去的</h3>
     <div class="grid">
-      <div class="card" data-vote="f15" data-vote-name="文冬姜 · 姜粉 · 姜糖 · 姜茶包">
+      <div class="card">
         <div class="card__tags"><span class="tag tag--ginger">招牌</span></div>
         <h4>文冬姜 · 姜粉 · 姜糖 · 姜茶包</h4>
         <p>这里的姜纤维细、辣味厚，是全马有名的。鲜姜味重要密封好；姜粉最耐放；姜糖轻便，分送同事最方便。</p>
@@ -1053,7 +1113,7 @@ html{scroll-behavior:smooth}
           <div><dt>价位</dt><dd>RM10–30 一份</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f16" data-vote-name="豆腐卜">
+      <div class="card">
         <div class="card__tags"><span class="tag">本地特产</span></div>
         <h4>豆腐卜</h4>
         <p>出名的炸豆腐泡，外皮酥、里头是空的，煮汤或蘸辣椒酱都行。轻、不怕压，是最好带的一样。</p>
@@ -1062,7 +1122,7 @@ html{scroll-behavior:smooth}
           <div><dt>价位</dt><dd>一包几块钱</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f17" data-vote-name="本地蜂蜜 · 酱油 · 咖啡粉">
+      <div class="card">
         <div class="card__tags"><span class="tag">土产</span></div>
         <h4>本地蜂蜜 · 酱油 · 咖啡粉</h4>
         <p>夜市和土产店都有本地小厂做的蜂蜜和酱油，咖啡粉是老咖啡店自己炒的。玻璃瓶装的记得用衣服包好再放行李。</p>
@@ -1071,7 +1131,7 @@ html{scroll-behavior:smooth}
           <div><dt>价位</dt><dd>RM15–40</dd></div>
         </dl>
       </div>
-      <div class="card" data-vote="f18" data-vote-name="山货 · 果干 · 蔬果">
+      <div class="card">
         <div class="card__tags"><span class="tag">顺路</span></div>
         <h4>山货 · 果干 · 蔬果</h4>
         <p>大巴刹的本地蔬果比城里便宜也新鲜，果干和腌制品适合当零食。回程当天早上买，路上就能开来吃。</p>
@@ -1087,112 +1147,7 @@ html{scroll-behavior:smooth}
 <!-- 投票 ───────────────────────────────────────────────── -->
 </div><!-- /tab-food -->
 
-<div class="tabpanel" id="tab-vote" role="tabpanel" aria-label="家庭投票">
-<section id="vote">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">家庭投票 · 7 人</span>
-      <h2>两步就好：先点名字，再点喜欢的</h2>
-      <p>不必吵，也不必打字。第一次开这页会问你是谁，之后<b>这台手机就一直是你</b> —— 一人一票，别人用不了你的名字。
-        下面想去、想吃的<b>点一下</b>就选上，再点一下取消；不用按送出，会自动存。
-        全家的排名和<a href="#plan" data-goto="plan">三日行程</a>会立刻跟着变。</p>
-    </div>
 
-    <div class="conn" id="conn" data-state="local">
-      <span class="conn__dot" aria-hidden="true"></span>
-      <span id="connMsg">正在连线…</span>
-    </div>
-
-    <div class="vote-card">
-      <div class="vote-card__head"><span class="vote-step">1</span><h3>你是谁</h3></div>
-      <div class="me" id="meBox">
-        <span class="me__who" id="meWho">—</span>
-        <span class="me__note">这台手机认得你，不用每次重选。</span>
-      </div>
-      <p class="hint" id="voteStatus">还没认名字。</p>
-    </div>
-
-    <div class="vote-card" id="pickCard" data-locked="1">
-      <div class="vote-card__head"><span class="vote-step">2</span><h3>想去哪里？想吃什么？</h3></div>
-      <p id="pickLead">先点上面的名字，这里才会打开。</p>
-
-      <div class="picklist" id="pickSpots" aria-label="想去的地方"></div>
-      <h4 class="picklist__h">想吃的东西</h4>
-      <div class="picklist" id="pickFood" aria-label="想吃的东西"></div>
-
-      <p class="saved" id="savedMsg" aria-live="polite"></p>
-      <p class="hint">投完随时能改主意 —— 再点一下就取消，票数马上跟着变。</p>
-    </div>
-
-    <div class="vote-card" id="addCard" data-locked="1">
-      <div class="vote-card__head"><span class="vote-step">+</span><h3>想去的不在上面？自己加</h3></div>
-      <p>加进去全家都看得到，也都能投。写清楚一点，别人才知道那是什么。</p>
-      <div class="field">
-        <input type="text" id="addName" placeholder="名字，例如：文冬吊桥" maxlength="30" autocomplete="off">
-      </div>
-      <div class="field">
-        <input type="text" id="addDesc" placeholder="一句话介绍（可以不写）" maxlength="80" autocomplete="off">
-      </div>
-      <div class="field">
-        <button class="btn btn--solid" type="button" id="addSpot">加成「想去的地方」</button>
-        <button class="btn btn--solid" type="button" id="addFood">加成「想吃的东西」</button>
-      </div>
-      <p class="hint" id="addMsg">你自己加的，之后可以再拿掉。</p>
-    </div>
-
-    <div class="vote-card offline-only">
-      <div class="vote-card__head"><span class="vote-step">·</span><h3>分享给家人</h3></div>
-      <p>把你的选择变成一段代码，丢到家族群里。别人贴进下面第 3 步就能合并。</p>
-      <div class="field">
-        <button class="btn btn--solid" type="button" id="voteWa">用 WhatsApp 发给家人</button>
-        <button class="btn" type="button" id="voteCopy">复制代码</button>
-      </div>
-      <p class="hint">代码长这样：<b>BT26.xxxxx</b>，整段一起复制才有效。</p>
-    </div>
-
-    <div class="vote-card offline-only">
-      <div class="vote-card__head"><span class="vote-step">·</span><h3>汇总大家的代码</h3></div>
-      <p>把家人传来的代码贴进来，<b>一行一个</b>，多少个都行。</p>
-      <div class="field">
-        <textarea id="votePaste" placeholder="BT26.xxxxx&#10;BT26.yyyyy" spellcheck="false"></textarea>
-      </div>
-      <div class="field">
-        <button class="btn btn--solid" type="button" id="voteMerge">合并进来</button>
-        <button class="btn" type="button" id="voteClear">清空投票箱</button>
-      </div>
-      <p class="hint" id="voteMergeMsg"></p>
-    </div>
-
-    <div class="vote-card">
-      <div class="vote-card__head"><span class="vote-step" id="stepLast">3</span><h3>全家排名</h3></div>
-      <div class="tally" id="voteTally"></div>
-      <p id="voteSummary">投票箱还是空的。先点上面的名字，再选几样。</p>
-      <div class="res__cols">
-        <div>
-          <h4>最想去的地方</h4>
-          <div class="res" id="resSpots"><p class="res__empty">还没有票。</p></div>
-        </div>
-        <div>
-          <h4>最想吃的东西</h4>
-          <div class="res" id="resFood"><p class="res__empty">还没有票。</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vote-card">
-      <div class="vote-card__head"><span class="vote-step">?</span><h3>点错名字了怎么办</h3></div>
-      <p>名字是绑这台手机的，认了就换不了 —— 这样才防得住有人乱用别人的名字投票。
-        真的认错了，按下面这个钮把这台手机的身分清掉，重开一次页面就能重认；
-        但<b>你原本那个名字已经被占住</b>，要请管理员（爸爸）到 Firebase 后台把那一笔删掉，才放得出来。</p>
-      <div class="field">
-        <button class="btn" type="button" id="resetMe">清掉这台手机的身分</button>
-      </div>
-      <p class="hint" id="resetMsg"></p>
-    </div>
-  </div>
-</section>
-
-</div><!-- /tab-vote -->
 
 <!-- 实用 ───────────────────────────────────────────────── -->
 <div class="tabpanel" id="tab-notes" role="tabpanel" aria-label="备忘">
@@ -1360,7 +1315,6 @@ html{scroll-behavior:smooth}
   </div>
 </footer>
 
-<script src="firebase-config.js"></script>
 <script>
 (function(){
   "use strict";
@@ -1479,7 +1433,7 @@ html{scroll-behavior:smooth}
     /* 版块 id → 属于哪个分页 */
     var SEC2TAB = {
       stay:"stay", planhead:"plan", plan:"plan", d1:"plan", d2:"plan", d3:"plan",
-      spots:"spots", food:"food", vote:"vote", info:"notes", pack:"notes", budget:"notes"
+      spots:"spots", food:"food", info:"notes", pack:"notes", budget:"notes"
     };
 
     function show(name, secId){
@@ -1532,1024 +1486,6 @@ html{scroll-behavior:smooth}
     show(SEC2TAB[start] || "stay", SEC2TAB[start] ? start : null);
 
     return { show:show, showDay:showDay, sec2tab:SEC2TAB };
-  })();
-
-  /* ── 家庭投票 ─────────────────────────────────────── */
-  (function(){
-    var cards = Array.prototype.slice.call(document.querySelectorAll(".card[data-vote]"));
-    var box   = document.getElementById("voteTally");
-    if (!cards.length || !box) return;
-
-    var K_DEV   = "bentong2026.device";
-    var K_NAME  = "bentong2026.myname";
-    var K_POOL  = "bentong2026.pool";
-    var K_ITEMS = "bentong2026.items";
-
-    var FAMILY = ["爷爷", "嫲嫲", "爸爸", "妈妈", "霆轩", "霆言", "霆正"];
-
-    /* 这台装置的固定身分。localStorage 会一直留着，不像 session 会跑掉。 */
-    var deviceId = load(K_DEV, null);
-    if (!deviceId) {
-      deviceId = "d" + Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
-      save(K_DEV, deviceId);
-    }
-
-    /* 内建的景点 / 美食 —— 名称和一句话介绍都从卡片上抓 */
-    var BUILTIN = {}, DESC = {};
-    cards.forEach(function(c){
-      var id = c.getAttribute("data-vote");
-      BUILTIN[id] = c.getAttribute("data-vote-name");
-      var p = c.querySelector("p");
-      if (p) {
-        var t = (p.textContent || "").trim();
-        var cut = t.indexOf("。");
-        if (cut > 8 && cut < 70) t = t.slice(0, cut + 1);
-        DESC[id] = t.length > 74 ? t.slice(0, 72) + "…" : t;
-      }
-    });
-
-    var K_PINS  = "bentong2026.pins";
-    var ADMIN_NAME = "爸爸";               // 谁排行程
-
-    var custom = load(K_ITEMS, {});        // id -> {name, desc, kind, by}
-    var pins    = load(K_PINS, {});        // id -> {day, time, off}
-    var adminDev = null;                   // 认领了「排行程」的那台装置
-    var isAdmin  = false;
-    var editing  = false;
-    var names  = {};                       // id -> 名称（内建 + 自己加的）
-    var who    = load(K_NAME, "") || "";
-    var mine   = [];
-    var pool   = load(K_POOL, {});         // voterId -> {name, picks}
-    var remote = null;
-
-    function rebuildNames(){
-      names = {};
-      Object.keys(BUILTIN).forEach(function(id){ names[id] = BUILTIN[id]; });
-      Object.keys(custom).forEach(function(id){
-        if (!custom[id].hidden) names[id] = custom[id].name;
-      });
-    }
-    rebuildNames();
-
-    function load(k, dflt){
-      try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? dflt : v; }
-      catch (e) { return dflt; }
-    }
-    function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
-
-    /* Firebase 的 key 不能有 . $ # [ ] / */
-    function idOf(name){ return "n_" + name.replace(/[.$#\[\]\/\s]/g, "_").slice(0, 20); }
-    function newItemId(kind){ return kind + Math.random().toString(36).slice(2, 9); }
-
-    /* base64url ↔ UTF-8，中文名字也能编码 */
-    function enc(str){
-      var b = btoa(String.fromCharCode.apply(null, new TextEncoder().encode(str)));
-      return b.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-    }
-    function dec(s){
-      var b = s.replace(/-/g, "+").replace(/_/g, "/");
-      while (b.length % 4) b += "=";
-      var bin = atob(b), arr = new Uint8Array(bin.length);
-      for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
-      return new TextDecoder().decode(arr);
-    }
-    function myCode(){ return "BT26." + enc(JSON.stringify([who || "家人", mine])); }
-
-    /* ── 第一次进来：问你是谁，然后把名字绑在这台装置上 ── */
-    var gate     = document.getElementById("gate");
-    var gateWho  = document.getElementById("gateWho");
-    var gateMsg  = document.getElementById("gateMsg");
-    var pickCard = document.getElementById("pickCard");
-    var addCard  = document.getElementById("addCard");
-
-    var ready;   // 连线（或确定连不上）之后才让人认名字
-    FAMILY.forEach(function(n){
-      var b = document.createElement("button");
-      b.type = "button";
-      b.textContent = n;
-      b.addEventListener("click", function(){ claim(n, b); });
-      gateWho.appendChild(b);
-    });
-
-    function claim(name, btn){
-      gateMsg.textContent = "正在认…";
-      Array.prototype.slice.call(gateWho.children).forEach(function(x){ x.disabled = true; });
-
-      ready.then(function(){
-        var rec = pool[idOf(name)];
-        if (rec && rec.device && rec.device !== deviceId) {
-          gateMsg.textContent = "「" + name + "」已经在另一台手机上用了。点你自己的名字。";
-          Array.prototype.slice.call(gateWho.children).forEach(function(x){ x.disabled = false; });
-          return;
-        }
-        return putVote(name, rec ? (rec.picks || []) : []).then(function(){
-          who = name; save(K_NAME, who);
-          mine = rec ? (rec.picks || []).slice() : [];
-          gate.hidden = true;
-          paintMe(); paintPicks(); status(); claimAdmin();
-        }, function(){
-          gateMsg.textContent = "「" + name + "」已经有人用了，或者网络不通。换一个，或等一下再试。";
-          Array.prototype.slice.call(gateWho.children).forEach(function(x){ x.disabled = false; });
-        });
-      });
-    }
-
-    function paintMe(){
-      document.getElementById("meWho").textContent = who || "—";
-      pickCard.setAttribute("data-locked", who ? "0" : "1");
-      addCard.setAttribute("data-locked", who ? "0" : "1");
-      document.getElementById("pickLead").textContent = who
-        ? "好了，" + who + "。想去、想吃的点一下就选上，再点一下取消。不用按送出，会自动存 —— 之后改主意也随时能改。"
-        : "先认一下名字，这里才会打开。";
-    }
-
-    document.getElementById("resetMe").addEventListener("click", function(){
-      try { localStorage.removeItem(K_NAME); localStorage.removeItem(K_DEV); } catch (e) {}
-      document.getElementById("resetMsg").textContent = "清好了。重新整理这一页，就会再问一次你是谁。";
-    });
-
-    /* ── 大颗的选项列 ────────────────────────────────── */
-    var cardBtns = {};   // id -> [卡片上的按钮]
-    var listBtns = {};   // id -> [清单上的按钮]
-
-    function buildList(hostId, prefix){
-      var host = document.getElementById(hostId);
-      host.innerHTML = "";
-      Object.keys(names).filter(function(i){ return i.charAt(0) === prefix; }).forEach(function(id){
-        var b = document.createElement("button");
-        b.type = "button";
-        b.setAttribute("aria-pressed", "false");
-        b.innerHTML = '<span class="picklist__box" aria-hidden="true">✓</span>' +
-                      '<span class="picklist__main">' +
-                        '<span class="picklist__label"></span>' +
-                        '<span class="picklist__desc"></span>' +
-                        '<span class="picklist__meta"></span>' +
-                      '</span>';
-        b.querySelector(".picklist__label").textContent = names[id];
-
-        var d = custom[id] ? (custom[id].desc || "") : (DESC[id] || "");
-        var de = b.querySelector(".picklist__desc");
-        if (d) de.textContent = d; else de.remove();
-
-        host.appendChild(b);
-        b.addEventListener("click", function(){ toggle(id); });
-        (listBtns[id] = listBtns[id] || []).push(b);
-      });
-    }
-
-    function rebuildLists(){
-      listBtns = {};
-      buildList("pickSpots", "s");
-      buildList("pickFood",  "f");
-      paintPicks();
-      tally();
-    }
-
-    /* 景点 / 美食分页里，每张卡片底部的按钮 */
-    cards.forEach(function(card){
-      var id = card.getAttribute("data-vote");
-      var isFood = id.charAt(0) === "f";
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "votebtn";
-      b.setAttribute("aria-pressed", "false");
-      b.innerHTML = '<span class="votebtn__mark" aria-hidden="true"></span><span class="votebtn__txt"></span>';
-      b.addEventListener("click", function(){
-        if (!who) { TABS.show("vote"); return; }
-        toggle(id);
-      });
-      card.appendChild(b);
-      cardBtns[id] = [b];
-      b.setAttribute("data-food", isFood ? "1" : "0");
-    });
-
-    function toggle(id){
-      if (!who) { TABS.show("vote"); return; }
-      var i = mine.indexOf(id);
-      if (i > -1) mine.splice(i, 1); else mine.push(id);
-      paintPicks(); status(); autosave();
-    }
-
-    function eachBtn(id, fn){
-      (cardBtns[id] || []).forEach(fn);
-      (listBtns[id] || []).forEach(fn);
-    }
-
-    function paintPicks(){
-      Object.keys(names).forEach(function(id){
-        var on = mine.indexOf(id) > -1;
-        var isFood = id.charAt(0) === "f";
-        eachBtn(id, function(b){
-          b.setAttribute("aria-pressed", on ? "true" : "false");
-          var mark = b.querySelector(".votebtn__mark");
-          if (mark) {
-            mark.textContent = on ? "✓" : "＋";
-            b.querySelector(".votebtn__txt").textContent =
-              on ? (isFood ? "我想吃" : "我想去") : (isFood ? "想吃" : "想去");
-          }
-        });
-      });
-    }
-
-    /* 每点一下就自动存，不用按送出；改主意也是同一条路 */
-    var saveTimer = null;
-    function autosave(){
-      var msg = document.getElementById("savedMsg");
-      msg.textContent = "存起来中…";
-      clearTimeout(saveTimer);
-      saveTimer = setTimeout(function(){
-        putVote(who, mine).then(function(){
-          saveTimer = null;
-          msg.textContent = "已经帮你存起来了 —— " + who + " 选了 " + mine.length + " 项。想改随时再点。";
-        }, function(){
-          saveTimer = null;
-          msg.textContent = "存不进去，可能是网络。等一下再点一次。";
-        });
-      }, 500);
-    }
-
-    function status(){
-      var s = mine.filter(function(i){ return i.charAt(0) === "s"; }).length;
-      var f = mine.length - s;
-      document.getElementById("voteStatus").textContent = !who
-        ? "还没认名字。"
-        : who + " —— 选了 " + s + " 个地方、" + f + " 样吃的。改主意随时再点一次。";
-    }
-
-    /* ── 自己加景点 / 美食 ───────────────────────────── */
-    function addItem(kind){
-      if (!who) return;
-      var nameEl = document.getElementById("addName");
-      var descEl = document.getElementById("addDesc");
-      var msg    = document.getElementById("addMsg");
-      var nm = (nameEl.value || "").trim();
-      if (!nm) { nameEl.focus(); msg.textContent = "先写上名字。"; return; }
-
-      var id = newItemId(kind);
-      var rec = {
-        name: nm.slice(0, 30),
-        desc: (descEl.value || "").trim().slice(0, 80),
-        kind: kind,
-        by: who.slice(0, 16),
-        device: deviceId,
-        at: Date.now()
-      };
-      msg.textContent = "加进去中…";
-      putItem(id, rec).then(function(){
-        nameEl.value = ""; descEl.value = "";
-        msg.textContent = "加好了：" + rec.name + "。全家都看得到，也都能投。";
-        if (mine.indexOf(id) < 0) { mine.push(id); autosave(); }
-        paintPicks(); status();
-      }, function(){
-        msg.textContent = "加不进去，可能是网络。等一下再试。";
-      });
-    }
-    document.getElementById("addSpot").addEventListener("click", function(){ addItem("s"); });
-    document.getElementById("addFood").addEventListener("click", function(){ addItem("f"); });
-
-    /* ── 资料层：接得上 Firebase 就用它，否则退回本机 ── */
-    function putVote(name, picks){
-      if (remote) return remote.putVote(idOf(name), name, picks, deviceId);
-      pool[idOf(name)] = { name: name, picks: picks.slice(), device: deviceId };
-      save(K_POOL, pool); tally();
-      return Promise.resolve();
-    }
-    function putItem(id, rec){
-      custom[id] = rec; save(K_ITEMS, custom);
-      rebuildNames(); rebuildLists();
-      if (remote) return remote.putItem(id, rec);
-      return Promise.resolve();
-    }
-    function putPin(id, day, time){
-      var rec = { day: day, time: time, device: deviceId, at: Date.now() };
-      pins[id] = rec; save(K_PINS, pins);
-      tally();
-      if (remote) return remote.putPin(id, rec);
-      return Promise.resolve();
-    }
-    /* 不删纪录，改成 off —— 没有 auth 的话删除挡不住别人 */
-    function clearPin(id){
-      var rec = { off: true, device: deviceId, at: Date.now() };
-      pins[id] = rec; save(K_PINS, pins);
-      tally();
-      if (remote) return remote.putPin(id, rec);
-      return Promise.resolve();
-    }
-
-    function claimAdmin(){
-      if (!remote || adminDev || who !== ADMIN_NAME) return;
-      remote.claimAdmin(deviceId, who).then(function(){
-        adminDev = deviceId; isAdmin = true; paintAdmin();
-      }, function(){});
-    }
-
-    function paintAdmin(){
-      var bar = document.getElementById("adminBar");
-      if (bar) bar.hidden = !isAdmin;
-      document.body.setAttribute("data-edit", editing ? "1" : "0");
-      var btn = document.getElementById("editPlan");
-      if (btn) btn.textContent = editing ? "排好了，收起来" : "调整行程";
-      var note = document.getElementById("adminNote");
-      if (note) note.textContent = editing
-        ? "每一站下面可以选换到哪一天、几点。钉住的站票再高也挤不掉，取消固定就放回去照票排。"
-        : "只有你看得到这个。可以把任何一站换到别天、别的时间。";
-    }
-
-    (function(){
-      var btn = document.getElementById("editPlan");
-      if (btn) btn.addEventListener("click", function(){ editing = !editing; paintAdmin(); tally(); });
-    })();
-
-    function dropVote(id){
-      if (remote) return Promise.resolve();   // 线上模式不让别人删别人的票
-      delete pool[id]; save(K_POOL, pool); tally();
-      return Promise.resolve();
-    }
-
-    /* 投票箱与排名 */
-    function tally(){
-      var people = Object.keys(pool);
-      box.innerHTML = "";
-      people.forEach(function(id){
-        var v = pool[id];
-        var chip = document.createElement("span");
-        chip.className = "voter";
-        chip.appendChild(document.createTextNode(
-          v.name + " · " + (v.picks || []).length + " 项" + (who && id === idOf(who) ? "（你）" : "")
-        ));
-        if (!remote) {
-          var x = document.createElement("button");
-          x.type = "button"; x.textContent = "×";
-          x.setAttribute("aria-label", "移除 " + v.name + " 的投票");
-          x.addEventListener("click", function(){ dropVote(id); });
-          chip.appendChild(x);
-        }
-        box.appendChild(chip);
-      });
-
-      var total = people.length;
-      document.getElementById("voteSummary").textContent = total
-        ? "已收到 " + total + " 个人的投票（共 7 人）。票数一样的并列，行程就照这个排。"
-        : (remote ? "还没有人投票。你可以当第一个。"
-                  : "投票箱还是空的。先认名字，再选几样。");
-
-      var count = {};
-      people.forEach(function(id){
-        (pool[id].picks || []).forEach(function(p){ if (names[p]) count[p] = (count[p] || 0) + 1; });
-      });
-      render("resSpots", "s", count, total);
-      render("resFood",  "f", count, total);
-      pickCounts(count, total);
-      applyPlan(count, total);
-    }
-
-    function pickCounts(count, total){
-      Object.keys(names).forEach(function(id){
-        var bits = [];
-        if (total) bits.push((count[id] || 0) + "/" + total + " 票");
-        if (custom[id] && custom[id].by) bits.push(custom[id].by + " 加的");
-        eachBtn(id, function(b){
-          var m = b.querySelector(".picklist__meta");
-          if (m) m.textContent = bits.join(" · ");
-        });
-      });
-    }
-
-    function render(elId, prefix, count, total){
-      var host = document.getElementById(elId);
-      var ids = Object.keys(count).filter(function(i){ return i.charAt(0) === prefix; });
-      host.innerHTML = "";
-      if (!ids.length) {
-        host.innerHTML = '<p class="res__empty">还没有票。</p>';
-        return;
-      }
-      ids.sort(function(a, b){ return count[b] - count[a] || names[a].localeCompare(names[b]); });
-      var top = count[ids[0]];
-      ids.forEach(function(id, i){
-        var n = count[id], isTop = n === top;
-        var row = document.createElement("div");
-        row.className = "res__row" + (isTop ? " res__row--top" : "");
-        row.innerHTML =
-          '<span class="res__rank">' + (i + 1) + '</span>' +
-          '<span class="res__name"></span>' +
-          '<span class="res__n">' + n + "/" + total + "</span>";
-        row.querySelector(".res__name").textContent = names[id];
-        var bar = document.createElement("div");
-        bar.className = "res__bar";
-        bar.innerHTML = '<i style="width:' + Math.round(n / total * 100) + '%"></i>';
-        host.appendChild(row); host.appendChild(bar);
-      });
-    }
-
-    /* ── 行程整份照票生出来 ──────────────────────────── */
-    /* 每一项的排程资料：在哪一区、要多久、适合排在哪个时段。
-       base 是没人投票时的预设偏好，投票一进来就由票数主导。 */
-    var META = {
-      s1:  { area:"town",   dur:75,  when:["brunch","am2","pm"],            base:8 },
-      s2:  { area:"town",   dur:150, when:["evening"], days:["d1"],          base:10, note:"一周只开周六这一晚，走路过去就到" },
-      s3:  { area:"town",   dur:60,  when:["bf","am"],                       base:7,  note:"越早越热闹，中午后就收摊" },
-      s4:  { area:"town",   dur:40,  when:["am2","pm","extra"],              base:4,  note:"下雨天可以顶掉半天" },
-      s5:  { area:"chamang",dur:150, when:["am"],                            base:10, note:"16:30 关、16:00 停止入场，所以一定排上午" },
-      s6:  { area:"spring", dur:75,  when:["pm","extra"],                    base:5 },
-      s7:  { area:"janda",  dur:150, when:["pm"],                            base:8,  note:"傍晚起雾，18:00 前要下山" },
-      s8:  { area:"bilut",  dur:180, when:["am","pm"],                       base:3,  book:"要先预约" },
-      s9:  { area:"chamang",dur:150, when:["am","am2","pm"],                 base:6,  book:"门票要提前 24 小时买" },
-      s12: { area:"janda",  dur:90,  when:["am2","pm","tea"],                base:4,  book:"长周末建议先订位" },
-      s13: { area:"raub",   dur:120, when:["extra","pm"],                    base:4 },
-      s14: { area:"out",    dur:60,  when:["shop","am2"],                    base:3,  note:"先打电话确认开放" },
-
-      f1:  { area:"town",   dur:45,  when:["bf","brunch"],                   base:9,  note:"11:00 收档、周三休，要吃就得排早" },
-      f2:  { area:"town",   dur:45,  when:["bf","brunch","lunch","tea"],     base:6,  note:"周一休息" },
-      f3:  { area:"town",   dur:40,  when:["bf","brunch","lunch"],           base:6,  note:"卖完为止" },
-      f4:  { area:"town",   dur:40,  when:["bf"],                            base:5 },
-      f5:  { area:"town",   dur:45,  when:["lunch","dinner"],                base:6 },
-      f6:  { area:"town",   dur:75,  when:["dinner"],                        base:4,  book:"圆桌菜建议先订位" },
-      f7:  { area:"perting",dur:60,  when:["lunch","dinner"],                base:5 },
-      f8:  { area:"town",   dur:60,  when:["lunch","dinner"],                base:6 },
-      f9:  { area:"janda",  dur:75,  when:["tea","lunch"],                   base:5,  book:"建议先订位" },
-      f10: { area:"town",   dur:60,  when:["dinner"], days:["d1"],           base:8,  note:"夜市摊子当晚餐，走路回去就行" },
-      f11: { area:"town",   dur:25,  when:["tea","night"],                   base:5,  note:"周一休息" },
-      f12: { area:"town",   dur:25,  when:["bf","tea"],                      base:6 },
-      f13: { area:"town",   dur:35,  when:["bf","tea"],                      base:8 },
-      f14: { area:"town",   dur:45,  when:["tea","extra"],                   base:6,  note:"吃完再上车，车上味道散不掉" },
-      f15: { area:"town",   dur:60,  when:["shop"],                          base:9 },
-      f16: { area:"town",   dur:20,  when:["shop"],                          base:5 },
-      f17: { area:"town",   dur:30,  when:["shop"],                          base:5 },
-      f18: { area:"town",   dur:30,  when:["shop","bf"],                     base:4 }
-    };
-
-    var AREA = {
-      town:    { label:"老街步行",       travel:"走路 5 分钟" },
-      chamang: { label:"Jalan Chamang", travel:"车程 约 15 分钟" },
-      spring:  { label:"温泉旧路",       travel:"车程 约 15–20 分钟" },
-      janda:   { label:"珍德拜",         travel:"车程 约 20–25 分钟 · 山路弯多" },
-      bilut:   { label:"Bilut",         travel:"车程 约 25–30 分钟" },
-      raub:    { label:"劳勿 Raub",      travel:"车程 约 30 分钟" },
-      perting: { label:"Kampung Perting",travel:"车程 约 10 分钟" },
-      out:     { label:"市区外",         travel:"车程 约 15 分钟" }
-    };
-
-    /* 固定的骨架：这些不是喜好，是行程本身的规矩 */
-    var FIXED = {
-      depart: {
-        t:"08:30", h:"吉隆坡出发 · 加叻大道 E8", tag:"约 70 km",
-        d:"走 Karak Highway（E8），正常 1 小时至 1 小时 15 分。长周末的周六早上是出城高峰，早点走差别很大。出发前确认 Touch 'n Go / RFID 有余额。",
-        f:["过路费 约 RM10", "油钱 约 RM40 来回", "途中有 R&R Genting Sempah"]
-      },
-      call: {
-        t:"13:30", h:"打电话给管家 Shanthi", tag:"别忘了", key:true,
-        d:"房东要求<b>抵达前至少 30 分钟</b>通知，Shanthi 才会到场交钥匙。老街逛到一半就先打，免得到了门口在楼下等。",
-        f:["010-9381 901", "提前 ≥30 分钟"], link:{href:"tel:+60109381901", txt:"拨打 Shanthi →"}
-      },
-      checkin: {
-        t:"14:00", h:"入住 27 Ah Peng · 休息", tag:"放行李",
-        d:"Suki Bakery 正对面、Lauu Bookstore 楼上。下午最热的两三个小时留给休息：小孩午睡，大人开冷气喝民宿的咖啡。晚上还要走两三个钟头，这段一定要留。",
-        f:["入住 14:00", "Shanthi 现场接待", "备好订单编号"]
-      },
-      backD1: { t:"21:00", h:"回民宿", d:"回去洗澡、把明天下水的东西整理出来：泳衣、拖鞋、快干毛巾、装湿衣服的塑料袋。", f:[] },
-      restD2: { t:"14:00", h:"回民宿冲凉 · 午休", d:"回去冲掉一身汗和河水，换干衣服。三个小孩下午没睡过，晚上会撑不住。", f:["最热的时段留给休息"] },
-      backD2: { t:"20:30", h:"回民宿 · 收行李", d:"天黑前要下山，山路没有路灯而且雾大。回去先把行李收一收，明天早上才不会手忙脚乱。", f:["建议 18:00 前离开山区"] },
-      checkout: {
-        t:"11:45", h:"退房", tag:"12:00 前",
-        d:"检查插座上的充电器、浴室里的泳衣、冰箱里的东西——这三处最常漏。钥匙交还给 Shanthi。退房前给 Paula &amp; Richard 发个讯息道谢，顺手的事。",
-        f:["退房 12:00", "Shanthi 010-9381 901"]
-      },
-      home: {
-        t:"14:30", h:"回程 · 加叻大道", tag:"避开高峰", key:true,
-        d:"国庆日下午往吉隆坡方向是全年最堵的时段之一。<b>2 点半前上路</b>，或等 8 点后再走，中间那一段最堵。车上备水和小孩的零食。",
-        f:["约 1 小时（不塞时）", "Touch 'n Go 备足余额"]
-      }
-    };
-
-    /* 每天的骨架：fixed 是固定站，slot 是照票填进去的空位 */
-    var DAYS = [
-      { id:"d1", rows:[
-        { fixed:"depart" },
-        { t:"10:00", slot:"brunch", lead:"进城第一顿" },
-        { t:"11:30", slot:"am2",    lead:"入住前的空档" },
-        { fixed:"call" },
-        { fixed:"checkin" },
-        { t:"18:30", slot:"evening", lead:"晚上的重头戏" },
-        { t:"19:30", slot:"dinner",  lead:"晚餐" },
-        { fixed:"backD1" }
-      ]},
-      { id:"d2", rows:[
-        { t:"08:00", slot:"bf",    lead:"早餐" },
-        { t:"09:30", slot:"am",    lead:"上午的主行程" },
-        { t:"12:30", slot:"lunch", lead:"午餐" },
-        { fixed:"restD2" },
-        { t:"15:30", slot:"pm",    lead:"下午的主行程" },
-        { t:"17:30", slot:"tea",   lead:"下午茶 / 垫肚子" },
-        { t:"19:00", slot:"dinner",lead:"晚餐" },
-        { fixed:"backD2" }
-      ]},
-      { id:"d3", rows:[
-        { t:"08:00", slot:"bf",   lead:"最后一顿早餐" },
-        { t:"09:30", slot:"shop", lead:"采买手信" },
-        { t:"10:30", slot:"shop", lead:"再买一样" },
-        { fixed:"checkout" },
-        { t:"12:15", slot:"extra",lead:"回程前加插一站" },
-        { t:"13:15", slot:"lunch",lead:"上路前吃饱" },
-        { fixed:"home" }
-      ]}
-    ];
-
-    var DAYNOTE = {
-      d1: "白天不排远的地方——先进城吃、逛老街，回去让小孩睡个午觉，把精神留给晚上。",
-      d2: "整天里最耗体力的一天。要下水的排上午（瀑布 16:30 就关），下午留给能坐下来的地方，山区午后常有雷阵雨。",
-      d3: "国庆日最后一天，整个雪隆的车都在同一个下午回吉隆坡。目标是 <b>2 点半前上高速</b>，不然就等 8 点后再走。"
-    };
-
-    var planConn = document.getElementById("planConn");
-    var planMsg  = document.getElementById("planConnMsg");
-
-    /* 从景点卡上抓资料行，当成时间轴的小标签 */
-    function factsOf(id){
-      var card = document.querySelector('.card[data-vote="' + id + '"]');
-      if (!card) return [];
-      return Array.prototype.slice.call(card.querySelectorAll(".rows > div")).map(function(row){
-        var dt = row.querySelector("dt"), dd = row.querySelector("dd");
-        return dt && dd ? dt.textContent + " " + dd.textContent : "";
-      }).filter(Boolean).slice(0, 3);
-    }
-
-    function metaOf(id){
-      if (META[id]) return META[id];
-      /* 家人自己加的：给一组通用预设，照样能被排进行程 */
-      var isFood = id.charAt(0) === "f";
-      return {
-        area: "town",
-        dur: isFood ? 50 : 75,
-        when: isFood ? ["bf","brunch","lunch","tea","dinner"] : ["am","am2","pm","extra","evening"],
-        base: 1,
-        added: true
-      };
-    }
-
-    /* 每天有哪些时段可以放东西 —— 调整时的下拉选单就是照这个出的 */
-    function slotRows(dayId){
-      var day = DAYS.filter(function(d){ return d.id === dayId; })[0];
-      return day ? day.rows.filter(function(r){ return r.slot; }) : [];
-    }
-
-    function applyPlan(count, total){
-      var used = {};
-      var rank = {};
-
-      /* 爸爸钉住的位置优先，占掉的名额票再高也挤不进来 */
-      var pinAt = {};
-      Object.keys(pins).forEach(function(id){
-        var p = pins[id];
-        if (!p || p.off || !p.day || !p.time || !names[id]) return;
-        pinAt[p.day + " " + p.time] = id;
-        used[id] = true;
-      });
-      ["s", "f"].forEach(function(p){
-        var ids = Object.keys(names).filter(function(i){ return i.charAt(0) === p; });
-        ids.sort(function(a, b){ return (count[b] || 0) - (count[a] || 0) || names[a].localeCompare(names[b]); });
-        ids.forEach(function(id, i){ rank[id] = i + 1; });
-      });
-
-      /* 挑出这个时段票最高的一项 */
-      function best(slot, dayId){
-        var pool2 = Object.keys(names).filter(function(id){
-          if (used[id]) return false;
-          var m = metaOf(id);
-          if (m.when.indexOf(slot) < 0) return false;
-          if (m.days && m.days.indexOf(dayId) < 0) return false;
-          return true;
-        });
-        if (!pool2.length) return null;
-        pool2.sort(function(a, b){
-          var va = (count[a] || 0), vb = (count[b] || 0);
-          if (va !== vb) return vb - va;
-          var ma = metaOf(a), mb = metaOf(b);
-          if (ma.base !== mb.base) return mb.base - ma.base;
-          return names[a].localeCompare(names[b]);
-        });
-        return pool2[0];
-      }
-
-      DAYS.forEach(function(day){
-        var host = document.querySelector('.day[data-day="' + day.id + '"] [data-tl]');
-        if (!host) return;
-        host.innerHTML = "";
-        var bySlot = {};
-
-        day.rows.forEach(function(row){
-          if (row.fixed) { host.appendChild(fixedStop(FIXED[row.fixed])); return; }
-          var pinned = pinAt[day.id + " " + row.t];
-          var id = pinned || best(row.slot, day.id);
-          if (!id) { if (editing) host.appendChild(emptySlot(row, day.id)); return; }
-          used[id] = true;
-          if (!bySlot[row.slot]) bySlot[row.slot] = id;
-          host.appendChild(voteStop(id, row, count, total, rank, day.id, !!pinned));
-        });
-
-        /* 标题和前言也照选出来的东西写 */
-        var head = document.querySelector('.day[data-day="' + day.id + '"] [data-daytitle]');
-        var note = document.querySelector('.day[data-day="' + day.id + '"] [data-daynote]');
-        if (head) head.textContent = dayTitle(day.id, bySlot);
-        if (note) {
-          note.innerHTML = DAYNOTE[day.id] +
-            (total ? "　这一天的每一站都是照 <b>" + total + " 个人</b>的票排出来的。"
-                   : "　还没有人投票，先照预设的顺序排。投了票这里就会重排。");
-        }
-      });
-
-      leftovers(count, total, used);
-
-      if (planConn) {
-        planConn.setAttribute("data-state", total ? "live" : "local");
-        planMsg.textContent = total
-          ? "整份行程照 " + total + " 个人的票排出来的。有人再投或改主意，这三天会立刻重排。"
-          : "还没有人投票 —— 先照预设排。第一票进来，行程就会跟着变。";
-      }
-    }
-
-    function dayTitle(dayId, bySlot){
-      var nm = function(k){ return bySlot[k] ? names[bySlot[k]] : null; };
-      if (dayId === "d1") {
-        var ev = nm("evening");
-        return ev ? "白天在老街，晚上去" + ev : "老街的一天";
-      }
-      if (dayId === "d2") {
-        var am = nm("am"), pm = nm("pm");
-        if (am && pm) return "上午" + am + "，下午" + pm;
-        if (am) return "整天从" + am + "开始";
-        return "吃吃走走的一天";
-      }
-      var shop = nm("shop"), ex = nm("extra");
-      if (shop && ex) return "买齐" + shop + "，顺路" + ex + "，赶在塞车前上路";
-      if (shop) return "买齐" + shop + "，赶在塞车前上路";
-      return "买齐手信，赶在塞车前上路";
-    }
-
-    function el(tag, cls, html){
-      var e = document.createElement(tag);
-      if (cls) e.className = cls;
-      if (html != null) e.innerHTML = html;
-      return e;
-    }
-
-    function shell(time, key){
-      var st = el("div", "stop" + (key ? " stop--key" : ""));
-      st.appendChild(el("div", "stop__time", time));
-      var body = el("div", "stop__body");
-      st.appendChild(body);
-      return { st: st, body: body };
-    }
-
-    function fixedStop(f){
-      var s = shell(f.t, f.key);
-      var title = el("div", "stop__title", "<h4>" + f.h + "</h4>" +
-        (f.tag ? '<span class="tag tag--ginger">' + f.tag + "</span>" : ""));
-      s.body.appendChild(title);
-      s.body.appendChild(el("p", "stop__desc", f.d));
-      if (f.f && f.f.length) {
-        s.body.appendChild(el("div", "stop__facts", f.f.map(function(x){ return "<span>" + x + "</span>"; }).join("")));
-      }
-      if (f.link) {
-        var a = el("a", "stop__link", f.link.txt);
-        a.href = f.link.href;
-        s.body.appendChild(a);
-      }
-      return s.st;
-    }
-
-    /* 调整模式下的「换到哪一天、几点」控制列 */
-    function pinCtl(id, curDay, curTime, pinned){
-      var box = el("div", "pinctl");
-
-      var dsel = document.createElement("select");
-      [["d1","第一天 · 8/29 六"], ["d2","第二天 · 8/30 日"], ["d3","第三天 · 8/31 一"]].forEach(function(o){
-        var op = document.createElement("option");
-        op.value = o[0]; op.textContent = o[1];
-        if (o[0] === curDay) op.selected = true;
-        dsel.appendChild(op);
-      });
-
-      var tsel = document.createElement("select");
-      function fillTimes(){
-        tsel.innerHTML = "";
-        slotRows(dsel.value).forEach(function(r){
-          var op = document.createElement("option");
-          op.value = r.t; op.textContent = r.t + "　" + (r.lead || "");
-          if (dsel.value === curDay && r.t === curTime) op.selected = true;
-          tsel.appendChild(op);
-        });
-      }
-      fillTimes();
-      dsel.addEventListener("change", fillTimes);
-
-      var ok = document.createElement("button");
-      ok.type = "button";
-      ok.textContent = "放这里";
-      var msg = el("span", "pinctl__msg", "");
-      ok.addEventListener("click", function(){
-        msg.textContent = "存起来中…";
-        putPin(id, dsel.value, tsel.value).then(function(){
-          msg.textContent = "钉好了。";
-        }, function(){
-          msg.textContent = "存不进去 —— 只有排行程的那台装置改得动。";
-        });
-      });
-
-      box.appendChild(dsel);
-      box.appendChild(tsel);
-      box.appendChild(ok);
-
-      if (pinned) {
-        var off = document.createElement("button");
-        off.type = "button";
-        off.className = "pinctl--off";
-        off.textContent = "取消固定";
-        off.addEventListener("click", function(){
-          msg.textContent = "取消中…";
-          clearPin(id).then(function(){ msg.textContent = "放开了，之后照票排。"; },
-                            function(){ msg.textContent = "改不动。"; });
-        });
-        box.appendChild(off);
-      }
-      box.appendChild(msg);
-      return box;
-    }
-
-    /* 调整模式下，空着的时段也要看得到 */
-    function emptySlot(row, dayId){
-      var s = shell(row.t, false);
-      s.body.appendChild(el("div", "stop__title", "<h4>（这个时段还空着）</h4>" +
-        (row.lead ? '<span class="tag">' + row.lead + "</span>" : "")));
-      s.body.appendChild(el("p", "stop__desc", "没有合适的项目可以填 —— 从下面「有票但塞不下的」挑一个钉进来，或者让大家多投几票。"));
-      return s.st;
-    }
-
-    function voteStop(id, row, count, total, rank, dayId, pinned){
-      var m = metaOf(id);
-      var n = count[id] || 0;
-      var hot = total > 0 && n * 2 >= total && n > 0;
-      var s = shell(row.t, hot);
-      s.st.setAttribute("data-vote", id);
-      if (pinned) s.st.classList.add("stop--pinned");
-      if (total > 0 && n === 0 && !pinned) s.st.classList.add("stop--cold");
-
-      var title = el("div", "stop__title", "<h4></h4>");
-      title.querySelector("h4").textContent = names[id];
-      if (row.lead) title.appendChild(el("span", "tag", row.lead));
-      if (m.book) title.appendChild(el("span", "tag tag--ginger", m.book));
-
-      var badge = el("span", "vbadge " + (!total ? "vbadge--cold" : n === 0 ? "vbadge--cold" : hot ? "vbadge--hot" : "vbadge--warm"));
-      var kind = id.charAt(0) === "f" ? "吃的" : "地方";
-      badge.textContent = !total ? "预设排的 · 还没人投"
-                        : n === 0 ? "没人投 · 投了票就会换掉"
-                        : kind + "第 " + rank[id] + " 名 · " + n + "/" + total + " 票";
-      title.appendChild(badge);
-      var clash = pinned && m.when.indexOf(row.slot) < 0;
-      if (pinned) {
-        var pb = el("span", "vbadge " + (clash ? "vbadge--hot" : "vbadge--warm"), "");
-        pb.textContent = clash ? "爸爸排的 · 时段不合，自己确认" : "爸爸排的 · 固定在这里";
-        title.appendChild(pb);
-      }
-      s.body.appendChild(title);
-
-      var d = custom[id] ? (custom[id].desc || "") : (DESC[id] || "");
-      if (m.note) d = d ? d + "　" + m.note + "。" : m.note + "。";
-      if (custom[id] && custom[id].by) d += "（" + custom[id].by + " 加进来的）";
-      if (d) s.body.appendChild(el("p", "stop__desc", "")).textContent = d;
-
-      var facts = factsOf(id).slice();
-      var ar = AREA[m.area];
-      if (ar && m.area !== "town") facts.push(ar.travel);
-      else if (ar) facts.push(ar.travel);
-      facts.push("约 " + (m.dur >= 60 ? Math.round(m.dur / 60 * 10) / 10 + " 小时" : m.dur + " 分钟"));
-      if (facts.length) {
-        s.body.appendChild(el("div", "stop__facts",
-          facts.map(function(x){ return "<span></span>"; }).join("")));
-        var spans = s.body.querySelectorAll(".stop__facts span");
-        facts.forEach(function(x, i){ if (spans[i]) spans[i].textContent = x; });
-      }
-
-      var a = el("a", "stop__link", "地图 →");
-      a.href = "https://www.google.com/maps/search/?api=1&query=" +
-               encodeURIComponent(names[id].replace(/[·|]/g, " ") + " Bentong Pahang");
-      a.target = "_blank"; a.rel = "noopener";
-      s.body.appendChild(a);
-
-      if (clash) {
-        var w = el("div", "callout", "");
-        w.innerHTML = "<b>这个时段本来不适合。</b>" +
-          (m.note ? m.note + "。" : "这一项平常不排在这个时段。") + "你排的就照你的，出发前自己再确认一次营业时间。";
-        s.body.appendChild(w);
-      }
-      if (isAdmin && editing) s.body.appendChild(pinCtl(id, dayId, row.t, pinned));
-      return s.st;
-    }
-
-    /* 有票但三天都没排进去的 */
-    function leftovers(count, total, used){
-      var cbox = document.getElementById("customPlan");
-      if (!cbox) return;
-      cbox.innerHTML = "";
-      if (!total) return;
-      var rest = Object.keys(names)
-        .filter(function(id){ return !used[id] && (count[id] || 0) > 0; })
-        .sort(function(a, b){ return count[b] - count[a] || names[a].localeCompare(names[b]); })
-        .slice(0, 6);
-      if (!rest.length) return;
-
-      var h = el("h4", null, "");
-      h.textContent = "有票，但三天塞不下的";
-      cbox.appendChild(h);
-      var ul = document.createElement("ul");
-      rest.forEach(function(id){
-        var li = document.createElement("li");
-        var t = document.createElement("span");
-        t.textContent = names[id] + " —— " + count[id] + "/" + total + " 票"
-                      + (custom[id] && custom[id].by ? "（" + custom[id].by + " 加的）" : "");
-        li.appendChild(t);
-        if (isAdmin && editing) li.appendChild(pinCtl(id, "d1", null, false));
-        ul.appendChild(li);
-      });
-      cbox.appendChild(ul);
-      var p = el("p", null, "");
-      p.textContent = "时段撞在一起，或者票数排在别人后面。想换的话，多投它几票就会自己顶上去。";
-      cbox.appendChild(p);
-    }
-    /* ── 代码汇总模式（连不上 Firebase 时才出现）────── */
-    document.getElementById("voteCopy").addEventListener("click", function(){
-      var code = myCode();
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(code).then(
-          function(){ flash("voteStatus", "代码已复制，贴到家族群就行。"); },
-          function(){ prompt("手动复制这段代码：", code); }
-        );
-      } else { prompt("手动复制这段代码：", code); }
-    });
-
-    document.getElementById("voteWa").addEventListener("click", function(){
-      var n = who || "我";
-      var txt = "【文冬三天两夜】" + n + " 的选择来了 🗳️\n" +
-                "选了 " + mine.length + " 项。把下面整段代码贴到行程网页的「汇总」里：\n\n" +
-                myCode() + "\n\n" + location.href;
-      window.open("https://wa.me/?text=" + encodeURIComponent(txt), "_blank", "noopener");
-    });
-
-    document.getElementById("voteMerge").addEventListener("click", function(){
-      var raw = document.getElementById("votePaste").value;
-      var hits = raw.match(/BT26\.[A-Za-z0-9\-_]+/g) || [];
-      var ok = 0, bad = 0;
-      hits.forEach(function(code){
-        try {
-          var v = JSON.parse(dec(code.slice(5)));
-          if (Array.isArray(v) && typeof v[0] === "string" && Array.isArray(v[1])) {
-            pool[idOf(v[0])] = {
-              name: v[0],
-              picks: v[1].filter(function(i){ return names[i]; })
-            };
-            ok++;
-          } else bad++;
-        } catch (e) { bad++; }
-      });
-      save(K_POOL, pool); tally();
-      document.getElementById("votePaste").value = "";
-      document.getElementById("voteMergeMsg").textContent = !hits.length
-        ? "没找到代码。代码要以 BT26. 开头，整段一起贴。"
-        : "合并了 " + ok + " 个人" + (bad ? "，" + bad + " 段读不出来" : "") + "。";
-    });
-
-    document.getElementById("voteClear").addEventListener("click", function(){
-      if (!Object.keys(pool).length) return;
-      pool = {}; save(K_POOL, pool); tally();
-      document.getElementById("voteMergeMsg").textContent = "投票箱已清空。";
-    });
-
-    function flash(id, msg){ document.getElementById(id).textContent = msg; }
-
-    /* ── 连上 Firebase（没设定 / 连不上就静静退回本机模式）── */
-    var conn = document.getElementById("conn");
-    var connMsg = document.getElementById("connMsg");
-
-    function setConn(state, msg){
-      conn.setAttribute("data-state", state);
-      connMsg.textContent = msg;
-      document.body.setAttribute("data-mode", state === "live" ? "live" : "local");
-    }
-
-    function connect(){
-      var cfg = window.FIREBASE_CONFIG;
-      if (!cfg || !cfg.databaseURL || /PASTE_HERE/.test(cfg.databaseURL)) {
-        setConn("local", "代码汇总模式：各自投完，把代码丢进家族群，一个人贴上来汇总。");
-        return Promise.resolve();
-      }
-      setConn("local", "正在连线…");
-
-      var V = "https://www.gstatic.com/firebasejs/10.12.2/";
-      return Promise.all([import(V + "firebase-app.js"), import(V + "firebase-database.js")])
-        .then(function(mods){
-          var app  = mods[0].initializeApp(cfg);
-          var d    = mods[1];
-          var db   = d.getDatabase(app);
-          var trip = "trips/" + (window.TRIP_ID || "bentong2026");
-          var vref = d.ref(db, trip + "/votes");
-          var iref = d.ref(db, trip + "/items");
-          var pref = d.ref(db, trip + "/plan");
-          var aref = d.ref(db, trip + "/admin");
-
-          remote = {
-            putVote: function(id, name, picks, dev){
-              return d.set(d.child(vref, id), {
-                name: name.slice(0, 16),
-                picks: picks.slice(0, 60),
-                device: dev,
-                updatedAt: Date.now()
-              });
-            },
-            putItem: function(id, rec){ return d.set(d.child(iref, id), rec); },
-            putPin:  function(id, rec){ return d.set(d.child(pref, id), rec); },
-            claimAdmin: function(dev, nm){
-              return d.set(aref, { device: dev, name: nm.slice(0, 16), at: Date.now() });
-            }
-          };
-
-          return new Promise(function(resolve){
-            var first = true;
-
-            d.onValue(vref, function(snap){
-              var val = snap.val() || {};
-              pool = {};
-              Object.keys(val).forEach(function(id){
-                var v = val[id];
-                if (v && typeof v.name === "string") {
-                  pool[id] = { name: v.name, picks: [].concat(v.picks || []), device: v.device || "" };
-                }
-              });
-              /* 同一个名字在别处改了票，跟着更新自己的勾选 */
-              if (who && pool[idOf(who)] && !saveTimer) {
-                mine = (pool[idOf(who)].picks || []).slice();
-                paintPicks(); status();
-              }
-              tally();
-              setConn("live", "已连线 · 全家即时同步（" + Object.keys(pool).length + "/7 人已投）");
-              if (first) { first = false; resolve(); }
-            }, function(){
-              setConn("error", "读不到投票资料，暂时用本机模式。检查资料库规则是否已套用。");
-              remote = null; pool = load(K_POOL, {}); tally();
-              if (first) { first = false; resolve(); }
-            });
-
-            d.onValue(aref, function(snap){
-              var v = snap.val();
-              adminDev = v && v.device ? v.device : null;
-              isAdmin = !!adminDev && adminDev === deviceId;
-              paintAdmin();
-              claimAdmin();
-            }, function(){});
-
-            d.onValue(pref, function(snap){
-              var val = snap.val() || {};
-              pins = {};
-              Object.keys(val).forEach(function(id){
-                var v = val[id];
-                if (v && !v.off && v.day && v.time) pins[id] = { day: v.day, time: v.time };
-              });
-              save(K_PINS, pins);
-              tally();
-            }, function(){});
-
-            d.onValue(iref, function(snap){
-              var val = snap.val() || {};
-              custom = {};
-              Object.keys(val).forEach(function(id){
-                var v = val[id];
-                if (v && typeof v.name === "string" && !v.hidden) custom[id] = v;
-              });
-              save(K_ITEMS, custom);
-              rebuildNames(); rebuildLists();
-            }, function(){});
-          });
-        })
-        .catch(function(){
-          setConn("local", "代码汇总模式：各自投完，把代码丢进家族群，一个人贴上来汇总。");
-        });
-    }
-
-    rebuildLists();
-    paintMe(); status();
-    ready = connect();
-
-    /* 连上之后才决定要不要弹「你是谁」 */
-    ready.then(function(){
-      if (who && pool[idOf(who)] && pool[idOf(who)].device && pool[idOf(who)].device !== deviceId) {
-        /* 这个名字已经被别台装置占走了 —— 重新认 */
-        who = ""; save(K_NAME, "");
-      }
-      if (!who) { gate.hidden = false; }
-      else {
-        var rec = pool[idOf(who)];
-        if (rec) mine = (rec.picks || []).slice();
-        paintMe(); paintPicks(); status(); claimAdmin();
-      }
-    });
   })();
 })();
 </script>

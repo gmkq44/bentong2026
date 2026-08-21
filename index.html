@@ -93,18 +93,25 @@ ul{margin:0; padding:0; list-style:none}
   backdrop-filter:blur(10px);
   border-block:1px solid var(--line);
 }
-.daynav ul{display:flex; gap:0; flex-wrap:wrap}
+.daynav ul{display:grid; grid-template-columns:repeat(6,1fr); gap:.35rem; padding:.5rem 0}
+@media (min-width:600px){
+  .daynav ul{grid-template-columns:repeat(6,minmax(0,6.5rem)); justify-content:center; gap:.5rem}
+}
 .daynav button{
-  display:block; padding:.85rem 1.1rem; white-space:nowrap; cursor:pointer;
-  font-family:var(--sans); font-size:1.05rem; color:var(--ink-mid);
-  background:none; border:none; border-bottom:3px solid transparent;
+  display:block; width:100%; padding:.7rem .2rem; white-space:nowrap; cursor:pointer;
+  font-family:var(--sans); font-size:1.02rem; color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line-strong); border-radius:7px;
+  box-shadow:0 1px 0 var(--line-strong);
 }
-@media (max-width:520px){
-  .daynav ul{justify-content:center}
-  .daynav button{padding:.7rem .8rem; font-size:1rem}
+.daynav button:hover{border-color:var(--ginger); color:var(--ginger)}
+.daynav button[aria-selected="true"]{
+  background:var(--pine); border-color:var(--pine); color:var(--paper); font-weight:700;
+  box-shadow:0 2px 8px color-mix(in srgb, var(--pine) 35%, transparent);
 }
-.daynav button:hover{color:var(--ink)}
-.daynav button[aria-selected="true"]{color:var(--ink); font-weight:600; border-bottom-color:var(--ginger)}
+@media (max-width:400px){
+  .daynav ul{gap:.25rem}
+  .daynav button{font-size:.94rem; padding:.65rem .1rem}
+}
 .daynav .num{color:var(--ink-soft); margin-right:.45em; font-size:.78rem}
 /* ── 分页 ────────────────────────────────────────────────── */
 .tabpanel{display:none}
@@ -406,11 +413,11 @@ html{scroll-behavior:smooth}
   <nav class="daynav" aria-label="主导航">
     <div class="wrap">
       <ul role="tablist">
-        <li><button type="button" role="tab" data-tab="plan">三日行程</button></li>
-        <li><button type="button" role="tab" data-tab="about">认识文冬</button></li>
+        <li><button type="button" role="tab" data-tab="plan">行程</button></li>
+        <li><button type="button" role="tab" data-tab="about">故事</button></li>
         <li><button type="button" role="tab" data-tab="stay">住宿</button></li>
         <li><button type="button" role="tab" data-tab="spots">景点</button></li>
-        <li><button type="button" role="tab" data-tab="food">吃什么</button></li>
+        <li><button type="button" role="tab" data-tab="food">美食</button></li>
         <li><button type="button" role="tab" data-tab="notes">备忘</button></li>
       </ul>
     </div>

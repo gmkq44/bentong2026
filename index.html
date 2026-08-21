@@ -139,18 +139,39 @@ ul{margin:0; padding:0; list-style:none}
 .tabpanel{display:none}
 .tabpanel.is-on{display:block}
 .tabpanel > section:first-child{padding-top:clamp(1.8rem,4vw,2.6rem)}
-.daytabs{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem}
+.daytabs__lead{
+  margin-top:1.8rem; margin-bottom:.6rem;
+  font-size:1.05rem; color:var(--ink); font-weight:600;
+}
+.daytabs__lead::after{content:" ↓"; color:var(--ginger)}
+.daytabs{
+  display:grid; gap:.7rem; margin-bottom:.4rem;
+  grid-template-columns:repeat(3,1fr);
+}
 .daytabs button{
-  cursor:pointer; font-family:var(--sans); font-size:.92rem;
-  padding:.6rem 1rem; border-radius:3px;
-  border:1px solid var(--line-strong); background:var(--surface); color:var(--ink-mid);
+  cursor:pointer; font-family:var(--sans); text-align:left;
+  display:flex; flex-direction:column; gap:.15rem;
+  padding:1rem 1.1rem; border-radius:6px;
+  border:2px solid var(--line-strong); background:var(--surface); color:var(--ink);
 }
-.daytabs button:hover{border-color:var(--ginger); color:var(--ginger)}
+.daytabs button:hover{border-color:var(--ginger)}
+.daytabs__n{font-size:1.25rem; font-weight:700; line-height:1.25}
+.daytabs__date{font-family:var(--mono); font-size:.8rem; color:var(--ink-soft)}
+.daytabs__what{font-size:.95rem; color:var(--ink-mid); margin-top:.15rem}
 .daytabs button[aria-selected="true"]{
-  background:var(--pine); border-color:var(--pine); color:var(--paper); font-weight:600;
+  background:var(--pine); border-color:var(--pine); color:var(--paper);
+  box-shadow:0 2px 10px color-mix(in srgb, var(--pine) 35%, transparent);
 }
-.daytabs button[aria-selected="true"] .num{color:var(--paper); opacity:.75}
-.daytabs .num{margin-right:.45em; font-size:.78rem; color:var(--ink-soft)}
+.daytabs button[aria-selected="true"] .daytabs__date,
+.daytabs button[aria-selected="true"] .daytabs__what{color:var(--paper); opacity:.85}
+.daytabs button[aria-selected="true"] .daytabs__n::after{
+  content:" ●"; font-size:.6em; vertical-align:middle; opacity:.9;
+}
+@media (max-width:640px){
+  .daytabs{grid-template-columns:1fr}
+  .daytabs button{flex-direction:row; align-items:baseline; flex-wrap:wrap; gap:.2rem .7rem}
+  .daytabs__what{margin-top:0; width:100%}
+}
 #planhead{padding-bottom:0}
 body[data-day="d1"] #d2, body[data-day="d1"] #d3,
 body[data-day="d2"] #d1, body[data-day="d2"] #d3,
@@ -460,10 +481,23 @@ html{scroll-behavior:smooth}
       ④ <b>第三天回程在 Bukit Tinggi 一带吃</b>，到时看哪家人少再挑（行程页列了 11 家）。想保险就先订<b>枫林品鲜馆</b> 09-233 0282，或 <b>Lemuni</b> 014-393 4348（只接预约，没有队）。
     </div>
 
+    <p class="daytabs__lead">想看哪一天？点下面的方格</p>
     <div class="daytabs" role="tablist" aria-label="选择哪一天">
-      <button type="button" role="tab" data-day="d1"><span class="num">D1</span>老街 · 夜市</button>
-      <button type="button" role="tab" data-day="d2"><span class="num">D2</span>早市 · 农场</button>
-      <button type="button" role="tab" data-day="d3"><span class="num">D3</span>回程 · 好好吃一顿</button>
+      <button type="button" role="tab" data-day="d1">
+        <span class="daytabs__n">第一天</span>
+        <span class="daytabs__date">8月29日 · 周六</span>
+        <span class="daytabs__what">老街 · 夜市</span>
+      </button>
+      <button type="button" role="tab" data-day="d2">
+        <span class="daytabs__n">第二天</span>
+        <span class="daytabs__date">8月30日 · 周日</span>
+        <span class="daytabs__what">早市 · 农场</span>
+      </button>
+      <button type="button" role="tab" data-day="d3">
+        <span class="daytabs__n">第三天</span>
+        <span class="daytabs__date">8月31日 · 周一</span>
+        <span class="daytabs__what">回程 · 慢慢吃一顿</span>
+      </button>
     </div>
   </div>
 </section>
@@ -477,7 +511,7 @@ html{scroll-behavior:smooth}
         <span class="day__date">8月29日 · 周六</span>
       </div>
       <p class="day__note">
-        <b>睡醒先在家附近吃饱，八点前上路。</b>Setia Alam 到文冬要 1.5 到 2 小时，空着肚子开这段路，三个小孩半路就闹了。
+        <b>睡醒先在家附近吃饱，八点前上路。</b>Setia Alam 到文冬要 1.5 到 2 小时，空着肚子上路，三个小孩半途容易饿。
         中途在 R&amp;R 停一次放风，九点四十几到文冬。
         今天不出市区：车停老街就一路走路，<b>老街壁画和文化馆刚好填满入住前的空档</b>，也不必为了赶景点让小孩再上车。
         下午睡饱，把精神留给晚上的<b>周六夜市</b>——它一周只开这一晚，刚好落在入住当天。
@@ -542,7 +576,7 @@ html{scroll-behavior:smooth}
         <div class="stop stop--key">
           <div class="stop__time">13:15</div>
           <div class="stop__body">
-            <div class="stop__title"><h4>打电话给管家 Shanthi</h4><span class="tag tag--ginger">别忘了</span></div>
+            <div class="stop__title"><h4>打电话给管家 Shanthi</h4><span class="tag tag--ginger">记得</span></div>
             <p class="stop__desc">房东要求<b>抵达前至少 30 分钟</b>通知，Shanthi 才会到场交钥匙。吃饭吃到一半就先打，免得到了门口在楼下等。</p>
             <div class="stop__facts"><span>010-9381 901</span><span>提前 ≥30 分钟</span></div>
             <a class="stop__link" href="tel:+60109381901">拨打 Shanthi →</a>
@@ -612,7 +646,7 @@ html{scroll-behavior:smooth}
       <p class="day__note">
         今天要做两件事：<b>把手信一次买完</b>（周日早市摊位最齐，而明天周一大巴刹休市），
         然后<b>整个白天给文冬休闲农场</b>——昨天玩了水，今天换动物，两天各一个重点不重复。三个小孩喂动物能玩上大半天。
-        下午刻意<b>不出城</b>：农场回来大家都累了，再开二十几分钟山路去珍德拜，晚上会撑不住。
+        下午刻意<b>不出城</b>：农场回来大家都累了，再开二十几分钟山路去珍德拜，晚上就吃力了。
       </p>
 
       <div class="tl">
@@ -659,7 +693,7 @@ html{scroll-behavior:smooth}
           <div class="stop__time">15:00</div>
           <div class="stop__body">
             <div class="stop__title"><h4>回民宿冲凉 · 午休</h4><span class="tag tag--pine">重要</span></div>
-            <p class="stop__desc">农场一早上下来一身汗和草屑，回去冲掉换干衣服。<b>三个小孩今天没睡过，这一觉不能省</b>，不然晚餐就闹了。大人也趁这时候把手信打包好、行李先收一半。</p>
+            <p class="stop__desc">农场一早上下来一身汗和草屑，回去冲掉换干衣服。<b>三个小孩今天还没睡过，这一觉别省</b>，睡饱了晚餐才有精神。大人也趁这时候把手信打包好、行李先收一半。</p>
             <div class="stop__facts"><span>最热的时段留给休息</span></div>
           </div>
         </div>
@@ -721,13 +755,14 @@ html{scroll-behavior:smooth}
     <div class="day" data-day="d3">
       <div class="day__head">
         <span class="day__n">DAY 3</span>
-        <h3>早退房，Bukit Tinggi 挑一家吃，早上路</h3>
+        <h3>早点退房，在 Bukit Tinggi 慢慢吃一顿</h3>
         <span class="day__date">8月31日 · 周一 · 国庆日</span>
       </div>
       <p class="day__note">
-        今天不排景点，就是<b>早点退房，在回家路上的 Bukit Tinggi 一带吃一顿，吃完直接上路</b>。
-        <b>吃哪一家到时候再决定</b>——国庆日那天人潮难预料，与其定死一家去排队，不如十点四十几就到那一区，
-        看哪家空就进哪家。下面十一家的特点、营业时间和要注意的都列好了。
+        今天不排景点，留一段悠闲的时间：<b>早点退房，在回家路上的 Bukit Tinggi 一带好好吃一顿</b>，
+        吃饱了再慢慢开回去。<b>吃哪一家到时候再决定</b>——国庆日的人潮不好预料，
+        与其定死一家去排队，不如十点四十几就到那一区，看哪家宽松就进哪家。
+        下面把这一带能吃的都列出来了，特点、营业时间和要留意的地方都写在里面。
       </p>
 
       <div class="tl">
@@ -752,8 +787,8 @@ html{scroll-behavior:smooth}
         <div class="stop stop--key">
           <div class="stop__time">10:15</div>
           <div class="stop__body">
-            <div class="stop__title"><h4>退房 · 出发</h4><span class="tag tag--pine">别拖到 12:00</span></div>
-            <p class="stop__desc">收好就走，<b>不要等到 12:00 才退</b>——今天赢在早：早退房、早吃饭、早上路。那一区最早的店 7:45 就开门，路上开 20 分钟，我们十点四十几到，刚好卡在早餐尾声和午餐人潮中间。钥匙交还给 Shanthi，按房东指示处理，退房前给 Paula &amp; Richard 发个讯息道谢。</p>
+            <div class="stop__title"><h4>退房 · 出发</h4><span class="tag tag--pine">早一点比较从容</span></div>
+            <p class="stop__desc">收拾好就可以出发，<b>不必等到 12:00 才退</b>——今天早一点，餐厅和路上都会宽松很多。路上开 20 分钟，我们十点四十几到，刚好在早餐尾声和午餐人潮之间，最从容。钥匙交还给 Shanthi，按房东指示处理，退房前给 Paula &amp; Richard 发个讯息道谢。</p>
             <div class="stop__facts"><span>退房 12:00 前</span><span>Shanthi 010-9381 901</span><span>车程 约 25 分钟</span></div>
             <a class="stop__link" href="tel:+60109381901">拨打 Shanthi →</a>
           </div>
@@ -764,10 +799,10 @@ html{scroll-behavior:smooth}
           <div class="stop__body">
             <div class="stop__title"><h4>到 Bukit Tinggi 一带 · 挑一家吃</h4><span class="tag tag--ginger">到了再决定</span></div>
             <p class="stop__desc"><b>不预先定死哪一家。</b>这一区（Bukit Tinggi · 珍德拜 · Genting Sempah）几家之间开车都只有几分钟，
-              到了先看停车场满不满——<b>人少就进，人多就开去下一家</b>，别下车排队。</p>
+              到了先看停车场满不满——<b>宽松就进，人多就换下一家</b>，不必勉强排队。</p>
             <p class="stop__desc"><b>十点四十几到这一区是关键。</b>Leng&apos;s Cafe 7:45、The Qiū Dining 8:00 就开门，
-              这个时间是早餐尾声、午餐人潮还没来的空档。<b>拖到十二点半，国庆日就只能碰运气了。</b>
-              下面把这一带能吃的全列出来了，每家的特点和要注意的都写清楚，到时候照当天情况挑。</p>
+              这个时间是早餐尾声、午餐人潮还没来的空档。若拖到十二点半才到，国庆日就比较看运气了。
+              下面把这一带能吃的都列出来了，每家的特点和要留意的地方都写清楚，到时候照当天情况挑。</p>
             <div class="stop__facts"><span>Bukit Tinggi · 珍德拜 · Genting Sempah</span><span>共 11 家可选</span><span>约 1.5 小时</span></div>
           </div>
         </div>
@@ -775,8 +810,8 @@ html{scroll-behavior:smooth}
         <div class="stop stop--key">
           <div class="stop__time">12:30</div>
           <div class="stop__body">
-            <div class="stop__title"><h4>上路回 Setia Alam</h4><span class="tag tag--ginger">一点前就在路上</span></div>
-            <p class="stop__desc">从 Bukit Tinggi 山脚回 Setia Alam <b>不塞车约 1 小时至 1 小时 15 分</b>，比从文冬走少了二十几分钟——这就是把午餐停在这里的好处，吃完等于已经走了一段路。<b>十二点半就上路，比大部分人都早</b>——国庆日下午往吉隆坡是全年最堵的时段之一，而且我们下了高速还要横过整个雪隆。早走一小时，可能少塞两小时。</p>
+            <div class="stop__title"><h4>启程回 Setia Alam</h4><span class="tag tag--ginger">一点前上路最从容</span></div>
+            <p class="stop__desc">从 Bukit Tinggi 山脚回 Setia Alam <b>不塞车约 1 小时至 1 小时 15 分</b>，比从文冬走少了二十几分钟——这就是把午餐停在这里的好处，吃完等于已经走了一段路。<b>十二点半启程，比多数人都早一步</b>。国庆日下午往吉隆坡是全年最塞的时段之一，我们下了高速还要横过整个雪隆——早走一小时，路上可能就少堵两小时，一车人都轻松。</p>
             <div class="stop__facts"><span>不塞时 约 1–1.25 小时</span><span>塞车可能 3 小时以上</span><span>Touch &apos;n Go 备足余额</span></div>
             <div class="callout"><b>真的塞住了就别硬撑。</b>珍德拜和 Bukit Tinggi 一带山上凉快，找个咖啡馆坐到 8 点后再走，会比卡在车龙里三小时好过得多，小孩也不会在车上崩溃。</div>
           </div>
@@ -832,7 +867,7 @@ html{scroll-behavior:smooth}
           <div class="card__tags"><span class="tag tag--pine">周一开</span><span class="tag">咖啡馆</span><span class="tag tag--ginger">会挤</span></div>
           <h4>Pineyard</h4>
           <p>珍德拜 Tanarimba 松林里的木头玻璃屋，整面落地窗对着松树林，环境是这几家里最漂亮的。西式加亚洲：奶油意面、烤肉、椰浆饭。</p>
-          <p><b>要注意：</b>我们上次去就人多要排队。<b>典型的打卡店，国庆日十点多可能就有人在等位</b>——除非那天看起来很空，否则别赌。</p>
+          <p><b>要注意：</b>我们上次去就人多要排队。<b>典型的打卡店，国庆日十点多可能就有人在等位</b>——那天看起来宽松再考虑。</p>
           <dl class="rows">
             <div><dt>地址</dt><dd>C1, Jalan Tanarimba Pine, 珍德拜</dd></div>
             <div><dt>时间</dt><dd class="hi">每天 11:00–22:00</dd></div>
@@ -856,7 +891,7 @@ html{scroll-behavior:smooth}
           <div class="card__tags"><span class="tag tag--pine">周一开</span><span class="tag">度假村 · 冷气</span><span class="tag tag--ginger">要入场费</span></div>
           <h4>Colmar Tropicale · Le Blason</h4>
           <p>Berjaya Hills 的法国村，<b>室内有冷气</b>，Le Blason 是全日餐厅，做本地和国际菜；旁边还有烤鸡店 Le Poulet Roti 和意大利菜 La Flamme。小孩看那个欧洲小镇造景很新鲜。</p>
-          <p><b>要注意：</b>要另付<b>入场费约 RM14/人</b>（七个人约 RM98），还要从 Exit 804 上山 10–15 分钟。<b>本身就是家庭日游客的目的地，国庆日会爆。</b></p>
+          <p><b>要注意：</b>要另付<b>入场费约 RM14/人</b>（七个人约 RM98），还要从 Exit 804 上山 10–15 分钟。本身就是家庭出游的热门去处，国庆日人会很多。</p>
           <dl class="rows">
             <div><dt>位置</dt><dd>Berjaya Hills, Bukit Tinggi</dd></div>
             <div><dt>电话</dt><dd class="num">09-221 3666</dd></div>
@@ -939,10 +974,10 @@ html{scroll-behavior:smooth}
       <div class="autoplan" style="margin-top:1.6rem">
         <h4>到时候怎么挑</h4>
         <ul>
-          <li><b>先看停车场。</b>满了就直接开去下一家，别下车排队——这一区几家之间开车都是几分钟</li>
+          <li><b>先看停车场。</b>满了就换下一家，不必勉强等——这一区几家之间开车都只要几分钟</li>
           <li><b>十点多到，赢一半。</b>Leng&apos;s 7:45、The Qiū 8:00 就开门，人潮通常十二点半后才来</li>
           <li><b>想要稳、不想赌</b>——出发前打电话订<b>枫林品鲜馆</b>（09-233 0282，地方大）或 <b>Lemuni</b>（014-393 4348，只接预约所以没有队）</li>
-          <li><b>全都要等</b>——别在这条走廊耗，直接上路回雪隆再吃。塞车的代价比吃得普通大得多</li>
+          <li><b>都要等的话</b>——就不在这条路上耗了，先启程，回到雪隆再从容地吃。路上顺畅，比吃哪一家都实在</li>
         </ul>
         <p>吃完想下车走走的话，<b>珍德拜的溪边就在附近</b>，停十几分钟不下水，不会耽误上路。</p>
       </div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,42 +26,8 @@
   --sans:"PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei",system-ui,-apple-system,"Helvetica Neue",sans-serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#10140F;
-    --surface:#181D18;
-    --surface-2:#212821;
-    --ink:#E7EBE1;
-    --ink-mid:#B3BDB0;
-    --ink-soft:#8A9488;
-    --line:#2B332B;
-    --line-strong:#3D473C;
-    --ginger:#DE9A4E;
-    --ginger-soft:#38291A;
-    --pine:#79B39C;
-    --pine-soft:#1C2A25;
-    --alert:#D9765C;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#10140F;
-  --surface:#181D18;
-  --surface-2:#212821;
-  --ink:#E7EBE1;
-  --ink-mid:#B3BDB0;
-  --ink-soft:#8A9488;
-  --line:#2B332B;
-  --line-strong:#3D473C;
-  --ginger:#DE9A4E;
-  --ginger-soft:#38291A;
-  --pine:#79B39C;
-  --pine-soft:#1C2A25;
-  --alert:#D9765C;
-  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
-}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%; font-size:18px}
+html{-webkit-text-size-adjust:100%; font-size:18px; color-scheme:light}
 @media (max-width:520px){html{font-size:17px}}
 body{
   margin:0;
@@ -95,25 +61,30 @@ ul{margin:0; padding:0; list-style:none}
 .tag--pine{background:var(--pine-soft); color:var(--pine)}
 .num{font-family:var(--mono); font-variant-numeric:tabular-nums}
 /* ── 页首 ────────────────────────────────────────────────── */
-.hero{position:relative; padding:clamp(1.6rem,5vw,3rem) 0 clamp(1.3rem,3.5vw,2rem); overflow:hidden}
-#ridge{position:absolute; inset:auto 0 0 0; width:100%; height:100%; z-index:0; opacity:.55}
+.hero{position:relative; padding:.9rem 0 .8rem; overflow:hidden}
+#ridge{position:absolute; inset:auto 0 0 0; width:100%; height:100%; z-index:0; opacity:.5}
 .hero .wrap{position:relative; z-index:1}
+.hero__row{display:flex; align-items:center; justify-content:space-between; gap:1rem}
 .hero__place{
-  font-family:var(--serif); font-size:clamp(2.4rem,9vw,4.6rem); line-height:1;
-  letter-spacing:.06em; margin:0;
+  font-family:var(--serif); font-size:clamp(1.7rem,5.5vw,2.6rem); line-height:1;
+  letter-spacing:.05em; margin:0; display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap;
 }
 .hero__place small{
-  display:block; font-family:var(--mono); font-size:clamp(.7rem,2.4vw,.9rem);
-  letter-spacing:.42em; color:var(--ginger); margin-top:.9rem; font-weight:400;
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.3em;
+  color:var(--ginger); font-weight:400;
 }
-
-.hero__meta{
-  display:flex; flex-wrap:wrap; gap:.5rem 1.6rem; margin-top:1.8rem;
-  padding-top:1.4rem; border-top:1px solid var(--line-strong);
+.hero__count{display:flex; align-items:baseline; gap:.4rem; white-space:nowrap}
+.hero__count-k{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; color:var(--ink-soft)}
+.hero__count .num{font-size:1rem; color:var(--ginger); font-weight:600}
+.hero__facts{
+  margin:.5rem 0 0; font-size:.88rem; color:var(--ink-mid);
+  display:flex; flex-wrap:wrap; align-items:center; gap:.15rem .5rem; line-height:1.5;
 }
-.hero__meta div{display:flex; flex-direction:column; gap:.1rem}
-.hero__meta dt{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft)}
-.hero__meta dd{margin:0; font-size:1.02rem; font-variant-numeric:tabular-nums}
+.hero__facts i{color:var(--line-strong); font-style:normal}
+@media (max-width:420px){
+  .hero__place small{width:100%; margin-top:.15rem}
+  .hero__facts{font-size:.82rem}
+}
 #countdown{color:var(--ginger); font-weight:600}
 /* ── 日期导航 ────────────────────────────────────────────── */
 .topbar{position:sticky; top:0; z-index:30}
@@ -121,7 +92,6 @@ ul{margin:0; padding:0; list-style:none}
   background:color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter:blur(10px);
   border-block:1px solid var(--line);
-  margin-top:2.5rem;
 }
 .daynav ul{display:flex; gap:0; overflow-x:auto; scrollbar-width:none}
 .daynav ul::-webkit-scrollbar{display:none}
@@ -167,12 +137,28 @@ body[data-tab="plan"] .daybar{display:block}
   .daytabs__n{font-size:1.02rem}
   .daytabs__date{font-size:.66rem}
 }
-#planhead{padding-bottom:0}
+#planhead{padding-top:1.2rem; padding-bottom:0}
+.sec-head--tight{gap:.35rem; margin-bottom:1rem}
+.sec-head--tight h2{font-size:clamp(1.35rem,4vw,1.8rem)}
+.sec-head--tight p{font-size:.95rem}
+.prep{margin-bottom:.5rem}
+.prep summary{
+  cursor:pointer; padding:.75rem 1rem; border-radius:4px;
+  background:var(--ginger-soft); color:var(--ginger); font-weight:600; font-size:.98rem;
+  border-left:3px solid var(--ginger); list-style:none;
+}
+.prep summary::-webkit-details-marker{display:none}
+.prep summary::before{content:"▸ "; display:inline-block; transition:transform .15s}
+.prep[open] summary::before{content:"▾ "}
+.prep__list{margin:.9rem 0 0; padding-left:1.4rem; display:grid; gap:.6rem}
+.prep__list li{font-size:.95rem; color:var(--ink-mid)}
+.prep__list b{color:var(--ink)}
 body[data-day="d1"] #d2, body[data-day="d1"] #d3,
 body[data-day="d2"] #d1, body[data-day="d2"] #d3,
 body[data-day="d3"] #d1, body[data-day="d3"] #d2{display:none}
 /* ── 版块 ────────────────────────────────────────────────── */
 section{padding:clamp(2.5rem,6vw,4rem) 0; scroll-margin-top:9rem}
+#d1,#d2,#d3{padding-top:1.2rem}
 .sec-head{display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem}
 .sec-head h2{font-size:clamp(1.6rem,4.4vw,2.2rem)}
 .sec-head p{color:var(--ink-mid); max-width:48em}
@@ -201,13 +187,13 @@ section{padding:clamp(2.5rem,6vw,4rem) 0; scroll-margin-top:9rem}
 .btn--solid{background:var(--pine); border-color:var(--pine); color:var(--paper)}
 .btn--solid:hover{opacity:.88; color:var(--paper)}
 /* ── 行程时间轴 ──────────────────────────────────────────── */
-.day{border-top:1px solid var(--line-strong); padding-top:1.6rem}
+.day{border-top:1px solid var(--line-strong); padding-top:1rem}
 .day + .day{margin-top:3.5rem}
-.day__head{display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1rem; margin-bottom:.5rem}
-.day__n{font-family:var(--mono); font-size:.8rem; letter-spacing:.16em; color:var(--ginger)}
-.day__head h3{font-size:clamp(1.35rem,3.6vw,1.75rem)}
-.day__date{font-family:var(--mono); font-size:.85rem; color:var(--ink-soft); font-variant-numeric:tabular-nums}
-.day__note{color:var(--ink-mid); font-size:.95rem; margin-bottom:1.8rem; max-width:52em}
+.day__head{display:flex; flex-wrap:wrap; align-items:baseline; gap:.2rem .8rem; margin-bottom:.4rem}
+.day__n{display:none}
+.day__head h3{font-size:clamp(1.2rem,3.2vw,1.5rem); line-height:1.35}
+.day__date{font-family:var(--mono); font-size:.78rem; color:var(--ink-soft); font-variant-numeric:tabular-nums}
+.day__note{color:var(--ink-mid); font-size:.9rem; line-height:1.65; margin-bottom:1.1rem; max-width:52em}
 .tl{display:flex; flex-direction:column}
 .stop{display:grid; grid-template-columns:5.5rem 1fr; column-gap:1.5rem; position:relative}
 .stop__time{
@@ -362,7 +348,6 @@ footer a{color:var(--ink-mid)}
   .stop{grid-template-columns:3.6rem 1fr; column-gap:.9rem}
   .stop__time{font-size:.8rem; padding-top:1.4rem}
   .stop__body{padding-left:1.1rem}
-  .hero__meta{gap:.9rem 1.2rem}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
@@ -375,14 +360,13 @@ html{scroll-behavior:smooth}
 <header class="hero">
   <canvas id="ridge" aria-hidden="true"></canvas>
   <div class="wrap">
-    <h1 class="hero__place">文冬<small>BENTONG · PAHANG</small></h1>
-    <dl class="hero__meta">
-      <div><dt>日期</dt><dd class="num">2026.08.29 – 08.31</dd></div>
-      <div><dt>星期</dt><dd>六 · 日 · 一（国庆日）</dd></div>
-      <div><dt>人数</dt><dd>4 大人 + 3 小孩</dd></div>
-      <div><dt>车程</dt><dd>Setia Alam 约 1.5–2 小时</dd></div>
-      <div><dt>倒数</dt><dd id="countdown" class="num">—</dd></div>
-    </dl>
+    <div class="hero__row">
+      <h1 class="hero__place">文冬<small>BENTONG · PAHANG</small></h1>
+      <div class="hero__count"><span class="hero__count-k">倒数</span><span id="countdown" class="num">—</span></div>
+    </div>
+    <p class="hero__facts">
+      <span class="num">8月29–31日</span><i>·</i>六 · 日 · 一（国庆日）<i>·</i>4 大人 + 3 小孩<i>·</i>Setia Alam 约 1.5–2 小时
+    </p>
   </div>
 </header>
 
@@ -477,22 +461,23 @@ html{scroll-behavior:smooth}
 
 <section id="planhead">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">三日行程 · 已排定</span>
+    <div class="sec-head sec-head--tight">
       <h2>三天两夜，怎么走比较不累</h2>
-      <p>排这三天有两件事定了大局：<b>周六晚的夜市一周只开一场</b>，而<b>周一大巴刹休市、老街很多店也休</b>。
-        所以吃和买都压在前两天，周一早点退房、转去回程路上的珍德拜。加上七个人里三个小孩两位长辈，
-        每天只放一个大行程，不排「上午出城下午进山」那种走法。</p>
+      <p>周六夜市一周只开一场、周一大巴刹休市 —— 所以吃和买都排在前两天。
+        七个人里三个小孩两位长辈，<b>每天只放一个大行程</b>。</p>
     </div>
 
-    <div class="callout">
-      <b>出发前要先办的四件事。</b>
-      ① <b>文冬休闲农场的票要提前 24 小时买</b>——第二天上午整个行程靠它，8月29日之前一定要在官网订好（7 人约 RM306）。
-      ② 第二天晚上的<b>龙凤酒楼先打电话订位</b>，长周末七个人开一桌不订位会等很久。
-      ③ <b>手信全部在第二天（周日）买完</b>——周一大巴刹休市，别留到最后一天。
-      ④ <b>第三天回程在 Bukit Tinggi 一带吃</b>，到时看哪家人少再挑（行程页列了 11 家）。想保险就先订<b>枫林品鲜馆</b> 09-233 0282，或 <b>Lemuni</b> 014-393 4348（只接预约，没有队）。
-    </div>
-
+    <details class="prep">
+      <summary>出发前要先办的四件事（点开看）</summary>
+      <div class="details__body">
+        <ol class="prep__list">
+          <li><b>文冬休闲农场的票要提前 24 小时买</b> —— 第二天上午整个行程靠它，8月29日之前在官网订好（7 人约 RM306）</li>
+          <li>第二天晚上的<b>龙凤酒楼先打电话订位</b>，长周末七个人开一桌不订位会等很久</li>
+          <li><b>手信全部在第二天（周日）买完</b> —— 周一大巴刹休市，别留到最后一天</li>
+          <li><b>第三天回程在 Bukit Tinggi 一带吃</b>，到时看哪家宽松再挑（第三天那页列了 12 家）。想保险就先订<b>枫林品鲜馆</b> <span class="num">09-233 0282</span>，或 <b>Lemuni</b> <span class="num">014-393 4348</span>（只接预约，没有队）</li>
+        </ol>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -1362,7 +1347,6 @@ html{scroll-behavior:smooth}
 
 <!-- 投票 ───────────────────────────────────────────────── -->
 </div><!-- /tab-food -->
-
 
 <!-- 实用 ───────────────────────────────────────────────── -->
 <div class="tabpanel" id="tab-notes" role="tabpanel" aria-label="备忘">

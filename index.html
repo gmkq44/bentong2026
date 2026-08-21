@@ -93,12 +93,15 @@ ul{margin:0; padding:0; list-style:none}
   backdrop-filter:blur(10px);
   border-block:1px solid var(--line);
 }
-.daynav ul{display:flex; gap:0; overflow-x:auto; scrollbar-width:none}
-.daynav ul::-webkit-scrollbar{display:none}
+.daynav ul{display:flex; gap:0; flex-wrap:wrap}
 .daynav button{
-  display:block; padding:1rem 1.25rem; white-space:nowrap; cursor:pointer;
+  display:block; padding:.85rem 1.1rem; white-space:nowrap; cursor:pointer;
   font-family:var(--sans); font-size:1.05rem; color:var(--ink-mid);
   background:none; border:none; border-bottom:3px solid transparent;
+}
+@media (max-width:520px){
+  .daynav ul{justify-content:center}
+  .daynav button{padding:.7rem .8rem; font-size:1rem}
 }
 .daynav button:hover{color:var(--ink)}
 .daynav button[aria-selected="true"]{color:var(--ink); font-weight:600; border-bottom-color:var(--ginger)}
@@ -244,6 +247,35 @@ section{padding:clamp(2.5rem,6vw,4rem) 0; scroll-margin-top:9rem}
 .autoplan li{font-size:.98rem; color:var(--ink); padding-left:1.1em; position:relative}
 .autoplan li::before{content:"→"; position:absolute; left:0; color:var(--pine)}
 .autoplan p{font-size:.88rem; color:var(--ink-mid); margin-top:.5rem}
+/* ── 认识文冬 ────────────────────────────────────────────── */
+.story{display:grid; gap:1.1rem}
+.story__q{
+  display:grid; grid-template-columns:2.6rem 1fr; gap:0 1rem;
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  padding:1.3rem 1.4rem;
+}
+.story__n{
+  display:flex; align-items:center; justify-content:center;
+  width:2.6rem; height:2.6rem; border-radius:50%;
+  background:var(--ginger); color:var(--paper);
+  font-family:var(--mono); font-size:1.15rem; font-weight:700;
+}
+.story__body h3{font-size:clamp(1.15rem,3.4vw,1.4rem); margin-bottom:.6rem; line-height:1.4}
+.story__body p{color:var(--ink-mid); margin-bottom:.7rem}
+.story__body p:last-child{margin-bottom:0}
+.story__body b{color:var(--ink)}
+.story__facts{display:grid; gap:.5rem; margin:.2rem 0 .8rem; padding-left:1.2rem}
+.story__facts li{color:var(--ink-mid); list-style:disc}
+.story__see{
+  background:var(--pine-soft); border-left:3px solid var(--pine);
+  padding:.7rem .9rem; border-radius:3px; font-size:.95rem; color:var(--ink) !important;
+}
+.story__see b{color:var(--pine)}
+@media (max-width:520px){
+  .story__q{grid-template-columns:1fr; gap:.8rem; padding:1.1rem 1.15rem}
+  .story__n{width:2.2rem; height:2.2rem; font-size:1rem}
+}
+
 /* ── 卡片网格 ────────────────────────────────────────────── */
 .grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .card{
@@ -375,6 +407,7 @@ html{scroll-behavior:smooth}
     <div class="wrap">
       <ul role="tablist">
         <li><button type="button" role="tab" data-tab="plan">三日行程</button></li>
+        <li><button type="button" role="tab" data-tab="about">认识文冬</button></li>
         <li><button type="button" role="tab" data-tab="stay">住宿</button></li>
         <li><button type="button" role="tab" data-tab="spots">景点</button></li>
         <li><button type="button" role="tab" data-tab="food">吃什么</button></li>
@@ -402,6 +435,111 @@ html{scroll-behavior:smooth}
     </div>
   </div>
 </div>
+
+<div class="tabpanel" id="tab-about" role="tabpanel" aria-label="认识文冬">
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head sec-head--tight">
+      <h2>文冬是什么样的地方？</h2>
+      <p>去之前先认识它一下。这里讲的每一样，你这三天都会亲眼看到 —— 走过的那条街、吃的那碗酿料、买回家的那包姜，
+        背后都有一段一百多年前的故事。</p>
+    </div>
+
+    <div class="story">
+
+      <article class="story__q">
+        <span class="story__n">1</span>
+        <div class="story__body">
+          <h3>文冬在哪里？</h3>
+          <p>文冬在<b>彭亨州</b>，从我们家 Setia Alam 开车过去，走加叻大道大概一个半到两个小时。</p>
+          <p>它<b>夹在山中间</b> —— 一边是云顶那一片高山，一边是山谷。所以文冬比吉隆坡凉一点，
+            早上常常有雾，晚上要穿一件外套。你会发现车子一路都在上坡。</p>
+          <p class="story__see">这趟你会看到：从 R&amp;R 停车下来的时候，抬头看四周全是山。</p>
+        </div>
+      </article>
+
+      <article class="story__q">
+        <span class="story__n">2</span>
+        <div class="story__body">
+          <h3>为什么叫「文冬」？</h3>
+          <p>这个名字很有意思 —— <b>它原本不叫文冬，叫「加邦」（Kapong）</b>。</p>
+          <p>一百多年前，有人在这里发现了<b>锡矿</b>（一种可以做罐头、做铁皮的金属）。很多人跑来挖矿，
+            他们把挖矿的场子叫做 <b>Ban</b>。其中有几个特别好赚，大家就叫它 <b>Ban Untung</b> ——
+            马来话的意思是<b>「赚大钱的矿场」</b>。</p>
+          <p>叫着叫着，Ban Untung 就变成了 <b>Bentong</b>，中文写作「文冬」。二战之后，就正式用这个名字了。</p>
+          <p class="story__see">所以文冬这个名字，意思差不多是「发财的地方」。</p>
+        </div>
+      </article>
+
+      <article class="story__q">
+        <span class="story__n">3</span>
+        <div class="story__body">
+          <h3>以前这里的人怎么来的？坐船。</h3>
+          <p>现在文冬市中心那一带，<b>以前是两条河交汇的地方</b>。那时候还没有大马路，
+            人和货都靠一种叫 <b>Perahu</b> 的小船进出，市里还有<b>码头</b>。</p>
+          <p>后来 <b>1895 年</b>，一个叫<b>陆佑</b>的人带着一大群人从吉隆坡北上来到文冬，
+            开矿、开街、做生意，文冬才热闹起来。</p>
+          <p class="story__see">这趟你会看到：老街那条 <b>Jalan Loke Yew（陆佑街）</b>，
+            就是用他的名字取的。你走在那条街上的时候，是走在一百多年前开这个镇的人的名字上面。</p>
+        </div>
+      </article>
+
+      <article class="story__q">
+        <span class="story__n">4</span>
+        <div class="story__body">
+          <h3>为什么这里的人会做「广西酿料」？</h3>
+          <p>因为<b>文冬的华人里，大概六成是广西人</b> —— 他们的祖先从中国广西来这里挖矿、种地，
+            把家乡的菜也一起带来了。</p>
+          <p>酿料就是<b>把肉馅塞进豆腐、苦瓜、辣椒、茄子里</b>，再煮或炸。这是广西和客家人的家常菜，
+            在别的地方不一定吃得到这么多种。</p>
+          <p>老街上还有一栋 <b>1914 年</b>建的<b>文冬华人大会堂</b>，是广东、广西、客家、福建、海南
+            <b>五个不同家乡的人一起盖起来的</b> —— 一百多年前，大家从不同地方来到同一个小镇，一起把它建起来。</p>
+          <p class="story__see">这趟你会吃到：第一天中午的<b>广西酿料</b>，可以自己夹想吃的那几样。</p>
+        </div>
+      </article>
+
+      <article class="story__q">
+        <span class="story__n">5</span>
+        <div class="story__body">
+          <h3>文冬姜，为什么全马来西亚都知道？</h3>
+          <p>姜到处都有，但<b>文冬姜特别辣、特别香、也长得比较大</b>。原因是这里的条件刚好：
+            山上<b>凉快</b>、空气干净、土壤肥、还有<b>山泉水</b>浇灌。</p>
+          <p>最厉害的是种法 ——</p>
+          <ul class="story__facts">
+            <li>普通的姜几个月就收成，<b>文冬姜要在土里长将近一年</b>才挖出来</li>
+            <li>挖完之后，那块地<b>要休息五、六年</b>才能再种姜，让土慢慢把养分补回来</li>
+            <li><b>2015 年</b>，文冬姜被认证为彭亨州的<b>「地理标志」</b>产品 ——
+              就像香槟只能产自法国香槟区一样，只有这里种的才能叫文冬姜</li>
+          </ul>
+          <p>因为一块地要等这么久，所以文冬姜每年产量不多，价钱也比普通姜贵。</p>
+          <p class="story__see">这趟你会买到：第二天在大巴刹买姜、姜粉、姜糖；
+            下午在莫大妈吃到淋<b>姜糖浆</b>的豆腐花 —— 那个辣辣甜甜的味道，就是文冬姜。</p>
+        </div>
+      </article>
+
+      <article class="story__q">
+        <span class="story__n">6</span>
+        <div class="story__body">
+          <h3>那现在的文冬呢？</h3>
+          <p>锡矿早就挖完了，现在的文冬靠<b>种东西</b>和<b>旅游</b>过日子 ——
+            姜、豆腐卜、蜂蜜、酱油、水果，还有山里的农场和咖啡馆。</p>
+          <p>它是个<b>小镇</b>，不是大城市。老街就那么三条，走路半个钟头能走完，
+            很多店是开了几十年的老店，老板认得住在附近的人。</p>
+          <p class="story__see">这趟你会感觉到：走在老街上，跟在吉隆坡逛商场完全是两回事。</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="callout" style="margin-top:1.8rem">
+      <b>去的时候可以找找看。</b>
+      ① 老街墙上的<b>壁画</b>，画的是以前文冬人的生活 —— 看看你认不认得出他们在做什么。
+      ② 街上的路牌，找找 <b>Jalan Loke Yew</b>（陆佑街）和 <b>Jalan Chui Yin</b>（崔贤街）。
+      ③ 大巴刹里的<b>姜</b>，跟家里用的姜比一比，看是不是真的比较大、比较黄。
+    </div>
+  </div>
+</section>
+</div><!-- /tab-about -->
 
 <!-- 住宿 ───────────────────────────────────────────────── -->
 <div class="tabpanel" id="tab-stay" role="tabpanel" aria-label="住宿">
@@ -1609,7 +1747,7 @@ html{scroll-behavior:smooth}
     /* 版块 id → 属于哪个分页 */
     var SEC2TAB = {
       stay:"stay", planhead:"plan", plan:"plan", d1:"plan", d2:"plan", d3:"plan",
-      spots:"spots", food:"food", info:"notes", pack:"notes", budget:"notes"
+      about:"about", spots:"spots", food:"food", info:"notes", pack:"notes", budget:"notes"
     };
 
     function show(name, secId){

@@ -1672,18 +1672,28 @@ html{scroll-behavior:smooth}
 
     /* 三天的子分页 */
     var dayBtns = Array.prototype.slice.call(document.querySelectorAll(".daytabs button[data-day]"));
-    function showDay(d){
+    function showDay(d, scroll){
       document.body.setAttribute("data-day", d);
       dayBtns.forEach(function(b){
         b.setAttribute("aria-selected", b.getAttribute("data-day") === d ? "true" : "false");
       });
+      /* 换一天就回到那一天的开头，不然会停在上一天卷到一半的位置 */
+      if (scroll) {
+        var sec = document.getElementById(d);
+        var bar = document.querySelector(".topbar");
+        if (sec) {
+          var y = sec.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)
+                - (bar ? bar.offsetHeight : 0) - 6;
+          window.scrollTo({ top: y < 0 ? 0 : y, behavior: "smooth" });
+        }
+      }
     }
     dayBtns.forEach(function(b){
-      b.addEventListener("click", function(){ showDay(b.getAttribute("data-day")); });
+      b.addEventListener("click", function(){ showDay(b.getAttribute("data-day"), true); });
     });
 
     var start = (location.hash || "").slice(1);
-    showDay(/^d[123]$/.test(start) ? start : "d1");
+    showDay(/^d[123]$/.test(start) ? start : "d1", false);
     show(SEC2TAB[start] || "plan", SEC2TAB[start] ? start : null);
 
     return { show:show, showDay:showDay, sec2tab:SEC2TAB };
